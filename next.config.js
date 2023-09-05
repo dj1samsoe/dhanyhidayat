@@ -5,11 +5,3 @@ const nextConfig = {
   }
 };
 module.exports = nextConfig;
-
-const withGA = require('@bradgarropy/next-google-analytics');
-
-module.exports = withGA({
-  googleAnalytics: {
-    id: 'G-20W6BJQQVJ' // Ganti dengan kode pelacakan Anda
-  }
-});
