@@ -1,0 +1,20 @@
+export const SKILLS = [
+  'Next.js',
+  'React.js',
+  'Redux',
+  'Node JS',
+  'TailwindCSS',
+  'Material UI',
+  'Bootstrap',
+  'Firebase',
+  'PostgreSql',
+  'Prisma',
+  'JavaScript',
+  'TypeScript',
+  'HTML',
+  'CSS',
+  'Laravel',
+  'MySQL',
+  'Framer Motion',
+  'PHP'
+];

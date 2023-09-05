@@ -1,0 +1,169 @@
+---
+id: 2
+title: 'Chapter 2 : JavaScript Basics'
+category: 'JavasScript Tips'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-06'
+updated_at: '2023-09-06'
+---
+
+> 2.1 Variables and Data Types
+
+In this section, we will delve into the fundamental concepts of variables and data types in JavaScript. These concepts are the building blocks of any programming language, and understanding them is crucial for writing effective JavaScript code.
+
+> Declaring Variables in JavaScript
+
+A variable is a named container used to store data values. In JavaScript, you can declare variables using the var, let, or const keyword. Here's a brief overview:
+
+- **var**: Historically used for variable declaration but has some scoping issues. It's rarely used in modern JavaScript.
+
+- **let**: Introduced in ES6 (ECMAScript 2015), it allows block-level scoping and is the preferred choice for variable declaration in most cases.
+
+- **const**: Also introduced in ES6, it is used to declare constants, which cannot be reassigned after declaration.
+
+**Example :**
+
+```
+let age = 25; // Declaring a variable 'age' and assigning a value of 25
+const name = "John"; // Declaring a constant 'name' with the value "John"
+
+```
+
+> Data Types
+
+JavaScript has several built-in data types:
+
+1. **Number**: Used for numeric values, including integers and floating-point numbers.
+
+```
+let age = 25; // Number
+let price = 19.99; // Floating-point number
+```
+
+2. **String**: Used for text and characters, enclosed in single (') or double (") quotes.
+
+```
+let greeting = "Hello, world!";
+```
+
+3. **Boolean**: Represents true or false values, often used in conditional statements.
+
+```
+let isStudent = true; // Boolean
+```
+
+4. **Array**: Ordered collections of values, indexed by numbers and start by 0.
+
+```
+let colors = ["red", "green", "blue"];
+```
+
+5. **Object**: Unordered collections of key-value pairs.
+
+```
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+};
+```
+
+6. **Undefined**: Represents a variable that has been declared but hasn't been assigned a value.
+
+```
+let city;
+console.log(city); // Outputs 'undefined'
+```
+
+7. **Null**: Represents the intentional absence of any object value.
+
+```
+let empty = null;
+```
+
+> Conclusion
+
+Understanding variables and data types is the foundation of JavaScript programming. Variables allow you to store and manipulate data, while data types define the kind of data that variables can hold. In the next section, we'll explore operators and expressions, which enable you to perform operations and make decisions in your JavaScript code.
+
+---
+
+> 2.2 Operators and Expressions
+
+In this section, we will dive into operators and expressions in JavaScript. Operators are symbols used to perform operations on variables and values, while expressions are combinations of values, variables, and operators that produce a result.
+
+> JavaScript Operators
+
+JavaScript provides a variety of operators for different purposes:
+
+1. **Arithmetic Operators**: Used for mathematical calculations.
+
+- Addition
+- Subtraction
+- Multiplication
+- Division
+- Modulus (remainder)
+
+**Example :**
+
+```
+let x = 10;
+let y = 5;
+let sum = x + y; // sum is 15
+let product = x * y; // product is 50
+```
+
+2. **Comparison Operators**: Used to compare values and return a Boolean result.
+
+- Equal to (value)
+- Equal to (value and type)
+- Not equal to (value)
+- Not equal to (value and type)
+- Greater than
+- Less than
+- Greater than or equal to
+- Less than or equal to
+
+**Example :**
+
+```
+let a = 5;
+let b = "5";
+let isEqual = a == b; // isEqual is true (values are equal)
+let isStrictEqual = a === b; // isStrictEqual is false (types are different)
+```
+
+3. **Logical Operators**: Used to perform logical operations and return a Boolean result.
+
+- Logical AND
+- Logical OR
+- Logical NOT
+
+**Example :**
+
+```
+let isAdult = true;
+let hasLicense = false;
+let canDrive = isAdult && hasLicense; // canDrive is false (both conditions must be true)
+```
+
+4. **Assignment Operators**: Used to assign values to variables.
+
+- Assignment
+- Addition assignment
+- Subtraction assignment
+- Multiplication assignment
+- Division assignment
+
+**Example :**
+
+```
+let x = 10;
+x += 5; // x is now 15 (same as x = x + 5)
+```
+
+> Conclusion
+
+Understanding operators and expressions is crucial for performing calculations, making decisions, and controlling the flow of your JavaScript code. In the next chapters, we'll explore control flow and functions, which will enable you to create more complex and interactive programs.

@@ -1,0 +1,154 @@
+---
+id: 3
+title: 'Chapter 3 : Control Flow and Functions'
+category: 'JavasScript Tips'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-05'
+updated_at: '2023-09-05'
+---
+
+In this chapter, we will dive into control flow and functions, two fundamental aspects of JavaScript that enable you to create dynamic and interactive programs.
+
+> 3.1 Conditional Statements
+
+**Explore if, else if, and else statements for decision-making.**
+
+Conditional statements allow your JavaScript code to make decisions and execute different actions based on specific conditions. They are essential for creating programs that respond dynamically to user input or changing data.
+
+**If Statement:**
+
+The **if** statement is used to execute a block of code if a specified condition is true.
+
+```
+let age = 18;
+if (age >= 18) {
+  console.log("You are an adult.");
+}
+```
+
+**Else Statement:**
+
+The **else** statement is used in conjunction with if to execute a block of code if the condition is false.
+
+```
+let age = 15;
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are not an adult.");
+}
+```
+
+**Else If Statement:**
+
+The **else if** statement allows you to check multiple conditions sequentially.
+
+```
+let score = 85;
+if (score >= 90) {
+  console.log("A");
+} else if (score >= 80) {
+  console.log("B");
+} else if (score >= 70) {
+  console.log("C");
+} else {
+  console.log("D");
+}
+```
+
+**Switch Statement:**
+
+A **switch** statement is used to select one of many code blocks to be executed.
+
+```
+let day = "Monday";
+switch (day) {
+  case "Monday":
+    console.log("It's the start of the week.");
+    break;
+  case "Friday":
+    console.log("It's almost the weekend.");
+    break;
+  default:
+    console.log("It's a regular day.");
+}
+```
+
+> 3.2 Loops
+
+**Discover for and while loops for iterating over data.**
+
+Loops are used to repeatedly execute a block of code as long as a specified condition is true. They are fundamental for tasks like iterating over arrays, processing data, and performing repetitive operations.
+
+**For Loop:**
+
+A **for** loop is commonly used for iterating over a range of values or elements in an array.
+
+```
+for (let i = 0; i < 5; i++) {
+  console.log(i); // Outputs numbers from 0 to 4
+}
+```
+
+**While Loop:**
+
+A **while** loop is used when you don't know the exact number of iterations in advance but have a condition that needs to be met.
+
+```
+let count = 0;
+while (count < 5) {
+  console.log(count); // Outputs numbers from 0 to 4
+  count++;
+}
+```
+
+**Loop Control Statements:**
+
+- **break**: Terminates the loop and continues executing the code after the loop.
+
+- **continue**: Skips the current iteration and proceeds to the next iteration of the loop.
+
+> 3.3 Functions
+
+**Define and call functions in JavaScript.**
+
+Functions are reusable blocks of code that can be defined and called at various points in your program. They allow you to organize your code, improve maintainability, and avoid repetition.
+
+**Function Declaration:**
+
+A function is declared using the **function** keyword, followed by a name and a set of parameters.
+
+```
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+```
+
+**Function Call:**
+
+To execute a function, you need to call it by its name and provide any required arguments.
+
+```
+greet("Alice"); // Outputs "Hello, Alice!"
+```
+
+**Function Parameters and Return Values:**
+
+Functions can accept parameters (inputs) and return values (outputs).
+
+```
+function add(x, y) {
+  return x + y;
+}
+let result = add(3, 5); // result is 8
+```
+
+Functions play a crucial role in structuring your code, promoting reusability, and encapsulating logic. They are the building blocks of JavaScript applications.
+
+> Conclusion
+
+Control flow constructs like conditional statements and loops, along with the power of functions, enable you to create dynamic and interactive JavaScript programs. In the following chapters, we'll delve even deeper into JavaScript's capabilities, including data manipulation, DOM interaction, and asynchronous programming.

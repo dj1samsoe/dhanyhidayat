@@ -1,0 +1,99 @@
+---
+id: 5
+title: 'Chapter 5 : DOM Manipulation'
+category: 'JavasScript Tips'
+language: 'JavaScript'
+difficulty: 'Easy'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-03'
+updated_at: '2023-09-03'
+---
+
+In this chapter, we will explore the Document Object Model (DOM) and how to manipulate it using JavaScript. Understanding the DOM is essential for creating dynamic and interactive web pages.
+
+> 5.1 Introduction to the DOM
+
+## 5.1.1 What is the DOM?
+
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, where each object corresponds to a part of the document, such as elements, attributes, and text content. The DOM allows you to access and manipulate the content and structure of a web page using JavaScript.
+
+## 5.1.2 Accessing DOM Elements
+
+To access and manipulate HTML elements on a web page, you can use JavaScript. Here are some common ways to access DOM elements:
+
+### 5.1.2.1 getElementById()
+
+You can select an element by its id attribute using the **getElementById()** method:
+
+```js
+const header = document.getElementById('header');
+```
+
+### 5.1.2.2 getElementsByClassName()
+
+To select elements by their class name, use the **getElementsByClassName()** method:
+
+```js
+const buttons = document.getElementsByClassName('button');
+```
+
+### 5.1.2.3 querySelector()
+
+The **querySelector()** method allows you to select elements using CSS-style selectors:
+
+```js
+const firstParagraph = document.querySelector('p');
+```
+
+### 5.1.2.4 querySelectorAll()
+
+To select multiple elements using CSS-style selectors, use the **querySelectorAll()** method:
+
+```js
+const allParagraphs = document.querySelectorAll('p');
+```
+
+---
+
+> 5.2 Event Handling
+
+## 5.2.1 What are Events?
+
+Events are interactions or occurrences that happen in the browser, such as user actions (clicking, typing, hovering), system events (loading, resizing), or other predefined triggers. Event handling in JavaScript enables you to respond to these events and create interactive web applications.
+
+## 5.2.2 Attaching Event Listeners
+
+To respond to events, you can attach event listeners to HTML elements. Event listeners are functions that are executed when a specific event occurs on an element. Here's an example of attaching a click event listener:
+
+```js
+const button = document.getElementById('myButton');
+
+button.addEventListener('click', function () {
+  alert('Button clicked!');
+});
+```
+
+**Common Events**
+
+There are numerous events you can listen for, including:
+
+- **click**: Occurs when an element is clicked.
+- **submit**: Triggered when a form is submitted.
+- **keydown** and **keyup**: Fired when a key on the keyboard is pressed and released, respectively.
+- **mouseover** and **mouseout**: Detect when the mouse pointer enters or leaves an element.
+
+## 5.2.3 Event Handling Best Practices
+
+When handling events, it's essential to follow some best practices:
+
+- **Use event delegation**: Instead of attaching event listeners to multiple elements, consider using event delegation by attaching a single listener to a parent element. This can improve performance and simplify your code.
+
+- **Avoid inline event handlers**: While it's possible to use inline event handlers like onclick directly in HTML, it's better to separate your JavaScript from your HTML for maintainability.
+
+- **Remove event listeners when not needed**: To prevent memory leaks and unexpected behavior, remove event listeners when they are no longer needed, especially for elements that are removed from the DOM.
+
+> Conclusion
+
+In this chapter, you've learned about the DOM and event handling in JavaScript. These concepts are crucial for creating dynamic and interactive web pages. As you continue to develop your web application, you'll find that mastering DOM manipulation and event handling is essential for providing a seamless user experience.
