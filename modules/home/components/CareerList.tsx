@@ -6,15 +6,16 @@ import { CAREERS } from '@/common/constant/careers';
 
 import CareerCard from './CareerCard';
 
-const RESUME_URL = 'https://res.cloudinary.com/dvlbwm8c1/image/upload/f_auto,q_auto/v1/codebayu/c7y1km2xd0sgvnvjlzyr';
-
 export default function CareerList() {
   return (
     <section className="space-y-6">
       <div className="space-y-2">
-        <SectionHeading title="Career" icon={<CareerIcon className="mr-1" />} />
+        <SectionHeading title="Certificates" icon={<CareerIcon className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">My professional career journey.</p>
+          <p className="dark:text-neutral-400">
+            My certificates list showcases my qualifications and achievements, serving as a testament to my skills and
+            expertise.
+          </p>
         </SectionSubHeading>
       </div>
 
