@@ -11,5 +11,15 @@ export const LEARN_CONTENTS: ContentProps[] = [
     is_new: true,
     level: 'beginner',
     is_show: true
+  },
+  {
+    id: 2,
+    title: 'React Js - JavaScript Library',
+    slug: 'react-js',
+    description: 'a comprehensive learning blog about React.js',
+    image: 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1694016322/djisamsoe/learn/xhhzcpc7vwe1j60nybmh.png',
+    is_new: true,
+    level: 'beginner',
+    is_show: true
   }
 ];
