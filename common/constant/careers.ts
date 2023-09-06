@@ -22,15 +22,15 @@ export const CAREERS = [
     link: 'https://storage.googleapis.com/myskill-v2-certificates/topic-sTLaN1dknfdCpAbUm5O2/vRPmxR4xeeSd2g7J55QRDc4TEG52-u4HlSOKomPKeY4GFqwag.pdf'
   },
   {
-    position: 'Belajar Dasar Structured Query Language (SQL)',
-    company: 'Dicoding Indonesia',
-    logo: 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1693915680/djisamsoe/careers/ldewfprkpiphyuzna12b.webp',
-    location: 'Bandung',
+    position: 'Basic HTML & CSS',
+    company: 'Dibimbing.id',
+    logo: 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1693915680/djisamsoe/careers/aoxqhhpzaucvw1jzx8e9.png',
+    location: 'Jakarta',
     location_type: 'Online',
     type: 'Fulltime',
-    start_date: '2023-08',
-    end_date: '2023-11',
-    link: 'https://www.dicoding.com/certificates/JMZV955DQPN9'
+    start_date: '2023-07',
+    end_date: '2023-08',
+    link: 'https://dibimbing-lms-dev.s3.ap-southeast-1.amazonaws.com/production/Basic%20HTML%20%26%20CSS/VOD20230803307.pdf'
   },
   {
     position: 'Frontend - JavaScript',

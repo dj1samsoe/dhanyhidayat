@@ -22,7 +22,7 @@ export default function CareerCard({ position, company, logo, location, start_da
 
   return (
     <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800">
-      {logo ? <Image src={logo} width={60} height={60} alt={company} /> : <CompanyIcon size={30} />}
+      {logo ? <Image src={logo} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
 
       <div className="space-y-1">
         <h2>{position}</h2>
