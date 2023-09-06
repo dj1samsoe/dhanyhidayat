@@ -26,6 +26,7 @@ import {
   SiReactquery,
   SiRedux,
   SiSass,
+  SiStripe,
   SiTailwindcss,
   SiThemoviedatabase,
   SiTypescript,
@@ -74,5 +75,6 @@ export const STACKS: stacksProps = {
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} />,
   MySQL: <SiMysql size={iconSize} />,
-  'TMDB API': <SiThemoviedatabase size={iconSize} />
+  'TMDB API': <SiThemoviedatabase size={iconSize} />,
+  Stripe: <SiStripe size={iconSize} />
 };
