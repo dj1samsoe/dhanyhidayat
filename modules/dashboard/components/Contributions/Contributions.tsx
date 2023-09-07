@@ -18,16 +18,23 @@ export default function Contributions({ githubData }: ContributionsProps) {
     <section className="flex flex-col gap-y-2">
       <SectionHeading title="Contributions" icon={<GithubIcon className="mr-1" />} />
       <SectionSubHeading>
-        <p className="dark:text-neutral-400">My contributions from last year on github.</p>
+        <p className="dark:text-neutral-400">My contributions from last year on github</p>
         <Link
           href={`https://github.com/${GITHUB_ACCOUNTS.username}`}
           target="_blank"
           passHref
-          className="text-sm font-code text-neutral-400 dark:text-neutral-600 hover:text-neutral-700 hover:dark:text-neutral-400"
+          className="text-sm font-code text-neutral-600 dark:text-neutral-500 hover:text-neutral-800 hover:dark:text-neutral-400"
         >
           @{GITHUB_ACCOUNTS.username}
         </Link>
       </SectionSubHeading>
+
+      <div className="flex justify-center pt-2 gap-2">
+        <img
+          height="150"
+          src="https://github-readme-stats.vercel.app/api/top-langs/?username=dj1samsoe&layout=compact&theme=transparent&hide=php&langs_count=6&title_color=18A44B"
+        />
+      </div>
 
       {!githubData && <div className="dark:text-neutral-400">No Data</div>}
 

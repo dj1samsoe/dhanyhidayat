@@ -1,0 +1,108 @@
+---
+id: 3
+title: 'Chapter 3 : State and Lifecycle'
+category: 'React Js Tips'
+language: 'JavaScript'
+difficulty: 'Medium'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-05'
+updated_at: '2023-09-05'
+---
+
+> 3.1 Managing Component State
+
+**Introduction to Component State:**
+
+In React, **component state** is a fundamental concept that allows components to manage and store their own data. State represents the dynamic part of a component, enabling it to react to user interactions, server responses, and other changes over time. By using state, you can create interactive and dynamic user interfaces.
+
+State is typically used for data that can change during the lifetime of a component, such as user input, timers, or data fetched from a server. Each component can have its own state, which is independent of other components, making it a powerful tool for building modular and reusable UI components.
+
+**Using setState to Update State**:
+
+To update component state in a React class component, you use the setState method. This method is asynchronous and allows you to specify the new state by providing an object or a function as an argument. React will then merge the new state with the existing state and trigger a re-render of the component.
+
+Example:
+
+```jsx
+import React, { Component } from 'react';
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0
+    };
+  }
+
+  incrementCount = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+
+  render() {
+    return (
+      <div>
+        <p>Count: {this.state.count}</p>
+        <button onClick={this.incrementCount}>Increment</button>
+      </div>
+    );
+  }
+}
+
+export default Counter;
+```
+
+**Stateful vs. Stateless Components:**
+
+- **Stateful Components**: Also known as class components, these are components that can hold and manage their own state. They have access to lifecycle methods and are used for complex UI elements that require dynamic behavior.
+
+- **Stateless Components**: Stateless functional components, on the other hand, are components that don't manage state. They are simpler and more focused on rendering UI based on the props they receive. Stateless components are typically used for presentation purposes and don't have access to lifecycle methods.
+
+---
+
+> 3.2 Component Lifecycle
+
+**Understanding Component Lifecycle Methods:**
+
+React components go through a series of lifecycle phases from creation to destruction. These phases are represented by lifecycle methods that you can override in class components. Here are some key lifecycle methods:
+
+- **componentDidMount**: This method is called after the component has been rendered to the screen. It's commonly used for tasks like data fetching, setting up timers, or subscribing to external data sources.
+
+- **componentDidUpdate**: Called when the component's props or state have been updated and the component is re-rendered. It's useful for performing side effects after an update, such as making additional data requests.
+
+- **componentWillUnmount**: Invoked just before the component is removed from the DOM. This is where you can clean up resources like timers, event listeners, or subscriptions.
+
+**Lifecycle Methods in Functional Components (Using Hooks):**
+
+Functional components don't have access to the traditional lifecycle methods. Instead, you can use React Hooks to achieve similar functionality. The **useEffect** hook is the most commonly used hook for managing side effects and mimicking lifecycle behavior.
+
+Example:
+
+```jsx
+import React, { useEffect, useState } from 'react';
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCount(count + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, [count]);
+
+  return <div>Count: {count}</div>;
+}
+
+export default Timer;
+```
+
+In this example, the **useEffect** hook is used to create a timer that increments the count every second. The returned cleanup function ensures that the timer is stopped when the component unmounts.
+
+> Conclusion
+
+Understanding component state and the component lifecycle is crucial for building dynamic and responsive React applications. Whether you're using class components or functional components with hooks, these concepts form the foundation for managing data and side effects in your UI.

@@ -1,0 +1,90 @@
+---
+id: 2
+title: 'Chapter 2 : Components and Props'
+category: 'React Js Tips'
+language: 'JavaScript'
+difficulty: 'Medium'
+source: ''
+cover_url: ''
+source_url: ''
+created_at: '2023-09-06'
+updated_at: '2023-09-06'
+---
+
+> 2.1 Understanding Components
+
+In React.js, components are the building blocks of a user interface. They are reusable, self-contained, and can be thought of as custom HTML elements that encapsulate a specific piece of UI and its behavior. React applications are typically structured as a tree of components, making it easy to manage and maintain complex user interfaces.
+
+**There are two main types of components in React:**
+
+1. **Class Components**: These are traditionally defined as ES6 classes that extend React.Component. Class components have a render method and can manage state and lifecycle events. They were the original way of creating components in React.
+
+2. **Functional Components**: Also known as stateless functional components, these are functions that return JSX (JavaScript XML) to describe the UI. Functional components are simpler and more concise than class components, and they were introduced to simplify the component development process.
+
+When deciding between class components and functional components, functional components are generally preferred due to their simplicity, improved performance, and better support for React features like hooks. However, class components are still used in some cases, especially when working with older codebases or when you need to manage state and lifecycle methods.
+
+Another important concept related to components is nesting. React components can be nested within each other, allowing you to build complex UIs by composing smaller, reusable components together. This approach promotes code reusability and maintainability.
+
+---
+
+> 2.2 Working with Props
+
+**Props** (short for **properties**) are a fundamental mechanism for passing data from a parent component to a child component in React. Props allow you to make your components dynamic and configurable by supplying them with data and behavior from their parent components.
+
+**Key points about working with props:**
+
+1. **Passing Data to Components using Props**: To pass data to a child component, you define attributes in the JSX of the parent component and assign values to those attributes. These values are then accessible as props within the child component.
+
+Example:
+
+```jsx
+// ParentComponent.js
+import React from 'react';
+
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  return <ChildComponent message="Hello, child!" />;
+}
+```
+
+```jsx
+// ChildComponent.js
+import React from 'react';
+
+function ChildComponent(props) {
+  return <div>{props.message}</div>;
+}
+```
+
+2. **Default Props and Prop Types**: React allows you to define default values for props and specify their expected data types using PropTypes. This helps catch potential bugs and provides documentation for component usage.
+
+Example:
+
+```jsx
+import PropTypes from 'prop-types';
+import React from 'react';
+
+function Greeting(props) {
+  return <div>Hello, {props.name}!</div>;
+}
+
+Greeting.defaultProps = {
+  name: 'Guest'
+};
+
+Greeting.propTypes = {
+  name: PropTypes.string
+};
+```
+
+3. **Best Practices for Using Props**: When working with props, it's essential to keep your components focused and maintainable. Some best practices include:
+
+- **Keep props simple**: Avoid passing large or complex objects as props; instead, pass only the necessary data.
+- **Use destructuring**: Destructure props in functional components to make the code cleaner and more readable.
+- **Avoid modifying props**: React components should be considered as "pure" functions that don't modify their input props.
+- **Document your components**: Use PropTypes or TypeScript to document the expected props for your components, making it easier for other developers to understand how to use them.
+
+> Conclusion
+
+In conclusion, components and props are at the core of React development. Understanding these concepts and following best practices will help you build maintainable and flexible user interfaces in your React applications.
