@@ -3,3 +3,4 @@ export const PLACEHOLDER_URL =
 export const DEVTO_PROFILE = 'https://dev.to/dj1samsoe';
 export const PROFILE_URL =
   'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1693769407/djisamsoe/tenvc6lnt4zuazowsbu7.jpg';
+export const SAWERIA_URL = 'https://saweria.co/dhanyhidayat';
