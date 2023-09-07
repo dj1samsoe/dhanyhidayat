@@ -16,5 +16,9 @@ export const metadata: Metadata = {
 };
 
 export default function MePage() {
-  return <MeSection />;
+  return (
+    <div className="max-w-xl mx-auto">
+      <MeSection />
+    </div>
+  );
 }
