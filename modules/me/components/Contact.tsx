@@ -5,8 +5,6 @@ import { FaRegEnvelopeOpen as EmailIcon } from 'react-icons/fa';
 import { PiChatsDuotone as ContactIcon } from 'react-icons/pi';
 
 const Contact = () => {
-  const bgImage = "url('/bg-gradient-2.svg')";
-
   const [copiedEmail, setCopiedEmail] = useState('');
 
   const handleEmailClick = (email: string) => {
@@ -24,10 +22,7 @@ const Contact = () => {
         <ContactIcon size={24} />
         <h2 className="font-medium text-lg md:text-xl">Get in Touch</h2>
       </div>
-      <div
-        className="bg-[#94d7c5] text-neutral-900 border p-8 rounded-2xl cursor-pointer space-y-5 bg-no-repeat bg-right"
-        style={{ backgroundImage: bgImage }}
-      >
+      <div className="bg-emerald-300 text-neutral-900 border p-8 rounded-2xl cursor-pointer space-y-5">
         <EmailIcon size={24} className="text-neutral-800" />
         <div className="space-y-3">
           <div className="font-medium text-lg md:text-xl">Drop Me an Email</div>

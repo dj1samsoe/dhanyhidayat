@@ -32,7 +32,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       />
       <div className="flex gap-2 items-center mt-1 lg:mt-4">
         <Link href="/" passHref>
-          <h2 className="flex-grow text-lg lg:text-xl font-sora font-medium">A F Dhany Hidayat</h2>
+          <h2 className="flex-grow text-lg lg:text-xl font-sora font-medium">Dhany Hidayat</h2>
         </Link>
         <Tooltip title="Verified">
           <VerifiedIcon size={18} className="text-blue-400" />
