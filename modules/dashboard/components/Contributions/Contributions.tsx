@@ -29,11 +29,19 @@ export default function Contributions({ githubData }: ContributionsProps) {
         </Link>
       </SectionSubHeading>
 
-      <div className="flex justify-center pt-2 gap-2">
+      <div className="flex flex-col space-y-3 justify-center md:space-x-3 md:space-y-0 md:flex-row">
         <img
           height="150"
+          width="300"
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=dj1samsoe&layout=compact&theme=transparent&hide=php&langs_count=6&title_color=18A44B"
         />
+        <a href="https://wakatime.com/@dj1samsoe" target="_blank">
+          <img
+            height="175"
+            width="500"
+            src="https://github-readme-stats.vercel.app/api/wakatime?username=dj1samsoe&layout=compact&theme=transparent&langs_count=6&title_color=18A44B"
+          />
+        </a>
       </div>
 
       {!githubData && <div className="dark:text-neutral-400">No Data</div>}
