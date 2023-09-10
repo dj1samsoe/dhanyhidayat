@@ -36,14 +36,6 @@ export default function Contributions({ githubData }: ContributionsProps) {
           src="https://github-readme-stats.vercel.app/api/top-langs/?username=dj1samsoe&layout=compact&theme=transparent&hide=php&langs_count=6&title_color=18A44B"
           alt="language-github"
         />
-        <a href="https://wakatime.com/@dj1samsoe" target="_blank">
-          <img
-            height="175"
-            width="500"
-            src="https://github-readme-stats.vercel.app/api/wakatime?username=dj1samsoe&layout=compact&theme=transparent&langs_count=6&title_color=18A44B"
-            alt="wakatime-stats"
-          />
-        </a>
       </div>
 
       {!githubData && <div className="dark:text-neutral-400">No Data</div>}

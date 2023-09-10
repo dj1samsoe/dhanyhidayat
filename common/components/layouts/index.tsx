@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -14,6 +14,10 @@ interface LayoutsProps {
 
 export default function Layouts({ children }: LayoutsProps) {
   const pathName = usePathname();
+  const searchParams = useSearchParams();
+  const readMode = searchParams.get('read-mode');
+
+  const hideSidebar = pathName === '/me' || readMode === 'true';
 
   useEffect(() => {
     AOS.init({
@@ -24,12 +28,12 @@ export default function Layouts({ children }: LayoutsProps) {
   return (
     <div className="flex flex-col justify-center lg:flex-row lg:gap-5 lg:pt-10">
       <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
-        {pathName !== '/me' && (
-          <header className="lg:w-1/5 lg:px-4">
+        {!hideSidebar && (
+          <header>
             <Sidebar />
           </header>
         )}
-        <main className="lg:max-w-[854px] transition-all duration-300 w-full lg:h-screen overflow-y-auto no-scrollbar">
+        <main className="lg:max-w-[854px] transition-all duration-300 w-full lg:min-h-screen overflow-y-auto no-scrollbar">
           {children}
         </main>
       </div>
