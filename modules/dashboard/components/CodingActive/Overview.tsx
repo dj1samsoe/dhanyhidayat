@@ -21,12 +21,12 @@ interface OverviewProps {
 const Overview = () => {
   return (
     <div className="mb-1 grid md:grid-cols-2 gap-3 py-2">
-      <OverviewItem label="Start Date" value={'September 05, 2023'} />
-      <OverviewItem label="End Date" value={'September 11, 2023'} />
-      <OverviewItem label="Daily Coding Average" value={'3 hrs 54 mins'} />
-      <OverviewItem label="This Week Coding Time" value={'27 hrs 21 mins'} />
-      <OverviewItem label="Best Day Coding Time" value={'September 11, 2023 (6 hrs 17mins)'} />
-      <OverviewItem label="All Time Since Today" value={'27 hrs 21 mins'} />
+      <OverviewItem label="Start Date" value={'September 06, 2023'} />
+      <OverviewItem label="End Date" value={'September 12, 2023'} />
+      <OverviewItem label="Daily Coding Average" value={'4 hrs 1 mins'} />
+      <OverviewItem label="This Week Coding Time" value={'28 hrs 7 mins'} />
+      <OverviewItem label="Best Day Coding Time" value={'September 11, 2023 (6 hrs 35 mins)'} />
+      <OverviewItem label="All Time Since Today" value={'28 hrs 46 mins'} />
     </div>
   );
 };

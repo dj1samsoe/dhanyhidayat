@@ -18,7 +18,7 @@ export default function Badge({ label, path, isShow }: BadgeProps) {
       className={clsxm(
         'px-3 py-2 text-xs rounded-full whitespace-nowrap',
         isShow ? 'flex' : 'hidden',
-        path === url ? 'bg-neutral-200 dark:bg-neutral-700' : 'bg-neutral-100 dark:bg-neutral-800'
+        path === url ? 'bg-neutral-500 text-neutral-100 dark:bg-neutral-600' : 'bg-neutral-100 dark:bg-neutral-800'
       )}
     >
       {label}

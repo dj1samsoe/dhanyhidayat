@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 
 import Breakline from '../../elements/Breakline';
+import Copyright from '../../elements/Copyright';
 import Navigation from './Navigation';
 
 const MobileMenu: FC = () => {
@@ -15,6 +16,8 @@ const MobileMenu: FC = () => {
       <div>
         <Breakline className="mt-2" />
         <Navigation />
+        <Breakline className="mt-2" />
+        <Copyright />
       </div>
     </motion.div>
   );

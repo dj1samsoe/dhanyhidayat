@@ -1,10 +1,8 @@
 import {
-  BiLineChart as AnalyticsIcon,
-  BiEnvelope as ContactIcon,
+  BiMessageDetail as ContactIcon,
   BiBarChartSquare as DashboardIcon,
   BiBookBookmark as LearnIcon,
-  BiGitCompare as RoadmapIcon,
-  BiAt as ThreadsIcon
+  BiGitCompare as RoadmapIcon
 } from 'react-icons/bi';
 import {
   BsGithub as GithubIcon,
@@ -29,6 +27,14 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home'
+  },
+  {
+    title: 'Dashboard',
+    href: '/dashboard',
+    icon: <DashboardIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Dashboard'
   },
   {
     title: 'Projects',
@@ -66,7 +72,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: 'Contact',
     href: '/contact',
     icon: <ContactIcon size={iconSize} />,
-    isShow: false,
+    isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact'
   },
@@ -77,14 +83,6 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Roadmap'
-  },
-  {
-    title: 'Dashboard',
-    href: '/dashboard',
-    icon: <DashboardIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Dashboard'
   }
 ];
 
@@ -95,7 +93,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <GithubIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Github'
+    eventName: 'Social: Github',
+    className: '!bg-black border border dark:border-neutral-700'
   },
   {
     title: 'Linkedin',
@@ -103,7 +102,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <LinkedinIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Linkedin'
+    eventName: 'Social: Linkedin',
+    className: '!bg-blue-500 border border dark:border-neutral-700'
   },
   {
     title: 'Twitter',
@@ -111,7 +111,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TwitterIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Twitter'
+    eventName: 'Social: Twitter',
+    className: '!bg-sky-500 border border dark:border-neutral-700'
   },
   {
     title: 'Instagram',
@@ -119,15 +120,8 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Instagram'
-  },
-  {
-    title: 'Threads',
-    href: '',
-    icon: <ThreadsIcon size={iconSize} />,
-    isShow: false,
-    isExternal: true,
-    eventName: 'Social: Threads'
+    eventName: 'Social: Instagram',
+    className: '!bg-orange-700 border border dark:border-neutral-700'
   },
   {
     title: 'TikTok',
@@ -135,6 +129,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     icon: <TiktokIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
-    eventName: 'Social: Tiktok'
+    eventName: 'Social: Tiktok',
+    className: '!bg-black border border dark:border-neutral-700'
   }
 ];

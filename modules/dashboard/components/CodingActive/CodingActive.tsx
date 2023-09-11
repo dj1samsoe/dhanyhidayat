@@ -24,7 +24,7 @@ const CodingActive = () => {
           </Link>
           <span> last 7 days stats.</span>
         </div>
-        <div className="text-sm text-neutral-600 dark:text-neutral-500">Last update: 21 hours ago</div>
+        <div className="text-sm text-neutral-600 dark:text-neutral-500">Last update: 12 hours ago</div>
       </SectionSubHeading>
 
       <Overview />
