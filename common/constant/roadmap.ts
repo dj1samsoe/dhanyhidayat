@@ -114,6 +114,6 @@ export const TRIBES = [
   {
     label: 'Backend Developer',
     path: '/roadmap?tribe=backend-developer',
-    isShow: false
+    isShow: true
   }
 ];

@@ -1,12 +1,9 @@
 import {
   BiLineChart as AnalyticsIcon,
-  BiEditAlt as BlogIcon,
   BiEnvelope as ContactIcon,
-  BiCategoryAlt as DashboardIcon,
-  BiHomeSmile as HomeIcon,
+  BiBarChartSquare as DashboardIcon,
   BiBookBookmark as LearnIcon,
-  BiLeaf as ProfileIcon,
-  BiArchive as ProjectIcon,
+  BiGitCompare as RoadmapIcon,
   BiAt as ThreadsIcon
 } from 'react-icons/bi';
 import {
@@ -16,7 +13,9 @@ import {
   BsTiktok as TiktokIcon,
   BsTwitter as TwitterIcon
 } from 'react-icons/bs';
-import { LuWorkflow } from 'react-icons/lu';
+import { CgProfile as ProfileIcon } from 'react-icons/cg';
+import { PiNotePencilBold as BlogIcon, PiProjectorScreenChartBold as ProjectIcon } from 'react-icons/pi';
+import { TbHomeHeart as HomeIcon } from 'react-icons/tb';
 
 import { MenuItemProps } from '../types/menu';
 
@@ -74,7 +73,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
   {
     title: 'Roadmap',
     href: '/roadmap?tribe=frontend-developer',
-    icon: <LuWorkflow size={iconSize} />,
+    icon: <RoadmapIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Roadmap'
