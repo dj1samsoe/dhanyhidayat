@@ -121,7 +121,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Instagram',
-    className: '!bg-orange-700 border border dark:border-neutral-700'
+    className: '!bg-[#F44B52] border border dark:border-neutral-700'
   },
   {
     title: 'TikTok',

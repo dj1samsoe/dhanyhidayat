@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
+import { SOCIAL_MEDIA } from '@/common/constant/menu';
+
 import Breakline from '../../elements/Breakline';
-import Copyright from '../../elements/Copyright';
+import SocialMedia from '../../elements/SocialMedia';
 import Navigation from './Navigation';
 
 const MobileMenu: FC = () => {
+  const filteredSocialMedia = SOCIAL_MEDIA?.filter(item => item?.isShow);
   return (
     <motion.div
       className="h-screen flex flex-col my-3"
@@ -17,7 +20,7 @@ const MobileMenu: FC = () => {
         <Breakline className="mt-2" />
         <Navigation />
         <Breakline className="mt-2" />
-        <Copyright />
+        <SocialMedia items={filteredSocialMedia} />
       </div>
     </motion.div>
   );

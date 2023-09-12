@@ -36,12 +36,6 @@ const FRONTEND = [
     linkEnglish: ''
   },
   {
-    title: 'Git & Github',
-    icon: 'Github',
-    linkIndonesia: 'https://www.youtube.com/watch?v=lTMZxWMjXQU&list=PLFIM0718LjIVknj6sgsSceMqlq242-jNf',
-    linkEnglish: ''
-  },
-  {
     title: 'Tailwind CSS',
     icon: 'TailwindCSS',
     linkIndonesia: 'https://www.youtube.com/watch?v=z3slaXqmkT0&list=PLFIM0718LjIUHFRMzPJ0wGjx9_NlC5d1h',
@@ -82,12 +76,6 @@ const FRONTEND = [
     icon: 'React.js',
     linkIndonesia: '',
     linkEnglish: 'https://www.youtube.com/watch?v=TiSGujM22OI&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK'
-  },
-  {
-    title: 'Next JS',
-    icon: 'Next.js',
-    linkIndonesia: 'https://www.youtube.com/watch?v=HNXYveOJPio&list=PLU4DS8KR-LJ3-zouYHHknPq1G5VTB8PRf',
-    linkEnglish: 'https://www.youtube.com/watch?v=RY6B7JSBRRg&list=PLC3y8-rFHvwgC9mj0qv972IO5DmD-H0ZH&index=2'
   }
 ];
 
@@ -96,6 +84,42 @@ const BACKEND = [
     title: 'Javascript',
     icon: 'JavaScript',
     linkIndonesia: 'https://www.youtube.com/watch?v=NBZ9Ro6UKV8&list=PLFIM0718LjIVuONHysfOK0ZtiqUWvrx4F',
+    linkEnglish: ''
+  },
+  {
+    title: 'Next JS',
+    icon: 'Next.js',
+    linkIndonesia: 'https://www.youtube.com/watch?v=HNXYveOJPio&list=PLU4DS8KR-LJ3-zouYHHknPq1G5VTB8PRf',
+    linkEnglish: 'https://www.youtube.com/watch?v=RY6B7JSBRRg&list=PLC3y8-rFHvwgC9mj0qv972IO5DmD-H0ZH&index=2'
+  },
+  {
+    title: 'Git & Github',
+    icon: 'Github',
+    linkIndonesia: 'https://www.youtube.com/watch?v=lTMZxWMjXQU&list=PLFIM0718LjIVknj6sgsSceMqlq242-jNf',
+    linkEnglish: ''
+  },
+  {
+    title: 'PHP Dasar Untuk Pemula',
+    icon: 'PHP',
+    linkIndonesia: 'https://www.youtube.com/watch?v=l1W2OwV5rgY&list=PLFIM0718LjIUqXfmEIBE3-uzERZPh3vp6&pp=iAQB',
+    linkEnglish: ''
+  },
+  {
+    title: 'OOP Dasar PHP',
+    icon: 'PHP',
+    linkIndonesia: 'https://www.youtube.com/watch?v=ZKDUFoouyBI&list=PLFIM0718LjIWvxxll-6wLXrC_16h_Bl_p&pp=iAQB',
+    linkEnglish: ''
+  },
+  {
+    title: 'MVC Pada PHP',
+    icon: 'PHP',
+    linkIndonesia: 'https://www.youtube.com/watch?v=tBKOb8Ib5nI&list=PLFIM0718LjIVEh_d-h5wAjsdv2W4SAtkx&pp=iAQB',
+    linkEnglish: ''
+  },
+  {
+    title: 'Laravel 8',
+    icon: 'Laravel',
+    linkIndonesia: 'https://www.youtube.com/watch?v=HqAMb6kqlLs&list=PLFIM0718LjIWiihbBIq-SWPU6b6x21Q_2&pp=iAQB',
     linkEnglish: ''
   }
 ];

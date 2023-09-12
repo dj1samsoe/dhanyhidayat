@@ -1,4 +1,4 @@
-import { MENU_ITEMS, SOCIAL_MEDIA } from '@/common/constant/menu';
+import { MENU_ITEMS } from '@/common/constant/menu';
 
 import Menu from './Menu';
 

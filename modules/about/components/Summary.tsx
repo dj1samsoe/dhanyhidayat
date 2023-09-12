@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Summary() {
   return (
-    <div className="flex flex-col space-y-6 font-sans text-neutral-800 dark:text-neutral-300">
+    <div className="flex flex-col space-y-6 font-sora text-neutral-800 dark:text-neutral-300">
       <p>
         Hi! I'm Achmad Fauzian Dhany Hidayat, a seasoned software developer with a deep love for using code to create
         elegant and effective solutions. I have a strong foundation in HTML, CSS, and Javascript, and I have a thorough
