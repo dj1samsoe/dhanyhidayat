@@ -5,7 +5,7 @@ import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { CAREERS } from '@/common/constant/careers';
 import { SKILLS } from '@/common/constant/skills';
 
-import CareerCard from './CareerCard';
+import CareerCard from '../../about/components/CareerCard';
 import SkillCard from './SkillCard';
 
 export default function SkillList() {
