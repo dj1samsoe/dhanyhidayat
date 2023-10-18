@@ -39,16 +39,21 @@ const config: Config = {
             transform: 'scaleY(1.7) scaleX(1.25)',
             opacity: '0'
           }
+        },
+        loop: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' }
         }
       },
       animation: {
         'waving-hand': 'wave 2s linear infinite',
         'flying-card': 'flying 3s infinite normal',
-        'badge-pulse': 'badge 1.5s ease-out infinite'
+        'badge-pulse': 'badge 1.5s ease-out infinite',
+        'looping-tag': 'loop 100s linear infinite'
       }
     }
   },
-  plugins: [],
+  plugins: [require('tailwind-scrollbar-hide')],
   darkMode: 'class'
 };
 export default config;

@@ -39,7 +39,7 @@ type stacksProps = {
   [key: string]: JSX.Element;
 };
 
-const iconSize = '100%';
+const iconSize = 24;
 
 export const STACKS: stacksProps = {
   PHP: <SiPhp size={iconSize} className="text-blue-500" />,
