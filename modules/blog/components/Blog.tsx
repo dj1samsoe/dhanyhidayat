@@ -3,8 +3,9 @@
 import { fetcher } from '@/services/fetcher';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import useSWR from 'swr';
+import { useWindowSize } from 'usehooks-ts';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import LoadingCard from '@/common/components/elements/LoadingCard';
@@ -12,15 +13,27 @@ import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
 
-import useIsMobile from '@/hooks/useIsMobile';
-
 import BlogCard from './BlogCard';
 import BlogListHeader from './BlogListHeader';
+import Pagination from './Pagination';
 
-export default function Blog() {
-  const isMobile = useIsMobile();
+type BlogList = {
+  showHeader?: boolean;
+  showPagination?: boolean;
+  perPage?: number;
+};
+
+const Blog = ({ perPage = 6, showHeader = true, showPagination = true }: BlogList) => {
+  const { width } = useWindowSize();
+  const isMobile = width < 468;
+
   const { viewOption, setViewOption } = useBlogViewStore();
-  const { data, isLoading } = useSWR('/api/blog', fetcher);
+
+  const [page, setPage] = useState<number>(1);
+  // eslint-disable-next-line unused-imports/no-unused-vars
+  const [pageSize, setPageSize] = useState<number>(perPage);
+
+  const { data, isLoading } = useSWR(`/api/blog?page=${page}&per_page=${pageSize}`, fetcher);
 
   const blogData: BlogItem[] = useMemo(() => {
     if (data?.status && data?.data && Array.isArray(data?.data)) {
@@ -29,27 +42,30 @@ export default function Blog() {
     return [];
   }, [data]);
 
-  if (isLoading)
-    return (
-      <div
-        className={clsx(
-          'gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2 sm:!gap-5'
-        )}
-      >
-        {[1, 2].map(item => (
-          <LoadingCard key={item} view={viewOption} />
-        ))}
-      </div>
-    );
+  const handleNextPage = () => {
+    setPage(page + 1);
+    scrollToTop();
+  };
 
-  if (blogData.length === 0 && !isLoading) {
+  const handlePrevPage = () => {
+    setPage(page - 1);
+    scrollToTop();
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (isLoading) return <LoadingCard view={viewOption} />;
+
+  if (!isLoading && blogData.length === 0) {
     return <EmptyState message="No Data" />;
   }
 
   return (
     <>
-      {!isMobile && <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />}
+      {showHeader && !isMobile && <BlogListHeader viewOption={viewOption} setViewOption={setViewOption} />}
+
       <div
         className={clsx(
           'gap-5 sm:gap-4',
@@ -67,6 +83,18 @@ export default function Blog() {
           </motion.div>
         ))}
       </div>
+
+      {showPagination && (
+        <Pagination
+          page={page}
+          onPrevPage={handlePrevPage}
+          onNextPage={handleNextPage}
+          blogData={blogData}
+          pageSize={pageSize}
+        />
+      )}
     </>
   );
-}
+};
+
+export default Blog;

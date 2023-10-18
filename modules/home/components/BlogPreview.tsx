@@ -31,7 +31,7 @@ const BlogPreview = () => {
           </Link>
         </SectionSubHeading>
       </div>
-      {isMobile ? <Blog /> : <BlogCarousel />}
+      {isMobile ? <Blog perPage={2} showHeader={false} showPagination={false} /> : <BlogCarousel />}
     </section>
   );
 };

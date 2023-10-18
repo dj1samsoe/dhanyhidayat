@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { useEffect, useState } from 'react';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
+import { HiOutlineArrowSmRight as ReadIcon } from 'react-icons/hi';
 import { TbMessage2 as CommentIcon } from 'react-icons/tb';
 
 import Card from '@/common/components/elements/Card';
@@ -19,20 +20,21 @@ interface BlogCardProps extends BlogItem {
   isCarousel?: boolean;
 }
 
-export default function BlogCard({
+const BlogCard = ({
   id,
   title,
   cover_image,
   published_at,
   description,
-  page_views_count,
+  total_views_count,
   slug,
   comments_count,
-  view,
+  view = 'list',
   isExcerpt = true,
   isCarousel = false
-}: BlogCardProps) {
-  const [viewOption, setViewOption] = useState<string>();
+}: BlogCardProps) => {
+  const [viewOption, setViewOption] = useState<string>(view);
+
   const isMobile = useIsMobile();
 
   const newSlug = formatBlogSlug(slug);
@@ -53,13 +55,13 @@ export default function BlogCard({
     <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
-          'flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-neutral-800 lg:hover:scale-[102%] w-full',
+          'group relative flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-900 lg:hover:scale-[102%] w-full',
           viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
           !isExcerpt && 'sm:h-[320px]'
         )}
       >
-        <div className="w-fit">
+        <div className="w-fit relative">
           <Image
             src={cover_image || PLACEHOLDER_URL}
             width={isMobile || viewOption === 'grid' ? 400 : 240}
@@ -70,18 +72,24 @@ export default function BlogCard({
               viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
             )}
           />
+          {viewOption === 'grid' && (
+            <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover:opacity-80 rounded-t-xl text-sm font-medium">
+              <span>Read Article</span>
+              <ReadIcon size={20} />
+            </div>
+          )}
         </div>
         <article className={contentContainerClasses}>
-          <h2 className="md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
+          <h3 className="md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
             {trimmedTitle}
-          </h2>
+          </h3>
           <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
             <div className="flex gap-1 items-center ">
               <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
             </div>
             <div className="flex gap-1 items-center">
               <ViewIcon size={14} />
-              <span className="text-xs ml-0.5">{page_views_count} Views</span>
+              <span className="text-xs ml-0.5">{total_views_count} Views</span>
             </div>
             <div className="flex gap-1 items-center">
               <CommentIcon size={16} />
@@ -102,4 +110,6 @@ export default function BlogCard({
       </Card>
     </Link>
   );
-}
+};
+
+export default BlogCard;

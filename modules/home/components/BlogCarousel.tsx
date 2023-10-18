@@ -14,7 +14,7 @@ import BlogCard from '@/modules/blog/components/BlogCard';
 import { useBlogViewStore } from '@/context/useBlogViewStore';
 
 const BlogCarousel = () => {
-  const { data, isLoading } = useSWR(`/api/blog`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);
   const { viewOption } = useBlogViewStore();
 
   const blogData: BlogItem[] = useMemo(() => {
