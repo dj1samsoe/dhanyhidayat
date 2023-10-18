@@ -22,7 +22,9 @@ export default function Layouts({ children }: LayoutsProps) {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      delay: 50
+      delay: 50,
+      disable: 'mobile',
+      once: true
     });
   }, []);
   return (
