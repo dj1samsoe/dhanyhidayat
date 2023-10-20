@@ -23,7 +23,6 @@ export default function Layouts({ children }: LayoutsProps) {
     AOS.init({
       duration: 800,
       delay: 50,
-      disable: 'mobile',
       once: true
     });
   }, []);

@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { PiLinkBreakDuotone as LinkIcon } from 'react-icons/pi';
 
-import SectionHeader from '@/common/components/elements/SectionHeader';
 import { LINKS } from '@/common/constant/links';
 
 import LinkItem from './LinkItem';
@@ -21,7 +20,10 @@ const Links = () => {
 
   return (
     <section className="space-y-4">
-      <SectionHeader icon={<LinkIcon size={24} />} title="Links" />
+      <div className="flex items-center gap-2 px-3">
+        <LinkIcon size={24} />
+        <h2 className="font-medium text-lg md:text-xl">Links</h2>
+      </div>
       <div className="flex flex-col w-full gap-y-3">
         {LINKS?.map((item, index) => <LinkItem key={index} index={index} onClick={handleClick} {...item} />)}
       </div>

@@ -1,5 +1,3 @@
-'use client';
-
 import Image from '@/common/components/elements/Image';
 import { PROFILE_URL } from '@/common/constant';
 
@@ -14,7 +12,7 @@ const Hero = () => {
         data-aos-duration="1000"
         style={{
           backgroundImage: coverImage,
-          backgroundPosition: 'center, bottom'
+          backgroundPosition: 'center, center'
         }}
       ></div>
       <div

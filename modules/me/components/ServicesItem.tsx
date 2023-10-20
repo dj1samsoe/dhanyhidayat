@@ -6,6 +6,9 @@ import { ServicesProps } from '@/common/types/services';
 const ServicesItem = ({ title, description, icon, className }: ServicesProps) => {
   return (
     <div
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-delay="50"
       className={clsx(
         'grid grid-flow-col justify-between items-center gap-x-6 bg-white bg-no-repeat bg-right bg-contain',
         'border py-5 px-6 rounded-xl',

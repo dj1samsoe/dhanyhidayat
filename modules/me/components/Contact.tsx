@@ -22,7 +22,12 @@ const Contact = () => {
         <ContactIcon size={24} />
         <h2 className="font-medium text-lg md:text-xl">Get in Touch</h2>
       </div>
-      <div className="bg-emerald-300 text-neutral-900 border p-8 rounded-2xl cursor-pointer space-y-5">
+      <div
+        data-aos="fade-down"
+        data-aos-duration="1000"
+        data-aos-delay="50"
+        className="bg-emerald-300 text-neutral-900 border p-8 rounded-2xl cursor-pointer space-y-5"
+      >
         <EmailIcon size={24} className="text-neutral-800" />
         <div className="space-y-3">
           <div className="font-medium text-lg md:text-xl">Drop Me an Email</div>
