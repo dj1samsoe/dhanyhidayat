@@ -1,25 +1,88 @@
-import Link from 'next/link';
+'use client';
 
-import React from 'react';
+import styled from '@emotion/styled';
 
 import Container from '@/common/components/elements/Container';
 
-export default function NotFound() {
+const NotFound = () => {
   return (
-    <>
-      <Container
-        data-aos="fade-up"
-        className="flex flex-col text-neutral-600 dark:text-neutral-300 space-y-10 items-center justify-center lg:h-[90vh] overflow-hidden"
-      >
-        <h1 className="text-4xl md:text-6xl font-semibold">Where are you going to?</h1>
-        <p className="text-center">It seems like the page that you are looking for is no longer here.</p>
-        <Link
-          href="/"
-          className="uppercase text-xs px-6 py-4 rounded-full dark:bg-neutral-300 bg-neutral-600 text-neutral-100 dark:text-neutral-700 hover:shadow-lg transition-all duration-300"
-        >
-          Go to Home
-        </Link>
-      </Container>
-    </>
+    <Container className="flex flex-col h-full justify-center items-center space-y-5 py-40 md:py-20" data-aos="fade-up">
+      <StyledHeading title="404" className="font-bold text-7xl font-sora">
+        404
+      </StyledHeading>
+      <StyledHeading title="Page Not Found" className="font-bold text-4xl font-sora">
+        Page Not Found!
+      </StyledHeading>
+      <h2 className="text-xl lg:text-xl animate-pulse text-center">
+        Whoops, there doesn&apos;t seem to be anything here!
+      </h2>
+    </Container>
   );
-}
+};
+
+export default NotFound;
+
+const StyledHeading = styled.h1`
+  animation: glitch 1s linear infinite;
+
+  @keyframes glitch {
+    2%,
+    64% {
+      transform: translate(2px, 0) skew(0deg);
+    }
+    4%,
+    60% {
+      transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+      transform: translate(0, 0) skew(5deg);
+    }
+  }
+
+  &:before,
+  &:after {
+    content: attr(title);
+    position: absolute;
+    left: 0;
+  }
+
+  &:before {
+    animation: glitchTop 1s linear infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  }
+
+  @keyframes glitchTop {
+    2%,
+    64% {
+      transform: translate(2px, -2px);
+    }
+    4%,
+    60% {
+      transform: translate(-2px, 2px);
+    }
+    62% {
+      transform: translate(13px, -1px) skew(-13deg);
+    }
+  }
+
+  &:after {
+    animation: glitchBotom 1.5s linear infinite;
+    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  }
+
+  @keyframes glitchBotom {
+    2%,
+    64% {
+      transform: translate(-2px, 0);
+    }
+    4%,
+    60% {
+      transform: translate(-2px, 0);
+    }
+    62% {
+      transform: translate(-22px, 5px) skew(21deg);
+    }
+  }
+`;
