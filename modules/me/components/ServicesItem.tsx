@@ -20,7 +20,7 @@ const ServicesItem = ({ title, description, icon, className }: ServicesProps) =>
         <Image src={icon} alt={title} width={50} height={50} />
       </div>
       <div className={clsx('space-y-1', className)}>
-        <h5 className="text-base md:text-lg font-medium">{title}</h5>
+        <h2 className="text-base md:text-lg font-medium">{title}</h2>
         <p className="text-neutral-600 text-sm md:text-base dark:text-neutral-400">{description}</p>
       </div>
     </div>
