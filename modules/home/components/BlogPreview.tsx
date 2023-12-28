@@ -7,15 +7,9 @@ import { BsArrowRightShort as ViewAllIcon } from 'react-icons/bs';
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 
-import Blog from '@/modules/blog/components/Blog';
-
-import useIsMobile from '@/hooks/useIsMobile';
-
 import BlogCarousel from './BlogCarousel';
 
 const BlogPreview = () => {
-  const isMobile = useIsMobile();
-
   return (
     <section className="space-y-6">
       <div className="flex items-center justify-between">
