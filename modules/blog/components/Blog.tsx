@@ -13,6 +13,8 @@ import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
 
+import useIsMobile from '@/hooks/useIsMobile';
+
 import BlogCard from './BlogCard';
 import BlogListHeader from './BlogListHeader';
 import Pagination from './Pagination';
@@ -24,8 +26,7 @@ type BlogList = {
 };
 
 const Blog = ({ perPage = 6, showHeader = true, showPagination = true }: BlogList) => {
-  const { width } = useWindowSize();
-  const isMobile = width < 468;
+  const isMobile = useIsMobile();
 
   const { viewOption, setViewOption } = useBlogViewStore();
 

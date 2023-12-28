@@ -7,7 +7,7 @@ import { BiCodeAlt as SkillsIcon } from 'react-icons/bi';
 import InfiniteLoopSlider from '@/common/components/elements/InfiniteLoopSliders';
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
-import { STACKS } from '@/common/constant/stacks';
+import { SKILLS } from '@/common/constant/skills';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
   <div className="flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700">
@@ -20,12 +20,12 @@ const Skills = () => {
   const [shuffledSkills, setShuffledSkills] = useState<Array<[string, ReactNode]>>([]);
 
   useEffect(() => {
-    const skillsArray = Object.entries(STACKS);
+    const skillsArray = Object.entries(SKILLS);
     const shuffledArray = [...skillsArray].sort(() => Math.random() - 0.5);
     setShuffledSkills(shuffledArray);
   }, []);
 
-  const sliders = Array.from({ length: 3 }, (_, index) => {
+  const sliders = Array.from({ length: 2 }, (_, index) => {
     const sliderSkills = [...shuffledSkills].sort(() => Math.random() - 0.5);
     return (
       <InfiniteLoopSlider key={index} isReverse={index === 1}>
