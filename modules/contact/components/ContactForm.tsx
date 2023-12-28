@@ -50,7 +50,7 @@ const ContactForm = () => {
             required
           />
           <input
-            className="w-full py-2 px-3 rounded-md border border-neutral-200 dark:border-neutral-700"
+            className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700"
             type="email"
             placeholder="Email*"
             name="email"

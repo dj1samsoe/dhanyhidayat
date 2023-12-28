@@ -15,7 +15,7 @@ const Socials = () => {
             target={item?.isExternal ? '_blank' : '_self'}
             rel="noopener noreferrer"
             className={clsx(
-              'bg-white p-3 border hover:shadow-none rounded-full transition-all duration-300 hover:shadow hover:scale-105 hover:text-white transition-all duration-300 shadow-sm',
+              'bg-white p-3 border hover:shadow-none rounded-full transition-all duration-300 hover:scale-105 hover:text-white shadow-sm',
               item?.className
             )}
             aria-label={item?.title}

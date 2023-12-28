@@ -4,7 +4,7 @@ import {
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon
 } from 'react-icons/bs';
-import { RiTwitterFill as TwitterXIcon } from 'react-icons/ri';
+import { RiTwitterXFill as TwitterXIcon } from 'react-icons/ri';
 
 import { SocialItemProps } from '../types/socials';
 
