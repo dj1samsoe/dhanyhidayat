@@ -26,7 +26,7 @@ const BlogCard = ({
   cover_image,
   published_at,
   description,
-  total_views_count,
+  page_views_count,
   slug,
   comments_count,
   view = 'list',
@@ -83,13 +83,13 @@ const BlogCard = ({
           <h3 className="md:text-[17px] font-medium text-neutral-600 dark:text-neutral-200 lg:group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
             {trimmedTitle}
           </h3>
-          <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
+          <div className="flex gap-3 text-neutral-600 dark:text-neutral-400">
             <div className="flex gap-1 items-center ">
               <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
             </div>
             <div className="flex gap-1 items-center">
               <ViewIcon size={14} />
-              <span className="text-xs ml-0.5">{total_views_count} Views</span>
+              <span className="text-xs ml-0.5">{page_views_count} Views</span>
             </div>
             <div className="flex gap-1 items-center">
               <CommentIcon size={16} />
