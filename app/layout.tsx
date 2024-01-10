@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import NextTopLoader from 'nextjs-toploader';
 
 import Layouts from '@/common/components/layouts/index';
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {process.env.NODE_ENV === 'production' && <Analytics />}
 
         <GoogleAnalytics measurementId={process.env.GTM_ID || ''} />
+        <SpeedInsights />
       </body>
     </html>
   );
