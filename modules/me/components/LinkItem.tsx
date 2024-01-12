@@ -11,7 +11,7 @@ const LinkItem = ({ index, label, icon, href, target = '', className, onClick }:
   return (
     <a
       onClick={() => onClick(href, target)}
-      className="relative inline-flex items-center justify-start py-4 pl-4 pr-14 overflow-hidden font-medium text-neutral-800 transition-all duration-150 ease-in-out rounded-lg hover:pl-12 hover:pr-6 bg-white group border shadow-sm cursor-pointer"
+      className="relative inline-flex items-center justify-start py-4 pl-4 pr-14 overflow-hidden font-medium text-neutral-800 dark:text-neutral-100 transition-all duration-150 ease-in-out rounded-lg hover:pl-12 hover:pr-6 bg-white dark:bg-neutral-800 group border shadow-sm cursor-pointer"
       data-aos="fade-down"
       data-aos-duration="1000"
       data-aos-delay={index * 100}

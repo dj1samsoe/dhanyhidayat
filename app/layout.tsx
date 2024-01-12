@@ -8,8 +8,9 @@ import NextTopLoader from 'nextjs-toploader';
 import Layouts from '@/common/components/layouts/index';
 import { METADATA } from '@/common/constant/metadata';
 
+import ThemeProviderContext from '@/context/theme';
+
 import { soraSans } from '../common/styles/fonts';
-import ThemeProviderContext from '../context/theme';
 import './globals.css';
 
 export const metadata: Metadata = {

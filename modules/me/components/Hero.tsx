@@ -15,11 +15,7 @@ const Hero = () => {
           backgroundPosition: 'center, center'
         }}
       ></div>
-      <div
-        className="rounded-full bg-white border border-2 -mt-[60px]"
-        data-aos="zoom-in-down"
-        data-aos-duration="1000"
-      >
+      <div className="rounded-full bg-white border-2 -mt-[60px]" data-aos="zoom-in-down" data-aos-duration="1000">
         <Image
           src={PROFILE_URL}
           alt="Dhany Hidayat"
@@ -37,13 +33,13 @@ const Hero = () => {
         >
           <div className="flex flex-col gap-1 items-center text-center">
             <h1 className="text-2xl font-medium">Achmad Fauzian Dhany Hidayat</h1>
-            <div className="flex gap-2 text-[15px] text-neutral-500">
+            <div className="flex gap-2 text-[15px] text-neutral-500 dark:text-neutral-200">
               <span>Malang, Indonesia</span>
-              <span className="text-neutral-300">•</span>
+              <span className="text-neutral-300 dark:text-neutral-200">•</span>
               <span>he/him</span>
             </div>
           </div>
-          <p className="text-center text-neutral-600 text-[15px] md:text-base mx-1.5 leading-relaxed">
+          <p className="text-center text-neutral-600 dark:text-neutral-300 text-[15px] md:text-base mx-1.5 leading-relaxed">
             Undergraduate Information Systems student at Brawijaya University who is a enthusiast in Software Engineer
             with a strong emphasis on frontend development.
           </p>
