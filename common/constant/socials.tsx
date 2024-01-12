@@ -45,7 +45,7 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: X',
-    className: 'hover:bg-black dark:text-black'
+    className: 'hover:bg-black dark:hover:bg-white dark:text-black'
   },
   {
     title: 'Blog',
