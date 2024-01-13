@@ -9,11 +9,7 @@ import Introduction from './Introduction';
 
 const ServicesList = lazy(() => import('./ServicesList'));
 
-interface HomeProps {
-  services: IServices[];
-}
-
-export default function Home({ services }: HomeProps) {
+export default function Home() {
   return (
     <>
       <Introduction />
@@ -22,7 +18,7 @@ export default function Home({ services }: HomeProps) {
       <Breakline className="my-8" />
       <ContactPreview />
       <Breakline className="my-8" />
-      <ServicesList services={services} />
+      <ServicesList />
     </>
   );
 }

@@ -2,11 +2,11 @@ export const servicesMock = [
   {
     tag: 'Coding',
     title: 'Website Development',
-    description: 'Create stunning, user-friendly fullstack web applications using modern technologies.'
+    description: 'Transforming your ideas into captivating websites using powerful technologies.'
   },
   {
-    tag: 'Tech Marketing',
-    title: 'Analytic Integration',
-    description: 'Implement Google Tag Manager, Google Analytics and Mixpanel for data-driven insights.'
+    tag: 'Bussiness',
+    title: 'Strategic IT Partnership',
+    description: 'Expert advice guiding your business towards tech-driven success.'
   }
 ];
