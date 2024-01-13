@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
 import useSWR from 'swr';
-import { useWindowSize } from 'usehooks-ts';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import LoadingCard from '@/common/components/elements/LoadingCard';
