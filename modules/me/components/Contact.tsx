@@ -26,19 +26,19 @@ const Contact = () => {
         data-aos="fade-down"
         data-aos-duration="1000"
         data-aos-delay="50"
-        className="bg-emerald-300 text-neutral-900 border p-8 rounded-2xl cursor-pointer space-y-5"
+        className="bg-emerald-300 dark:bg-[#4949492e] backdrop-blur-lg dark:text-neutral-200 text-neutral-900 border dark:border-none p-8 rounded-2xl cursor-pointer space-y-5"
       >
-        <EmailIcon size={24} className="text-neutral-800" />
+        <EmailIcon size={24} className="text-neutral-800 dark:text-neutral-200" />
         <div className="space-y-3">
           <div className="font-medium text-lg md:text-xl">Drop Me an Email</div>
           <div
-            className="hover:underline text-neutral-800 text-lg md:text-lg"
+            className="hover:underline text-neutral-800 dark:text-neutral-300 text-lg md:text-lg"
             onClick={() => handleEmailClick('dhanyh86@gmail.com')}
           >
             {copiedEmail ? 'Copied!' : 'dhanyh86@gmail.com'}
           </div>
         </div>
-        <p className="text-sm md:text-base text-neutral-700 leading-relaxed">
+        <p className="text-sm md:text-base text-neutral-700 dark:text-neutral-300 leading-relaxed">
           Expect my rapid and eager reply – your message won't be kept waiting!
         </p>
       </div>

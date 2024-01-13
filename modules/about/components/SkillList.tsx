@@ -10,7 +10,7 @@ import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { SKILLS } from '@/common/constant/skills';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
-  <div className="flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-50 dark:bg-neutral-800 dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700">
+  <div className="flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-50 dark:bg-[#4949492e] backdrop-blur-lg dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700">
     {icon}
     <span>{title}</span>
   </div>
@@ -48,7 +48,7 @@ const Skills = () => {
       <div className="flex w-full">
         <div className="relative flex flex-col gap-y-4 justify-start py-2 w-full overflow-hidden">
           {sliders}
-          <StyledFade className="hidden dark:flex fade" />
+          <StyledFade className="hidden dark:flex dark:bg-transparent" />
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@ export default Skills;
 
 const StyledFade = styled.div`
   pointer-events: none;
-  background: linear-gradient(90deg, #121212, transparent 20%, transparent 80%, #121212);
+  background: linear-gradient(90deg, transparent 20%, transparent 80%);
   position: absolute;
   inset: 0;
 `;

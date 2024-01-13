@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import clsx from 'clsx';
 import { useState } from 'react';
 import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs';
 
@@ -10,18 +11,26 @@ import { MenuItemProps } from '@/common/types/menu';
 
 import { useMenu } from '@/context/menu';
 
-export default function MenuItem({ title, href, icon, onClick, className = '', children }: MenuItemProps) {
+export default function MenuItem({
+  title,
+  href,
+  icon,
+  onClick,
+  className = '',
+  children,
+  hideIcon = false
+}: MenuItemProps) {
   //   const { hideNavbar } = useContext(MenuContext);
   const [isHovered, setIsHovered] = useState(false);
   const { hideMenu } = useMenu();
   const isExternalUrl = href?.includes('http');
   const isHashLink = href === '#';
   const pathname = usePathname();
-  const url = new URL(href, 'https://djisamsoe.vercel.app');
+  const url = new URL(href, 'https://dhanyhidayat.vercel.app/');
 
-  const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-300 rounded-lg ${
+  const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-200 rounded-lg ${
     pathname === url.pathname
-      ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-300'
+      ? 'bg-neutral-200 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-200'
       : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
   }`;
 
@@ -45,12 +54,19 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
     onMouseLeave: handleMouseLeave
   };
 
+  const isActiveRoute = pathname === url.pathname;
+
   const itemComponent = () => {
     return (
       <div {...elementProps}>
-        <div>{icon}</div>
+        {!hideIcon && (
+          <div className={clsx('group-hover:-rotate-12 transition-all duration-300', isActiveRoute && '-rotate-12')}>
+            {icon}
+          </div>
+        )}
         <div className="flex-grow ml-0.5">{title}</div>
         {children && <>{children}</>}
+        {isActiveRoute && <ExternalLinkIcon size={22} className="text-gray-500 animate-pulse" />}
         {isExternalUrl && isHovered && (
           <ExternalLinkIcon size={22} className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300" />
         )}

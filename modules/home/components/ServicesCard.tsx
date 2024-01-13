@@ -16,7 +16,7 @@ export default function ServicesCard({ tag, title, description }: ServicesCardPr
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`min-w-[400px] md:w-80 dark:bg-neutral-800 bg-neutral-200 dark:text-neutral-100 text-neutral-900 rounded-xl overflow-hidden bg-center bg-cover`}
+      className={`min-w-[300px] md:w-80 border border-neutral-300 shadow-3xl ring-1 ring-black/5 dark:divide-neutral-800 dark:border-neutral-800 dark:bg-[#4949492e] backdrop-blur-lg dark:text-neutral-100 text-neutral-900 rounded-xl overflow-hidden bg-center bg-cover`}
       style={{
         backgroundImage: coverImage,
         backgroundPosition: 'center, center'
@@ -26,7 +26,7 @@ export default function ServicesCard({ tag, title, description }: ServicesCardPr
         {!hover && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <span className="text-sm dark:text-neutral-300">#{tag}</span>
-            <h3 className="text-2xl font-bold mt-2 dark:text-neutral-200">{title}</h3>
+            <h3 className="text-xl font-bold mt-2 dark:text-neutral-200">{title}</h3>
           </motion.div>
         )}
 

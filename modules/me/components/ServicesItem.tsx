@@ -11,9 +11,9 @@ const ServicesItem = ({ title, description, icon, className }: ServicesProps) =>
       data-aos-delay="50"
       className={clsx(
         'grid grid-flow-col justify-between items-center gap-x-6 bg-white bg-no-repeat bg-right bg-contain',
-        'border py-5 px-6 rounded-xl',
+        'py-5 px-6 rounded-xl border dark:border-none',
         'transition-all duration-300',
-        'dark:bg-neutral-800'
+        'dark:bg-[#4949492e] backdrop-blur-lg'
       )}
     >
       <div>{icon}</div>

@@ -18,7 +18,7 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Github',
-    className: 'text-slate-800 hover:bg-slate-800'
+    className: 'text-slate-800 dark:text-slate-200'
   },
   {
     title: 'Linkedin',
@@ -27,7 +27,7 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Linkedin',
-    className: 'text-[#0b66c2] hover:bg-[#0b66c2]'
+    className: 'text-blue-500'
   },
   {
     title: 'Instagram',
@@ -36,7 +36,7 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Instagram',
-    className: 'text-pink-600 hover:bg-pink-600'
+    className: 'text-pink-600'
   },
   {
     title: 'X',
@@ -45,7 +45,7 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: X',
-    className: 'hover:bg-black dark:hover:bg-white dark:text-black'
+    className: 'dark:text-white'
   },
   {
     title: 'Blog',
@@ -54,6 +54,6 @@ export const SOCIAL_MEDIA: SocialItemProps[] = [
     isShow: true,
     isExternal: true,
     eventName: 'Social: Blog',
-    className: 'text-orange-500 hover:bg-orange-500'
+    className: 'text-orange-500'
   }
 ];
