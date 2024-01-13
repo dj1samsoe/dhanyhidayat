@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-dark: #121212;
+  --color-light: #fafafa;
+}
+
+body {
+  background: radial-gradient(ellipse 60% 50% at 50% -30%, rgb(45 212 191 / 15%) 0%, rgb(8 0 0 / 0%));
+}
+
+.dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.light {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
 @layer utilities {
   @layer responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */
