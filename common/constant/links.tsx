@@ -21,7 +21,7 @@ export const LINKS: LinkProps[] = [
     label: 'Buy me a Cup of Coffee',
     icon: <CoffeeIcon size={21} className="text-neutral-600" />,
     href: 'https://saweria.co/dhanyhidayat',
-    className: 'bg-gray-800',
+    className: 'bg-blue-600',
     target: '_blank'
   }
 ];

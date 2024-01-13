@@ -72,7 +72,7 @@ export default function Calendar({ data }: CalendarProps) {
           ))}
         </ul>
 
-        <div className="flex justify-start gap-[3px] overflow-x-scroll">
+        <div className="flex justify-start gap-[3px] overflow-x-scroll no-scrollbar">
           {weeks?.map(week => (
             <div key={week.firstDay}>
               {week.contributionDays.map(contribution => {
