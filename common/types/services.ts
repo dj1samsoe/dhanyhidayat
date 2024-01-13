@@ -4,3 +4,9 @@ export interface ServicesProps {
   icon: React.ReactNode;
   className?: string;
 }
+
+export interface IServices {
+  title: string;
+  description: string;
+  tag: string;
+}
