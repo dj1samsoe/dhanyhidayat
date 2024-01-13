@@ -35,7 +35,7 @@ export default function Profile() {
   return (
     <div
       className={clsx(
-        'z-20 fixed shadow-sm xl:shadow-none lg:border-none dark:border-b dark:border-neutral-800 bg-white dark:bg-dark/50 dark:backdrop-blur-2xl lg:!bg-transparent w-full p-5 lg:relative lg:p-0',
+        'z-20 fixed shadow-sm xl:shadow-none lg:border-none dark:border-b dark:border-neutral-800 bg-white dark:bg-dark/60 dark:backdrop-blur-2xl lg:!bg-transparent w-full p-5 lg:relative lg:p-0',
         isOpen && 'pb-0'
       )}
     >
