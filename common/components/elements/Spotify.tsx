@@ -3,9 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { useGetDataSpotify } from '@/hooks/useGetDataSpotify';
+import { FaSpotify } from 'react-icons/fa';
 
-import { LogoSpotify } from './LogoIcon';
+import { useGetDataSpotify } from '@/hooks/useGetDataSpotify';
 
 export default function Spotify() {
   const { data, error, isLoading } = useGetDataSpotify();
@@ -16,7 +16,7 @@ export default function Spotify() {
         className={`inline-flex min-w-[250px] rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10`}
       >
         <div className="w-[75px] animate-pulse overflow-hidden rounded-lg p-5 sm:w-[100px]">
-          <LogoSpotify className="h-8 w-8" />
+          <FaSpotify className="h-8 w-8" />
         </div>
 
         <div className="mx-5">
@@ -33,7 +33,7 @@ export default function Spotify() {
     return (
       <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg">
         <div className="flex items-center gap-5 overflow-hidden rounded-lg">
-          <LogoSpotify className="h-10 w-10 text-green-500" />
+          <FaSpotify className="h-10 w-10 text-green-500" />
           <div className="flex flex-col space-y-2">
             <h1 className="text-md font-semibold sm:text-lg">Spotify For Developers</h1>
             <p className="text-xs sm:text-sm">No Music Playing</p>
@@ -49,7 +49,7 @@ export default function Spotify() {
           <div className="relative w-[75px] overflow-hidden rounded-lg sm:w-[100px]">
             <Image src={data?.albumArt.url} alt="Album art" width={100} height={100} />
             <div className="absolute bottom-0 right-3 z-20 w-6">
-              <LogoSpotify className="h-8 w-8" />
+              <FaSpotify className="h-8 w-8" />
             </div>
           </div>
         </Link>
