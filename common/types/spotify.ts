@@ -1,4 +1,5 @@
 export type CurrentlyPlaying = {
+  device: Device;
   context: Context;
   timestamp: number;
   progress_ms: number;
@@ -6,6 +7,16 @@ export type CurrentlyPlaying = {
   item: Item;
   currently_playing_type: string;
   actions: Actions;
+};
+
+export type Device = {
+  id: string;
+  is_active: boolean;
+  is_private_session: boolean;
+  is_restricted: boolean;
+  name: string;
+  type: string;
+  volume_percent: number;
 };
 
 export type Actions = {
