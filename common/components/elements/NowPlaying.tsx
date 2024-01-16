@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { FaSpotify } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaRegStopCircle, FaSpotify } from 'react-icons/fa';
 
 import { NowPlaying, RecentlyPlayed } from '@/common/types/spotify';
 
@@ -28,7 +31,21 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
 
         <div className="mx-5 overflow-x-hidden">
           <h1 className="mb-3 text-xs font-semibold sm:text-sm">
-            {data?.currentlyPlaying ? 'LISTENING ON SPOTIFY NOW' : 'RECENTLY PLAYED'}
+            {data?.currentlyPlaying ? (
+              <div className="flex items-center gap-2">
+                <motion.div
+                  className="h-2 w-2 rounded-full bg-green-400"
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 0.5, repeat: Infinity }}
+                />
+                <span className="text-sm text-neutral-600 dark:text-neutral-400">LISTENING ON SPOTIFY</span>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <FaRegStopCircle className="h-4 w-4 text-red-600" />
+                <span className="text-sm text-neutral-600 dark:text-neutral-400">RECENTLY PLAYED</span>
+              </div>
+            )}
           </h1>
           <a
             href={data.href}

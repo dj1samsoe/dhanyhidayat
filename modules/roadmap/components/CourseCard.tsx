@@ -14,7 +14,7 @@ export default function CourseCard(props: CourseCardProps) {
   const isMobile = useIsMobile();
   return (
     <Card className="flex justify-between p-4 border text-sm border-neutral-300 text-neutral-700 dark:border-neutral-700 dark:text-neutral-200 dark:bg-[#4949492e] backdrop-blur-lg">
-      <div className="flex space-x-2 items-center">
+      <div className="flex space-x-5 items-center">
         <div className="w-5">{STACKS[icon]}</div>
         <span>{title}</span>
       </div>

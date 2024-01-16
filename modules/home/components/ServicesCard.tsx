@@ -11,7 +11,7 @@ interface ServicesCardProps {
 
 export default function ServicesCard({ tag, title, description }: ServicesCardProps) {
   const [hover, setHover] = useState(false);
-  const coverImage = "url('/shiny_card_animated.svg')";
+  const coverImage = "url('/bg-gradient-2.svg')";
   return (
     <div
       onMouseEnter={() => setHover(true)}

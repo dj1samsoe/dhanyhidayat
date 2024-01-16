@@ -6,7 +6,7 @@ import { ServicesProps } from '@/common/types/services';
 const ServicesItem = ({ title, description, icon, className }: ServicesProps) => {
   return (
     <div
-      data-aos="fade-down"
+      data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay="50"
       className={clsx(

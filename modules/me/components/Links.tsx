@@ -20,7 +20,7 @@ const Links = () => {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center gap-2 px-3">
+      <div className="flex items-center gap-2 px-3" data-aos="fade-up" data-aos-duration="1000">
         <LinkIcon size={24} />
         <h2 className="font-medium text-lg md:text-xl">Links</h2>
       </div>

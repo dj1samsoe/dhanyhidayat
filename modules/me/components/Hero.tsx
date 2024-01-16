@@ -2,17 +2,18 @@ import Image from '@/common/components/elements/Image';
 import { PROFILE_URL } from '@/common/constant';
 
 const Hero = () => {
-  const coverImage = "url('/shiny_card_animated.svg'), url('/cover.webp')";
+  const coverImage = "url('/shiny_card_animated.svg')";
 
   return (
     <header className="flex flex-col items-center justify-center">
       <div
-        className="w-full h-28 md:h-40 md:rounded-t-lg bg-cover"
+        className="w-full h-28 md:h-40 md:rounded-t-lg bg-cover "
         data-aos="fade-down"
         data-aos-duration="1000"
         style={{
           backgroundImage: coverImage,
-          backgroundPosition: 'center, center'
+          backgroundPosition: 'center, center',
+          background: 'radial-gradient(circle, rgba(36,58,78,1) 15%, rgba(125,190,172,1) 100%)'
         }}
       ></div>
       <div className="rounded-full bg-white border-2 -mt-[60px]" data-aos="zoom-in-down" data-aos-duration="1000">
