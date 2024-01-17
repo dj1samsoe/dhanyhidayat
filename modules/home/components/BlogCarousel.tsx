@@ -29,7 +29,7 @@ const BlogCarousel = () => {
 
   const renderBlogCards = () => {
     if (isLoading) {
-      return Array.from({ length: 3 }, (_, index) => <LoadingCard key={index} view={viewOption} />);
+      return Array.from({ length: 2 }, (_, index) => <LoadingCard key={index} view={viewOption} />);
     }
 
     return blogData.map((item, index) => (
