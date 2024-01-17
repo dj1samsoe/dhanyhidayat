@@ -10,7 +10,7 @@ export default function Status() {
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ duration: 0.5, repeat: Infinity }}
       />
-      <span className="text-sm text-neutral-600 dark:text-neutral-400">available for hire.</span>
+      <span className="text-sm text-neutral-600 dark:text-neutral-400">available for collabs</span>
     </div>
   );
 }
