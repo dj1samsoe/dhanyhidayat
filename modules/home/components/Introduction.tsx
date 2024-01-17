@@ -20,14 +20,13 @@ export default function Introduction() {
         <ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
           <li>Frontend Developer</li>
           <li>
-            Based in Malang, Indonesia <span className="ml-1">🇮🇩</span>
+            Based in Sidoarjo, Indonesia <span className="ml-1">🇮🇩</span>
           </li>
         </ul>
         <p className="leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300">
           Undergraduate Information Systems student at Brawijaya University who is a enthusiast in Software Engineer
-          with a strong emphasis on frontend development. Proficient in HTML, CSS, JavaScript, and other elements of web
-          technology. Collaborative team player committed to developing online apps that are efficient, scalable, and
-          visually appealing.
+          with a strong emphasis on frontend development. Proficient in Javascript, Typescript, React JS, Next JS and
+          other elements of web technology.
         </p>
       </div>
     </section>
