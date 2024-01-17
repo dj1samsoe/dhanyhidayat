@@ -19,15 +19,13 @@ const Contact = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center gap-2 px-3" data-aos="fade-up" data-aos-duration="1000">
+      <div className="flex items-center gap-2 px-3">
         <ContactIcon size={24} />
         <h2 className="font-medium text-lg md:text-xl">Get in Touch</h2>
       </div>
       <div
         className="bg-emerald-300 dark:bg-[#4949492e] backdrop-blur-lg dark:text-neutral-200 text-neutral-900 border dark:border-none p-8 rounded-2xl cursor-pointer space-y-5 bg-no-repeat bg-right"
         style={{ backgroundImage: bgImage }}
-        data-aos="fade-up"
-        data-aos-duration="1000"
       >
         <EmailIcon size={24} className="text-neutral-800 dark:text-neutral-200" />
         <div className="space-y-3">
