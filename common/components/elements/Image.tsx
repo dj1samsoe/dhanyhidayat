@@ -16,6 +16,7 @@ const Image = (props: ImageProps) => {
   return (
     <div className={clsx('overflow-hidden', isLoading ? 'animate-pulse' : '', rounded)}>
       <NextImage
+        data-testid="image"
         className={clsx(
           'duration-700 ease-in-out',
           isLoading ? 'scale-[1.02] blur-xl grayscale' : 'scale-100 blur-0 grayscale-0',
@@ -25,7 +26,6 @@ const Image = (props: ImageProps) => {
         src={src}
         alt={alt}
         loading="lazy"
-        // priority={true}
         quality={100}
         onLoadingComplete={() => setLoading(false)}
         {...rest}

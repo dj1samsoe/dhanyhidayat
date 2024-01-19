@@ -18,15 +18,15 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
   return (
     <div
       className={clsx(
-        'flex items-center lg:items-start gap-4 lg:gap-0.5 flex-grow lg:flex-col w-full',
+        'flex items-center gap-4 lg:gap-0.5 flex-grow lg:flex-col w-full',
         expandMenu && 'flex-col !items-start'
       )}
     >
       <Image
         src={PROFILE_URL}
         alt="profile"
-        width={expandMenu ? 80 : imageSize}
-        height={expandMenu ? 80 : imageSize}
+        width={expandMenu ? 80 : imageSize * 0.9}
+        height={expandMenu ? 80 : imageSize * 0.9}
         rounded="rounded-full"
         className="lg:hover:scale-105"
       />

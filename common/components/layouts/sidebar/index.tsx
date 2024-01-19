@@ -11,14 +11,14 @@ export default function Sidebar() {
   return (
     <div className="sticky transition-all duration-300 top-0 z-10 flex flex-col lg:py-8">
       <Profile />
-      {!isMobile && (
-        <>
-          <Breakline />
+      <nav className="hidden md:block">
+        <Breakline />
+        <div className="hidden lg:block">
           <Navigation />
-          <Breakline />
-          <Copyright />
-        </>
-      )}
+        </div>
+        <Breakline />
+        <Copyright />
+      </nav>
     </div>
   );
 }
