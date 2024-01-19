@@ -25,7 +25,7 @@ export default function Overview({ data }: OverviewProps) {
     .flat();
   // console.log(totalContributionList.length);
   const bestContribution = Math.max(...totalContributionList) || 0;
-  const averageContribution = totalContributionList?.length / totalContributions;
+  const averageContribution = totalContributions / totalContributionList?.length;
 
   return (
     <div className="grid grid-cols-2 gap-3 py-2 sm:grid-cols-4">
