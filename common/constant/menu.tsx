@@ -1,6 +1,7 @@
 import {
   BiMessageDetail as ContactIcon,
   BiBarChartSquare as DashboardIcon,
+  BiLogoDevTo as DevToIcon,
   BiBookBookmark as LearnIcon,
   BiGitCompare as RoadmapIcon
 } from 'react-icons/bi';
@@ -127,9 +128,18 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     title: 'TikTok',
     href: 'https://www.tiktok.com/@dj1samsoe__',
     icon: <TiktokIcon size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: true,
     eventName: 'Social: Tiktok',
+    className: '!bg-black border border dark:border-neutral-700'
+  },
+  {
+    title: 'Dev.to',
+    href: 'https://dj1samsoe.hashnode.dev/',
+    icon: <DevToIcon size={iconSize} />,
+    isShow: true,
+    isExternal: true,
+    eventName: 'Social: Dev.to',
     className: '!bg-black border border dark:border-neutral-700'
   }
 ];

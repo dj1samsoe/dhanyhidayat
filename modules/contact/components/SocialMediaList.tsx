@@ -12,7 +12,7 @@ const SocialMediaList = () => {
     <div className="space-y-5 pb-2">
       <h3 className="text-lg font-medium">Find me on social media</h3>
       <div className="flex flex-col md:flex-row justify-between gap-3">
-        {SOCIAL_MEDIA?.map((item, index: number) => (
+        {SOCIAL_MEDIA?.filter(item => item?.isShow).map((item, index: number) => (
           <Button
             className={clsx(
               'w-full md:w-1/5 flex justify-center items-center hover:scale-105 transition-all duration-300',
