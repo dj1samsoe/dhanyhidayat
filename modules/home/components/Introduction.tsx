@@ -9,7 +9,7 @@ export default function Introduction() {
     <section className="bg-cover bg-no-repeat space-y-2">
       <div className="flex justify-between items-center">
         <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-sora">
-          <h1>Hi, I&apos;m Dhany</h1> <div className="ml-1 animate-waving-hand">👋</div>
+          <h1>Hi, I&apos;m Dhany</h1>
         </div>
         <Link href={SAWERIA_URL} target="_blank" aria-label="logo-coffee">
           <TbCoffee size={25} />

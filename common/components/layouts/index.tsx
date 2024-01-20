@@ -29,13 +29,13 @@ export default function Layouts({ children }: LayoutsProps) {
   }, []);
   return (
     <div className="flex flex-col justify-center lg:flex-row lg:gap-5">
-      <div className="flex flex-col lg:flex-row w-full justify-center lg:gap-5">
+      <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8">
         {!hideSidebar && <MobileMenuHeader /> && (
-          <header>
+          <header className="lg:w-1/5">
             <Sidebar />
           </header>
         )}
-        <main className="lg:max-w-[854px] transition-all duration-300 w-full lg:min-h-screen overflow-y-auto no-scrollbar">
+        <main className="lg:w-4/5 lg:max-w-[854px] transition-all duration-300 lg:min-h-screen overflow-y-auto no-scrollbar">
           {children}
         </main>
       </div>

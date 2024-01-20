@@ -95,7 +95,7 @@ export type ExternalIDS = {
 
 export type NowPlaying = {
   name: string;
-  artists: ArtistNowPlaying[];
+  artists: Artist[];
   href: string;
   albumArt: AlbumArt;
   currentlyPlaying: boolean;

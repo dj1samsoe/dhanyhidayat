@@ -12,19 +12,19 @@ type NowPlayingProps = {
   data: NowPlaying;
 };
 
-// type RecentlyPlayedProps = {
-//   data: RecentlyPlayed | undefined;
-// };
-
 export default function NowPlayingSection({ data }: NowPlayingProps) {
   if (data)
     return (
-      <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10">
+      <div className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10">
         <Link href={data.href} target="_blank" rel="noopener noreferrer">
           <div className="relative w-[75px] overflow-hidden rounded-lg sm:w-[100px]">
             <Image src={data?.albumArt.url} alt="Album art" width={100} height={100} />
             <div className="absolute bottom-0 right-3 z-20 w-6">
-              <FaSpotify className="h-8 w-8 text-green-500" />
+              {data?.currentlyPlaying ? (
+                <FaSpotify className="h-8 w-8 text-green-500" />
+              ) : (
+                <FaSpotify className="h-8 w-8" />
+              )}
             </div>
           </div>
         </Link>
@@ -38,12 +38,12 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 0.5, repeat: Infinity }}
                 />
-                <span className="text-sm text-neutral-600 dark:text-neutral-400">LISTENING ON SPOTIFY</span>
+                <span className="text-sm text-neutral-600 dark:text-neutral-400">Now Playing</span>
               </div>
             ) : (
               <div className="flex items-center gap-2">
-                <FaRegStopCircle className="h-4 w-4 text-red-600" />
-                <span className="text-sm text-neutral-600 dark:text-neutral-400">RECENTLY PLAYED</span>
+                <FaRegStopCircle className="h-3 w-3 text-red-600" />
+                <span className="text-sm text-neutral-600 dark:text-neutral-400">Last Played</span>
               </div>
             )}
           </h1>
@@ -59,12 +59,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
             by
             {data?.artists.map((artist, i) => (
               <span key={`artist${i}`} className="ml-1">
-                <a
-                  className="hover:cursor-pointer hover:underline"
-                  href={artist.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a className="hover:cursor-pointer hover:underline" href={artist.href} target="_blank">
                   {artist.name}
                 </a>
                 {i === data.artists.length - 1 ? '' : ','}
