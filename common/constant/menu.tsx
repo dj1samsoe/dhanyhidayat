@@ -81,7 +81,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     title: 'Roadmap',
     href: '/roadmap?tribe=frontend-developer',
     icon: <RoadmapIcon size={iconSize} />,
-    isShow: true,
+    isShow: false,
     isExternal: false,
     eventName: 'Pages: Roadmap'
   }
