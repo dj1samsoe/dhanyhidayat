@@ -7,7 +7,7 @@ interface CircleProgressProps {
 }
 export default function CircleProgress({ value }: CircleProgressProps) {
   return (
-    <div className="w-12 md:w-16 h-12 md:h-16">
+    <div className="w-12 md:w-16 h-12 md:h-16" data-testid="progress">
       <CircularProgressbar
         value={value}
         text={`${value}%`}

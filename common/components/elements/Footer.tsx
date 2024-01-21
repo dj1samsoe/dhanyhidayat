@@ -1,7 +1,12 @@
 const Footer = () => {
   return (
-    <div className="text-center text-neutral-500 dark:text-neutral-300 pb-5">
-      <div>© {new Date().getFullYear()} by Dhany Hidayat</div>
+    <div
+      className="flex items-center justify-center gap-1 text-center text-neutral-500 dark:text-neutral-300 pb-5"
+      data-testid="footer"
+    >
+      <span>©</span>
+      <span>{new Date().getFullYear()}</span>
+      <span>by Dhany Hidayat</span>
     </div>
   );
 };

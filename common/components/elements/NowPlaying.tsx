@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FaRegStopCircle, FaSpotify } from 'react-icons/fa';
 
-import { NowPlaying, RecentlyPlayed } from '@/common/types/spotify';
+import { NowPlaying } from '@/common/types/spotify';
 
 type NowPlayingProps = {
   data: NowPlaying;
@@ -15,7 +15,10 @@ type NowPlayingProps = {
 export default function NowPlayingSection({ data }: NowPlayingProps) {
   if (data)
     return (
-      <div className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10">
+      <div
+        className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10"
+        data-testid="now-playing"
+      >
         <Link href={data.href} target="_blank" rel="noopener noreferrer">
           <div className="relative w-[75px] overflow-hidden rounded-lg sm:w-[100px]">
             <Image src={data?.albumArt.url} alt="Album art" width={100} height={100} />

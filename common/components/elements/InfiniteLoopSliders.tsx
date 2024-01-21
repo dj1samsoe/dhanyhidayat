@@ -8,7 +8,7 @@ interface InfiniteLoopSliderProps {
 
 const InfiniteLoopSlider = ({ children, isReverse = false }: InfiniteLoopSliderProps) => {
   return (
-    <StyledSlider className="flex w-fit animate-looping-tag" isReverse={isReverse}>
+    <StyledSlider className="flex w-fit animate-looping-tag" isReverse={isReverse} data-testid="infinite-loop-slider">
       {children}
     </StyledSlider>
   );
