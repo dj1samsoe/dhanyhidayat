@@ -16,6 +16,8 @@ import CourseCard from './CourseCard';
 
 /* eslint-disable react-hooks/exhaustive-deps */
 
+/* eslint-disable react-hooks/exhaustive-deps */
+
 export default function CourseList() {
   const params = useSearchParams();
   const tribe = params.get('tribe');
