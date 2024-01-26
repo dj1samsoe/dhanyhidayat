@@ -41,7 +41,7 @@ const Skills = () => {
       <div className="space-y-2">
         <SectionHeading title="Skills" icon={<SkillsIcon size={22} className="mr-1" />} />
         <SectionSubHeading>
-          <p className="dark:text-neutral-400">My professional skills.</p>
+          <p className="dark:text-neutral-400">My professional hard skills</p>
         </SectionSubHeading>
       </div>
 
