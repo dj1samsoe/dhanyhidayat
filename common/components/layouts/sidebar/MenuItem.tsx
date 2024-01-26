@@ -60,15 +60,21 @@ export default function MenuItem({
     return (
       <div {...elementProps}>
         {!hideIcon && (
-          <div className={clsx('group-hover:-rotate-12 transition-all duration-300', isActiveRoute && '-rotate-12')}>
+          <div
+            className={clsx(
+              isHovered && '-rotate-12',
+              'transition-all duration-300 dark:text-green-500',
+              isActiveRoute && '-rotate-12'
+            )}
+          >
             {icon}
           </div>
         )}
         <div className="flex-grow ml-0.5">{title}</div>
         {children && <>{children}</>}
-        {isActiveRoute && <ExternalLinkIcon size={22} className="text-gray-500 animate-pulse" />}
+        {isActiveRoute && <ExternalLinkIcon size={22} className="text-green-500 animate-pulse" />}
         {isExternalUrl && isHovered && (
-          <ExternalLinkIcon size={22} className="text-gray-500 -rotate-45 lg:transition-all lg:duration-300" />
+          <ExternalLinkIcon size={22} className="text-green-500 -rotate-45 lg:transition-all lg:duration-300" />
         )}
       </div>
     );

@@ -27,7 +27,7 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
           className="rounded-t-xl h-48 object-cover object-left"
         />
         <div className="p-5 space-y-2">
-          <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-teal-800 dark:hover:text-teal-400 transition-all duration-300">
+          <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:hover:text-green-800 dark:hover:text-green-400 transition-all duration-300">
             {title}
           </div>
           <p className="text-neutral-700 dark:text-neutral-400 text-[15px] leading-relaxed">{trimmedContent}</p>

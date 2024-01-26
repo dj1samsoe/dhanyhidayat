@@ -66,7 +66,7 @@ const ContactForm = () => {
         />
         <Button
           className={clsx(
-            'py-2.5 bg-neutral-800 dark:!bg-neutral-50 dark:text-neutral-950 flex justify-center hover:dark:bg-neutral-50 hover:bg-neutral-900 hover:scale-[101%]'
+            'py-2.5 bg-neutral-800 dark:bg-gradient-to-l dark:from-teal-950 dark:to-teal-800 dark:text-white flex justify-center hover:bg-neutral-900 hover:scale-[101%]'
           )}
           type="submit"
           icon={<></>}

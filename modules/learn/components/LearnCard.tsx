@@ -37,7 +37,7 @@ const LearnCard = ({ title, slug, description, image, is_new, level }: ContentPr
         <div className="flex flex-col justify-between p-5 space-y-3">
           <div className="space-y-2">
             <div className="flex justify-between">
-              <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-all duration-300">
+              <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:group-hover:text-green-800 dark:group-hover:text-green-400 transition-all duration-300">
                 {title}
               </div>
             </div>

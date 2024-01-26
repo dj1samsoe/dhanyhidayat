@@ -35,15 +35,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning={true}>
       <body className={soraSans.className}>
         <NextTopLoader
-          color="#2299DD"
+          color="#40C463"
           initialPosition={0.08}
           crawlSpeed={200}
           height={3}
           crawl={true}
-          showSpinner={true}
-          easing="ease"
+          showSpinner={false}
+          easing="ease-in-out"
           speed={200}
-          shadow="0 0 10px #2299DD,0 0 5px #2299DD"
+          shadow="0 0 10px #9BE9A8,0 0 5px #9BE9A8"
         />
         <ThemeProviderContext>
           <Layouts>{children}</Layouts>
