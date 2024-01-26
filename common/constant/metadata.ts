@@ -2,7 +2,8 @@ export const METADATA = {
   creator: 'Achmad Fauzian Dhany Hidayat',
   description:
     'Discover my personal website - your gateway to my passions, projects, and insights. Explore my portfolio, blog, and more to gain valuable insights into my world. Join me on this digital journey of connection and discovery.',
-  keyword: 'dj1samsoe, dhany hidayat, programming tips, belajar javascript, belajar typescript',
+  keyword:
+    'dhanhid, dhany hidayat personal website, dhany hidayat, programming tips, belajar javascript, belajar typescript, frontend developer, dhany hidayat portfolio, dhany hidayat blog, dhany hidayat projects, dhany hidayat insights, nextjs portfolio, frontend portfolio, reactjs, nextjs, typescript, programming',
   authors: {
     name: 'Achmad Fauzian Dhany Hidayat',
     url: process.env.DOMAIN

@@ -10,15 +10,15 @@ import Projects from '@/modules/projects';
 
 export const metadata: Metadata = {
   title: `Projects ${METADATA.exTitle}`,
-  description: 'Software Engineer portfolio ideas',
-  keywords: 'portfolio frontend developer',
+  description: "Showcase of Dhany Hidayat's recent projects",
+  keywords: 'portfolio dhany hidayat, dhany hidayat, frontend developer',
   alternates: {
     canonical: `${process.env.DOMAIN}/projects`
   }
 };
 
 const PAGE_TITLE = 'Projects';
-const PAGE_DESCRIPTION = 'Showcasing my love of technology, design, and using code to solve problems.';
+const PAGE_DESCRIPTION = 'Showcase of my recent projects';
 
 export default async function ProjectsPage() {
   const projects = await getProjets();

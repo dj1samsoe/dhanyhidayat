@@ -9,8 +9,10 @@ import LearnModule from '@/modules/learn';
 
 export const metadata: Metadata = {
   title: `Learn ${METADATA.exTitle}`,
-  description: 'Programming tips for software developer',
-  keywords: 'frontend developer, software engineer, react js, javascript, typescript',
+  description:
+    "It is my own personal learning notes, it is not a course. However, if you're curious, let's study together.",
+  keywords:
+    'frontend developer, software engineer, react js, javascript, typescript, dhany hidayat blogs, dhany hidayat learn module',
   alternates: {
     canonical: `${process.env.DOMAIN}/learn`
   }
