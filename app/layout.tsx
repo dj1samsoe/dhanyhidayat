@@ -4,6 +4,7 @@ import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import NextTopLoader from 'nextjs-toploader';
+import { Suspense } from 'react';
 
 import Layouts from '@/common/components/layouts/index';
 import { METADATA } from '@/common/constant/metadata';
@@ -46,7 +47,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           shadow="0 0 10px #9BE9A8,0 0 5px #9BE9A8"
         />
         <ThemeProviderContext>
-          <Layouts>{children}</Layouts>
+          <Suspense>
+            <Layouts>{children}</Layouts>
+          </Suspense>
         </ThemeProviderContext>
         {process.env.NODE_ENV === 'production' && <Analytics />}
 

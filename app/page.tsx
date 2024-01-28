@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 
 import Container from '@/common/components/elements/Container';
 import { METADATA } from '@/common/constant/metadata';
-import { IServices, ServicesProps } from '@/common/types/services';
 
 import Home from '@/modules/home';
 
