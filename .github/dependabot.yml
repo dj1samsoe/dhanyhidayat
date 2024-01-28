@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: npm, bundler, composer, devcontainers, maven, mix, cargo, gradle, nuget, gomod, docker, elm, gitsubmodule, github-actions, pip, terraform, pub, swift 
+  - package-ecosystem: npm
     directory: "/" # Location of package manifests
     schedule:
       interval: "monthly"
