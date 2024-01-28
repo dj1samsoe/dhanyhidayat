@@ -8,7 +8,6 @@ export const METADATA = {
     name: 'Achmad Fauzian Dhany Hidayat',
     url: process.env.DOMAIN
   },
-  metadataBase: process.env.DOMAIN,
   openGraph: {
     url: process.env.DOMAIN,
     siteName: 'Dhany Hidayat',
