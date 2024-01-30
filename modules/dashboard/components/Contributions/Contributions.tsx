@@ -16,7 +16,7 @@ type ContributionsProps = {
 export default function Contributions({ githubData }: ContributionsProps) {
   return (
     <section className="flex flex-col gap-y-2">
-      <SectionHeading title="Contributions" icon={<GithubIcon className="mr-1" />} />
+      <SectionHeading title="Github Contributions" icon={<GithubIcon className="mr-1" />} />
       <SectionSubHeading>
         <p className="dark:text-neutral-400">My contributions from last year on github</p>
         <Link
