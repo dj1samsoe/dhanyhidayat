@@ -116,6 +116,7 @@ export const getALLTimeSinceToday = async (accessToken: string) => {
   if (status >= 400) return { status, data: {} };
 
   const getData = await response.json();
+  console.log('dj1samsoe ~ getAllTimeStats ~ getData : ', getData);
 
   const data = {
     text: getData?.data?.text,
