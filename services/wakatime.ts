@@ -11,22 +11,27 @@ const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time
 const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
 
 export const getAccessToken = async (): Promise<string> => {
-  const response = await axios.post(
-    TOKEN_ENDPOINT,
-    querystring.stringify({
-      grant_type: 'refresh_token',
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      refresh_token: REFRESH_TOKEN
-    }),
-    {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+  try {
+    const response = await axios.post(
+      TOKEN_ENDPOINT,
+      querystring.stringify({
+        grant_type: 'refresh_token',
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
+        refresh_token: REFRESH_TOKEN
+      }),
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
       }
-    }
-  );
+    );
 
-  return response.data;
+    return response.data;
+  } catch (error) {
+    console.error('Error getting access token:', error);
+    throw new Error('Failed to get access token');
+  }
 };
 
 export const getReadStats = async (): Promise<{
