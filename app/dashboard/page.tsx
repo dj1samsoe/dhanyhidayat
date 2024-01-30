@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { GetStaticProps, Metadata } from 'next';
 
 import axios from 'axios';
 
@@ -21,6 +21,7 @@ const PAGE_TITLE = 'Dashboard';
 const PAGE_DESCRIPTION =
   'This is my personal dashboard, built with Next.js API routes deployed as serverless functions.';
 
+export const revalidate = 30;
 export default async function DahboardPage() {
   const githubData = await getGithubData();
   return (
