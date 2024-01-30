@@ -10,100 +10,112 @@ const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time_since_today';
 const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
 
-export const getAccessToken = async (): Promise<string> => {
-  try {
-    const response = await axios.post(
-      TOKEN_ENDPOINT,
-      querystring.stringify({
-        grant_type: 'refresh_token',
-        client_id: CLIENT_ID,
-        client_secret: CLIENT_SECRET,
-        refresh_token: REFRESH_TOKEN
-      }),
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        }
-      }
-    );
+export const getAccessToken = async () => {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      Accept: 'application/json'
+    },
+    body: querystring.stringify({
+      grant_type: 'refresh_token',
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      refresh_token: REFRESH_TOKEN
+    }),
+    next: { revalidate: 3600 }
+  };
 
-    return response.data;
+  const response = await fetch(TOKEN_ENDPOINT, requestOptions);
+  if (!response.ok) {
+    console.error(`Failed to fetch access token. Status: ${response.status}`);
+    return undefined;
+  }
+  const responseText = await response.text();
+  console.log('Response Text:', responseText);
+  try {
+    const data = JSON.parse(responseText);
+    console.log(data);
+    return data.access_token;
   } catch (error) {
-    console.error('Error getting access token:', error);
-    throw new Error('Failed to get access token');
+    console.error('Error parsing JSON:', error);
+    return undefined;
   }
 };
 
-export const getReadStats = async (): Promise<{
-  status: number;
-  data: any;
-}> => {
-  const res = await getAccessToken();
-  const access_token = res.substring(res.indexOf('=') + 1, res.lastIndexOf('&refresh_token'));
+export const getReadStats = async (accessToken: string) => {
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${accessToken}`);
 
-  const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
-    headers: {
-      Authorization: `Bearer ${access_token}`
-    }
-  });
-
-  const status = response.status;
-  console.log('dj1samsoe ~ getReadStats ~ status : ', status);
-
-  if (status >= 400) return { status, data: [] };
-
-  const getData = response.data;
-
-  const start_date = getData?.data?.start;
-  const end_date = getData?.data?.end;
-  const last_update = getData?.data?.modified_at;
-
-  const categories = getData?.data?.categories;
-
-  const best_day = {
-    date: getData?.data?.best_day?.date,
-    text: getData?.data?.best_day?.text
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    next: { revalidate: 3600 }
   };
-  const human_readable_daily_average = getData?.data?.human_readable_daily_average_including_other_language;
-  const human_readable_total = getData?.data?.human_readable_total_including_other_language;
 
-  const languages = getData?.data?.languages?.slice(0, 3);
-  const editors = getData?.data?.editors;
+  try {
+    const response = await fetch(`${STATS_ENDPOINT}/last_7_days`, requestOptions);
 
-  return {
-    status,
-    data: {
-      last_update,
-      start_date,
-      end_date,
-      categories,
-      best_day,
-      human_readable_daily_average,
-      human_readable_total,
-      languages,
-      editors
-    }
-  };
+    const status = response.status;
+    console.log('dj1samsoe ~ getReadStats ~ status : ', status);
+
+    if (status >= 400) return { status, data: [] };
+
+    const getData = await response.json();
+    console.log('dj1samsoe ~ getReadStats ~ getData : ', getData);
+
+    const start_date = getData?.data?.start;
+    const end_date = getData?.data?.end;
+    const last_update = getData?.data?.modified_at;
+
+    const categories = getData?.data?.categories;
+
+    const best_day = {
+      date: getData?.data?.best_day?.date,
+      text: getData?.data?.best_day?.text
+    };
+    const human_readable_daily_average = getData?.data?.human_readable_daily_average_including_other_language;
+    const human_readable_total = getData?.data?.human_readable_total_including_other_language;
+
+    const languages = getData?.data?.languages?.slice(0, 3);
+    const editors = getData?.data?.editors;
+
+    return {
+      status,
+      data: {
+        last_update,
+        start_date,
+        end_date,
+        categories,
+        best_day,
+        human_readable_daily_average,
+        human_readable_total,
+        languages,
+        editors
+      }
+    };
+  } catch (err) {
+    null;
+  }
 };
 
-export const getALLTimeSinceToday = async (): Promise<{
-  status: number;
-  data: any;
-}> => {
-  const res = await getAccessToken();
-  const access_token = res.substring(res.indexOf('=') + 1, res.lastIndexOf('&refresh_token'));
+export const getALLTimeSinceToday = async (accessToken: string) => {
+  const myHeaders = new Headers();
+  myHeaders.append('Authorization', `Bearer ${accessToken}`);
 
-  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
-    headers: {
-      Authorization: `Bearer ${access_token}`
-    }
-  });
+  const requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    next: { revalidate: 3600 }
+  };
+
+  const response = await fetch(ALL_TIME_SINCE_TODAY, requestOptions);
 
   const status = response.status;
 
   if (status >= 400) return { status, data: {} };
 
-  const getData = response.data;
+  const getData = await response.json();
 
   const data = {
     text: getData?.data?.text,
