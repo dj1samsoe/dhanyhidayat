@@ -51,7 +51,7 @@ const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
 
   return (
     <section className="flex flex-col gap-y-2">
-      <SectionHeading title="Weekly Statistics" icon={<WakatimeIcon className="mr-1" />} />
+      <SectionHeading title="WakaTime Statistics" icon={<WakatimeIcon className="mr-1" />} />
       <SectionSubHeading>
         <div className="dark:text-neutral-400 md:flex-row md:items-center">
           <span>My </span>
