@@ -61,7 +61,7 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
           <div className="h-full w-full rounded-lg bg-neutral-50 p-2 dark:bg-dark">
             <p className="absolute -top-3 left-3 bg-neutral-50 px-2 rounded-xl dark:bg-dark">{item?.title}</p>
 
-            <ul className="flex flex-col py-3 px-4 gap-1">
+            <ul className="flex flex-col py-3 gap-1">
               {item?.data?.map(subItem => (
                 <li key={subItem?.name}>
                   <Progress data={subItem} className={item?.styles?.bg} />
