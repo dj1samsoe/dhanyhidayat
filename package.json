@@ -69,7 +69,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "jsdom": "^23.2.0",
     "prettier": "^3.0.3",
-    "prisma": "^5.8.1",
+    "prisma": "^5.9.0",
     "ts-node": "^10.9.1",
     "vitest": "^1.2.1"
   }
