@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 import { getALLTimeSinceToday, getAccessToken, getReadStats } from '@/services/wakatime';
 
+export const revalidate = 30;
 export async function GET() {
   const accessToken = await getAccessToken();
 

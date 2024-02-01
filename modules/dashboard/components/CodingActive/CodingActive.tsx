@@ -19,6 +19,8 @@ interface CodingActiveProps {
   lastUpdate?: string;
 }
 
+export const refreshInterval = 3000;
+export const revalidate = 30;
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR(
     '/api/wakatime',
