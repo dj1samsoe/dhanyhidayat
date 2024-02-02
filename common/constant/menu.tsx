@@ -23,20 +23,20 @@ const iconSize = 20;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: 'Home',
-    href: '/',
-    icon: <HomeIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Home'
-  },
-  {
     title: 'Dashboard',
     href: '/dashboard',
     icon: <DashboardIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Dashboard'
+  },
+  {
+    title: 'Home',
+    href: '/',
+    icon: <HomeIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Home'
   },
   {
     title: 'Projects',
@@ -86,16 +86,15 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Chat Room'
-  },
-
-  {
-    title: 'Roadmap',
-    href: '/roadmap?tribe=frontend-developer',
-    icon: <RoadmapIcon size={iconSize} />,
-    isShow: false,
-    isExternal: false,
-    eventName: 'Pages: Roadmap'
   }
+  // {
+  //   title: 'Roadmap',
+  //   href: '/roadmap?tribe=frontend-developer',
+  //   icon: <RoadmapIcon size={iconSize} />,
+  //   isShow: false,
+  //   isExternal: false,
+  //   eventName: 'Pages: Roadmap'
+  // }
 ];
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
@@ -134,15 +133,6 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
     isExternal: true,
     eventName: 'Social: Instagram',
     className: '!bg-[#F44B52] border border dark:border-neutral-700'
-  },
-  {
-    title: 'TikTok',
-    href: 'https://www.tiktok.com/@dj1samsoe__',
-    icon: <TiktokIcon size={iconSize} />,
-    isShow: false,
-    isExternal: true,
-    eventName: 'Social: Tiktok',
-    className: '!bg-black border border dark:border-neutral-700'
   },
   {
     title: 'Dev.to',
