@@ -3,10 +3,13 @@ import { useWindowSize } from 'usehooks-ts';
 
 const useIsMobile = () => {
   const { width } = useWindowSize();
-  const [isMobile, setIsMobile] = useState(width < 1024);
+  const [isMobile, setIsMobile] = useState(false); // Set an initial value
 
   useEffect(() => {
-    setIsMobile(width < 1024);
+    // Check if width is defined before updating state
+    if (width !== undefined) {
+      setIsMobile(width < 1024);
+    }
   }, [width]);
 
   return isMobile;
