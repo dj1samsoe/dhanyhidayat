@@ -1,27 +1,28 @@
-import { Metadata } from 'next'
+import { Metadata } from 'next';
 
-import { User, getServerSession } from 'next-auth'
+import { User, getServerSession } from 'next-auth';
 
-import Container from '@/common/components/elements/Container'
-import PageHeading from '@/common/components/elements/PageHeading'
-import { METADATA } from '@/common/constant/metadata'
+import Container from '@/common/components/elements/Container';
+import PageHeading from '@/common/components/elements/PageHeading';
+import { METADATA } from '@/common/constant/metadata';
 
-import ChatRoom from '@/modules/chat'
+import ChatRoom from '@/modules/chat';
 
 export const metadata: Metadata = {
-  title: `Chat Room ${METADATA.exTitle}`,
-  description: 'The community chat room for codebayu.com',
-  keywords: 'chat room, codebayu, community',
+  title: `Guestbook ${METADATA.exTitle}`,
+  description: 'The guestbook for everyone to share their impressions and suggestions about this website',
+  keywords: 'guestbook, dhanyhidayat, chat, community, dhany hidayat chat, dhany hidayat, chatroom with public',
   alternates: {
     canonical: `${process.env.DOMAIN}/chat`
   }
-}
+};
 
-const PAGE_TITLE = 'Chat Room'
-const PAGE_DESCRIPTION = 'Leave your impression or suggestion about this website here'
+const PAGE_TITLE = 'Guestbook';
+const PAGE_DESCRIPTION =
+  'Share your impressions and suggestions about this website – your valuable insights matter to me!';
 
 export default async function ChatRoomPage() {
-  const session = await getServerSession()
+  const session = await getServerSession();
   return (
     <>
       <Container data-aos="fade-left">
@@ -29,5 +30,5 @@ export default async function ChatRoomPage() {
         <ChatRoom user={session?.user as User} />
       </Container>
     </>
-  )
+  );
 }
