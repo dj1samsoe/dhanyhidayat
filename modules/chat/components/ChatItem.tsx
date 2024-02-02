@@ -44,7 +44,7 @@ export default function ChatItem({
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
       <div className="flex flex-col space-y-2 w-full">
         <div className="flex space-x-3 items-center">
-          <span className="text-sm font-medium text-white">{name}</span>
+          <span className="text-sm font-medium dark:text-white text-neutral-900">{name}</span>
           {authorEmail === email && (
             <div className="flex items-center gap-0.5 text-violet-50 bg-gradient-to-bl from-indigo-800 to-fuchsia-800 rounded-full px-1.5 py-0.5 text-medium">
               <AdminIcon size={13} />
