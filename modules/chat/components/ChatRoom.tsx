@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid';
 
 import { tourChatRoom } from '@/common/constant/drivers';
 import createDrivers from '@/common/libs/drivers';
-import { firebase, firestore } from '@/common/libs/firebase';
+import { firebase } from '@/common/libs/firebase';
 import { IMessage, IRawMessages } from '@/common/types/chat';
 
 import useHasMounted from '@/hooks/useHasMounted';
@@ -57,6 +57,7 @@ export default function ChatRoom({ user }: ChatRoomProps) {
 
     if (messageRef) {
       remove(messageRef);
+      notif('Message deleted');
       return null;
     }
   }
