@@ -42,7 +42,7 @@ export default function ChatItem({
       className="flex items-start space-x-3 w-full"
     >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
-      <div className="flex flex-col space-y-2 w-full">
+      <div className="flex flex-col space-y-2 w-full lg:max-w-[90%]">
         <div className="flex space-x-3 items-center">
           <span className="text-sm font-medium dark:text-white text-neutral-900">{name}</span>
           {authorEmail === email && (
