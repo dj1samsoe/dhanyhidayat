@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { usePathname, useSearchParams } from 'next/navigation';
 
 import AOS from 'aos';
@@ -23,6 +24,7 @@ export default function Layouts({ children }: LayoutsProps) {
   const hideSidebar = pathName === '/me' || readMode === 'true';
 
   const isShowChatButton = pathName !== '/chat';
+  const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false });
 
   useEffect(() => {
     AOS.init({
@@ -53,6 +55,7 @@ export default function Layouts({ children }: LayoutsProps) {
           </main>
         </div>
       </div>
+      <Notif />
       {isShowChatButton && <ChatButton />}
     </>
   );
