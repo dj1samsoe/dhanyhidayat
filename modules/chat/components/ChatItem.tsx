@@ -1,13 +1,15 @@
-import { formatDistanceToNow } from 'date-fns';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { FiTrash2 as DeleteIcon } from 'react-icons/fi';
 import { ImReply } from 'react-icons/im';
+import { IoCheckmarkDone } from 'react-icons/io5';
 import { MdAdminPanelSettings as AdminIcon } from 'react-icons/md';
 
 import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
 import { IMessage } from '@/common/types/chat';
+
+import ChatTime from './ChatTime';
 
 interface IChatItemProps extends IMessage {
   deleteMessage: (id: string) => void;
@@ -30,7 +32,7 @@ export default function ChatItem({
 }: IChatItemProps) {
   const [onHover, setOnHover] = useState(false);
   const authorEmail = process.env.NEXT_PUBLIC_AUTHOR_EMAIL as string;
-  const time = formatDistanceToNow(new Date(created_at), { addSuffix: true });
+  // const time = formatDistanceToNow(new Date(created_at), { addSuffix: true });
 
   return (
     <motion.div
@@ -41,32 +43,46 @@ export default function ChatItem({
     >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
       <div className="flex flex-col space-y-2 w-full">
-        <div className="flex items-center md:space-x-3 space-x-2">
-          <div className="flex space-x-1 items-center">
-            <span className="md:text-sm text-xs font-medium text-white">{name}</span>
-            {authorEmail === email && (
-              <div className="flex items-center gap-0.5 text-violet-50 bg-gradient-to-bl from-indigo-800 to-fuchsia-800 rounded-full px-1.5 py-0.5 text-medium">
-                <AdminIcon size={13} />
-                <span className="md:text-[10px] text-[8px] font-sora">Author</span>
-              </div>
-            )}
-          </div>
-          <span className="text-neutral-400 md:text-xs text-[10px]">{time}</span>
+        <div className="flex space-x-3 items-center">
+          <span className="text-sm font-medium text-white">{name}</span>
+          {authorEmail === email && (
+            <div className="flex items-center gap-0.5 text-violet-50 bg-gradient-to-bl from-indigo-800 to-fuchsia-800 rounded-full px-1.5 py-0.5 text-medium">
+              <AdminIcon size={13} />
+              <span className="text-[10px] font-sora">Author</span>
+            </div>
+          )}
         </div>
+
         <div
-          className="flex space-x-2 items-end w-full max-w-[90%]"
+          className="flex space-x-2 items-end w-full"
           onMouseEnter={() => setOnHover(true)}
           onMouseLeave={() => setOnHover(false)}
         >
           <div className="font-sans bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 py-2 px-3 rounded-xl rounded-tl-none">
             <p className="text-neutral-700 dark:text-neutral-200 text-md font-normal">
               {is_reply && (
-                <>
-                  <span className="text-green-600 dark:text-green-500 whitespace-nowrap mr-1">@{reply_to}</span>{' '}
-                  <span>{message}</span>
-                </>
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center">
+                    <p className="text-neutral-700 dark:text-neutral-200 text-md font-normal">
+                      <span className="text-green-600 dark:text-green-500 whitespace-nowrap">@{reply_to} </span>
+                      {message}
+                    </p>
+                  </div>
+                  <div className="flex items-center justify-end gap-2">
+                    <ChatTime datetime={created_at} />
+                    <IoCheckmarkDone size={17} className="text-blue-400" />
+                  </div>
+                </div>
               )}
-              {!is_reply && <>{message}</>}
+              {!is_reply && (
+                <div className="flex flex-col space-y-2">
+                  <p className="text-neutral-700 dark:text-neutral-200 text-md font-normal">{message}</p>
+                  <div className="flex items-center justify-end gap-2">
+                    <ChatTime datetime={created_at} />
+                    <IoCheckmarkDone size={17} className="text-blue-400" />
+                  </div>
+                </div>
+              )}
             </p>
           </div>
           {onHover && (
@@ -83,7 +99,7 @@ export default function ChatItem({
           )}
         </div>
       </div>
-      {authorEmail === sessionEmail && (
+      {(authorEmail === sessionEmail || email === sessionEmail) && (
         <button onClick={() => deleteMessage(id)} aria-label="Delete">
           <DeleteIcon size={15} className="text-red-500" />
         </button>
