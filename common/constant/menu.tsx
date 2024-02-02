@@ -14,6 +14,7 @@ import {
 } from 'react-icons/bs';
 import { CgProfile as ProfileIcon } from 'react-icons/cg';
 import { PiNotePencilBold as BlogIcon, PiProjectorScreenChartBold as ProjectIcon } from 'react-icons/pi';
+import { PiChatTeardropDotsBold as ChatIcon } from 'react-icons/pi';
 import { TbHomeHeart as HomeIcon } from 'react-icons/tb';
 
 import { MenuItemProps } from '../types/menu';
@@ -77,6 +78,16 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isExternal: false,
     eventName: 'Pages: Contact'
   },
+
+  {
+    title: 'Guestbook',
+    href: '/chat',
+    icon: <ChatIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Chat Room'
+  },
+
   {
     title: 'Roadmap',
     href: '/roadmap?tribe=frontend-developer',

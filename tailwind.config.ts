@@ -18,6 +18,10 @@ const config: Config = {
         dark: '#121212',
         light: '#fafafa'
       },
+      fontFamily: {
+        sans: ['var(--jakartaSans-font)'],
+        sora: ['var(--soraSans-font)']
+      },
       keyframes: {
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },

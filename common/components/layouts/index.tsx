@@ -6,7 +6,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { ReactNode, useEffect } from 'react';
 
-import MobileMenuHeader from './MobileMenuHeader';
+import { jakartaSans, soraSans } from '@/common/styles/fonts';
+
+import ChatButton from '../elements/ChatButton';
 import Sidebar from './sidebar';
 
 interface LayoutsProps {
@@ -20,6 +22,8 @@ export default function Layouts({ children }: LayoutsProps) {
 
   const hideSidebar = pathName === '/me' || readMode === 'true';
 
+  const isShowChatButton = pathName !== '/chat';
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -28,17 +32,28 @@ export default function Layouts({ children }: LayoutsProps) {
     });
   }, []);
   return (
-    <div className="flex flex-col justify-center w-full lg:flex-row lg:gap-5">
-      <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8">
-        {!hideSidebar && <MobileMenuHeader /> && (
-          <header>
-            <Sidebar />
-          </header>
-        )}
-        <main className="lg:max-w-[854px] transition-all duration-300 lg:min-h-screen overflow-y-auto no-scrollbar">
-          {children}
-        </main>
+    <>
+      <style jsx global>
+        {`
+          html {
+            --jakartaSans-font: ${jakartaSans.style.fontFamily};
+            --soraSans-font: ${soraSans.style.fontFamily};
+          }
+        `}
+      </style>
+      <div className="flex flex-col justify-center w-full lg:flex-row lg:gap-5">
+        <div className="flex flex-col lg:flex-row lg:gap-5 lg:py-4 xl:pb-8">
+          {!hideSidebar && (
+            <header>
+              <Sidebar />
+            </header>
+          )}
+          <main className="lg:w-[854px] max-w-[854px] transition-all duration-300 lg:min-h-screen overflow-y-auto no-scrollbar">
+            {children}
+          </main>
+        </div>
       </div>
-    </div>
+      {isShowChatButton && <ChatButton />}
+    </>
   );
 }
