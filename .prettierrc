@@ -7,6 +7,8 @@
     "^@/context/(.*)$",
     "^@/hooks/(.*)$",
     "^@/contents/(.*)$",
+    "^@/stores/(.*)$",
+    "^@/services/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": true,
