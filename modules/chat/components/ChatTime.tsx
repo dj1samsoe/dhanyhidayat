@@ -20,7 +20,7 @@ const ChatTime = ({ datetime }: ChatTimeProps) => {
 
   return (
     <div className="dark:text-neutral-400 text-neutral-600 text-xs">
-      {isToday(new Date(datetime)) ? formattedTime : format(new Date(datetime), 'dd/MM/yyyy, HH:mm')}
+      {isToday(new Date(datetime)) ? formattedTime : format(new Date(datetime), 'dd MMM yyyy, HH:mm')}
     </div>
   );
 };
