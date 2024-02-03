@@ -32,7 +32,8 @@ import {
   SiTypescript,
   SiVite,
   SiVuedotjs,
-  SiWordpress
+  SiWordpress,
+  SiDaisyui
 } from 'react-icons/si';
 
 type stacksProps = {
@@ -57,6 +58,7 @@ export const STACKS: stacksProps = {
   Vite: <SiVite size={iconSize} className="text-purple-500" />,
   PostgreSql: <BiLogoPostgresql size={iconSize} className="text-blue-400" />,
   ChakraUI: <SiChakraui size={iconSize} className="text-teal-500" />,
+  DaisyUI: <SiDaisyui size={iconSize} className="text-teal-600" />,
   'React Native': <SiReact size={iconSize} className="text-sky-600" />,
   Expo: <SiExpo size={iconSize} />,
   SASS: <SiSass size={iconSize} className="text-pink-600" />,
