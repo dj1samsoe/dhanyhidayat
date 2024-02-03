@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 };
 
 const PAGE_TITLE = 'Guestbook';
-const PAGE_DESCRIPTION =
-  'Share your impressions and suggestions about this website – your valuable insights matter to me!';
+const PAGE_DESCRIPTION = 'Share your impressions and suggestions about this website here';
 
 export default async function ChatRoomPage() {
   const session = await getServerSession();
