@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 
-import { fetcher } from '@/services/fetcher';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
 import { useEffect, useState } from 'react';
@@ -12,6 +11,8 @@ import useSWR from 'swr';
 import SectionHeading from '@/common/components/elements/SectionHeading';
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 
+import { fetcher } from '@/services/fetcher';
+
 import CodingActiveList from './CodingActiveList';
 import Overview from './Overview';
 
@@ -19,7 +20,7 @@ interface CodingActiveProps {
   lastUpdate?: string;
 }
 
-export const refreshInterval = 3000;
+export const dynamic = 'force-dynamic';
 export const revalidate = 30;
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
   const { data } = useSWR(
