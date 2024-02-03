@@ -55,7 +55,7 @@ const BlogCard = ({
     <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
-          'group relative flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-900 dark:bg-[#4949492e] backdrop-blur-lg lg:hover:scale-[102%] w-full',
+          'group relative flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e] backdrop-blur-lg lg:hover:scale-[102%] w-full',
           viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
           !isExcerpt && 'sm:h-[320px]'

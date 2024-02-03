@@ -23,16 +23,16 @@ export default function ChatAuth({ user, reply, sendMessage, cancleReply }: Chat
         <div>
           <ChatInput sendMessage={sendMessage} reply={reply} cancleReply={cancleReply} />
           <div className="flex text-sm mt-6 justify-between items-center">
-            <div className=" text-neutral-500 flex items-center space-x-2">
+            <div className=" text-neutral-500 dark:text-neutral-300 flex items-center space-x-2">
               <Image src={String(user.image)} alt={String(user.name)} width={35} height={35} className="rounded-full" />
               <div className="flex flex-col">
                 <span>{user.name}</span>
-                <span className="text-xs font-thin">{user.email}</span>
+                <span className="text-xs">{user.email}</span>
               </div>
             </div>
             <button
               onClick={() => signOut()}
-              className="flex items-center text-xs space-x-2 text-red-500"
+              className="flex items-center text-xs px-4 py-2 space-x-2 bg-red-500 hover:bg-red-600 text-white rounded-lg transition-all duration-200"
               aria-label="Sign out"
             >
               <span>Sign out</span>

@@ -8,7 +8,7 @@
 }
 
 body {
-  background: radial-gradient(ellipse 60% 50% at center, rgb(45 212 191 / 10%) 0%, rgb(8 0 0 / 0%));
+  background: radial-gradient(ellipse 60% 50% at top, rgba(45, 212, 190, 0.035) 0%, rgba(36, 0, 0, 0.151));
 }
 
 .dark {
@@ -34,4 +34,16 @@ body {
       scrollbar-width: none; /* Firefox */
     }
   }
+}
+
+::-webkit-scrollbar {
+  @apply w-1;
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-[3px] bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-[3px] border-2 border-neutral-300 bg-neutral-600 dark:bg-neutral-300;
 }

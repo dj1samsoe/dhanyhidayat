@@ -58,8 +58,8 @@ const CodingActiveList = ({ data }: CodingActiveListProps) => {
           key={item?.title}
           className={clsx(item?.styles?.bg, 'relative flex flex-1 flex-col gap-2 rounded-lg p-[2px]')}
         >
-          <div className="h-full w-full rounded-lg bg-neutral-50 p-2 dark:bg-dark">
-            <p className="absolute -top-3 left-3 bg-neutral-50 px-2 rounded-xl dark:bg-dark">{item?.title}</p>
+          <div className="h-full w-full rounded-lg bg-neutral-200 p-2 dark:bg-dark">
+            <p className="absolute -top-3 left-3 bg-neutral-200 px-2 rounded-xl dark:bg-dark">{item?.title}</p>
 
             <ul className="flex flex-col py-3 gap-1">
               {item?.data?.map(subItem => (

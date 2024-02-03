@@ -30,9 +30,7 @@ export default function ChatItem({
   deleteMessage,
   clickReply
 }: IChatItemProps) {
-  const [onHover, setOnHover] = useState(false);
   const authorEmail = process.env.NEXT_PUBLIC_AUTHOR_EMAIL as string;
-  // const time = formatDistanceToNow(new Date(created_at), { addSuffix: true });
 
   return (
     <motion.div
@@ -42,7 +40,7 @@ export default function ChatItem({
       className="flex items-start space-x-3 w-full"
     >
       <Image src={image} alt={name} width={40} height={40} className="rounded-full" />
-      <div className="flex flex-col space-y-2 w-full lg:max-w-[90%]">
+      <div className="flex flex-col space-y-2 w-full lg:max-w-[85%]">
         <div className="flex space-x-3 items-center">
           <span className="text-sm font-medium dark:text-white text-neutral-900">{name}</span>
           {authorEmail === email && (
@@ -53,13 +51,9 @@ export default function ChatItem({
           )}
         </div>
 
-        <div
-          className="flex space-x-2 items-end w-full"
-          onMouseEnter={() => setOnHover(true)}
-          onMouseLeave={() => setOnHover(false)}
-        >
-          <div className="font-sans bg-neutral-200 dark:bg-neutral-800 dark:hover:bg-neutral-700 py-2 px-3 rounded-xl rounded-tl-none">
-            <p className="text-neutral-700 dark:text-neutral-200 text-md font-normal">
+        <div className="flex space-x-2 items-end w-full">
+          <div className="font-sans bg-neutral-100 shadow-xl dark:shadow-none dark:bg-neutral-800 dark:hover:bg-neutral-700 py-2 px-3 rounded-xl rounded-tl-none">
+            <p className="text-neutral-900 dark:text-neutral-200 text-md font-normal">
               {is_reply && (
                 <div className="flex flex-col space-y-2">
                   <div className="flex items-center">
@@ -76,7 +70,7 @@ export default function ChatItem({
               )}
               {!is_reply && (
                 <div className="flex flex-col space-y-2">
-                  <p className="text-neutral-700 dark:text-neutral-200 text-md font-normal">{message}</p>
+                  <p className="text-neutral-900 dark:text-neutral-200 text-md font-normal">{message}</p>
                   <div className="flex items-center justify-end gap-2">
                     <ChatTime datetime={created_at} />
                     <IoCheckmarkDone size={17} className="text-blue-400" />
@@ -85,18 +79,17 @@ export default function ChatItem({
               )}
             </p>
           </div>
-          {onHover && (
-            <Tooltip title="Reply">
-              <motion.button
-                aria-label="Reply"
-                initial={{ opacity: 0, transform: 'rotate(-45deg)' }}
-                animate={{ opacity: 1, transform: 'rotate(0deg)' }}
-                onClick={() => clickReply(name)}
-              >
-                <ImReply size={18} className="text-neutral-400" />
-              </motion.button>
-            </Tooltip>
-          )}
+
+          <Tooltip title="Reply">
+            <motion.button
+              aria-label="Reply"
+              initial={{ opacity: 0, transform: 'rotate(-45deg)' }}
+              animate={{ opacity: 1, transform: 'rotate(0deg)' }}
+              onClick={() => clickReply(name)}
+            >
+              <ImReply size={18} className="text-neutral-400" />
+            </motion.button>
+          </Tooltip>
         </div>
       </div>
       {(authorEmail === sessionEmail || email === sessionEmail) && (
