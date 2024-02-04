@@ -74,9 +74,13 @@ const BlogCard = ({
           <h3 className="md:text-md font-normal line-clamp-1 text-neutral-800 dark:text-neutral-200 lg:group-hover:text-green-800 dark:group-hover:text-green-400 transition-all duration-300">
             {title}
           </h3>
-          <span className="text-xs text-neutral-600 dark:text-neutral-400">
-            {formatDate(published_at, 'MMM dd, yyyy')}
-          </span>
+          <div className="flex gap-4 text-neutral-600 dark:text-neutral-400">
+            <span className="text-xs">{formatDate(published_at, 'MMM dd, yyyy')}</span>
+            <div className="flex gap-1 items-center">
+              <ViewIcon size={14} />
+              <span className="text-xs ml-0.5">{page_views_count} Views</span>
+            </div>
+          </div>
         </article>
       </Card>
     </Link>
