@@ -13,7 +13,7 @@ const LinkItem = ({ index, label, icon, href, target = '', className, onClick }:
   return (
     <Link
       onClick={() => onClick(href, target)}
-      className="relative inline-flex items-center justify-start py-4 pl-4 pr-14 overflow-hidden font-medium text-neutral-800 dark:text-neutral-100 dark:bg-[#4949492e] backdrop-blur-lg transition-all duration-150 ease-in-out rounded-lg hover:pl-12 hover:pr-6 bg-white group border dark:border-none shadow-sm cursor-pointer"
+      className="relative inline-flex items-center justify-start py-4 pl-4 pr-14 overflow-hidden font-medium text-neutral-800 dark:text-neutral-100 dark:bg-[#4949492e] duration-150 ease-in-out rounded-lg hover:pl-12 hover:pr-6 bg-white group border dark:border-none shadow-sm cursor-pointer"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay={index * 100}

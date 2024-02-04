@@ -19,7 +19,7 @@ export default function LearnSubContentItem({
     <Link href={`/learn/${contentSlug}/${subContentSlug}`}>
       <Card
         className={clsxm(
-          'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-[#4949492e] backdrop-blur-lg lg:hover:scale-[102%] w-full py-4 px-5'
+          'flex items-center flex-row justify-between cursor-pointer border border-neutral-300 dark:border-neutral-800 dark:bg-[#4949492e]  lg:hover:scale-[102%] w-full py-4 px-5'
         )}
       >
         <div className="flex gap-3 items-center">

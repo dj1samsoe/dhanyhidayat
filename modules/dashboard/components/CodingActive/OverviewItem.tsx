@@ -6,7 +6,7 @@ interface OverviewItemProps {
 }
 
 const OverviewItem = ({ label, value }: OverviewItemProps) => (
-  <Card className="flex flex-col rounded-xl bg-neutral-100 dark:bg-[#4949492e] backdrop-blur-lg py-3 px-4 sm:col-span-1 space-y-1 border border-neutral-200 dark:border-neutral-900">
+  <Card className="flex flex-col rounded-xl bg-neutral-100 dark:bg-[#4949492e]  py-3 px-4 sm:col-span-1 space-y-1 border border-neutral-200 dark:border-neutral-900">
     <span className="text-sm dark:text-neutral-400">{label}</span>
     <span>{value}</span>
   </Card>

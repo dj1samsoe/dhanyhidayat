@@ -43,14 +43,14 @@ const ContactForm = () => {
       <div className="flex flex-col flex-grow gap-5">
         <div className="flex flex-col md:flex-row gap-5">
           <input
-            className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] backdrop-blur-lg"
+            className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] "
             type="text"
             placeholder="Name*"
             name="name"
             required
           />
           <input
-            className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] backdrop-blur-lg"
+            className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] "
             type="email"
             placeholder="Email*"
             name="email"
@@ -58,7 +58,7 @@ const ContactForm = () => {
           />
         </div>
         <textarea
-          className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] backdrop-blur-lg"
+          className="w-full py-2 px-3 rounded-md border border-neutral-200 focus:outline-none dark:border-neutral-700 dark:bg-[#4949492e] "
           rows={5}
           placeholder="Message*"
           name="message"

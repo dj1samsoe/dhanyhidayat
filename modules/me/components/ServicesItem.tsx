@@ -13,7 +13,7 @@ const ServicesItem = ({ title, description, icon, className }: ServicesProps) =>
         'grid grid-flow-col justify-between items-center gap-x-6 bg-white bg-no-repeat bg-right bg-contain',
         'py-5 px-6 rounded-xl border dark:border-none',
         'transition-all duration-300',
-        'dark:bg-[#4949492e] backdrop-blur-lg'
+        'dark:bg-[#4949492e] '
       )}
     >
       <div>{icon}</div>

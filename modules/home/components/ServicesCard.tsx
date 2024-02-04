@@ -16,7 +16,7 @@ export default function ServicesCard({ tag, title, description }: ServicesCardPr
     <div
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
-      className={`min-w-[300px] md:w-80 border border-neutral-300 shadow-3xl ring-1 ring-black/5 dark:divide-neutral-800 dark:border-neutral-800 dark:bg-[#4949492e] bg-neutral-200 backdrop-blur-lg dark:text-neutral-100 text-neutral-900 rounded-xl overflow-hidden bg-center bg-cover`}
+      className={`min-w-[300px] md:w-80 border border-neutral-300 shadow-3xl ring-1 ring-black/5 dark:divide-neutral-800 dark:border-neutral-800 dark:bg-[#4949492e] bg-neutral-200  dark:text-neutral-100 text-neutral-900 rounded-xl overflow-hidden bg-center bg-cover`}
       style={{
         backgroundImage: coverImage,
         backgroundPosition: 'center, center'

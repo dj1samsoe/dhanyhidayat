@@ -21,7 +21,7 @@ export default function CareerCard({ position, company, logo, location, start_da
   }
 
   return (
-    <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 bg-neutral-200 dark:bg-[#4949492e] backdrop-blur-lg">
+    <Card className="flex items-center gap-5 py-4 px-6 border border-neutral-300 dark:border-neutral-800 bg-neutral-200 dark:bg-[#4949492e] ">
       {logo ? <Image src={logo} width={55} height={55} alt={company} /> : <CompanyIcon size={30} />}
 
       <div className="space-y-1">

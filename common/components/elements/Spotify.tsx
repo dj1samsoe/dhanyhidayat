@@ -11,19 +11,17 @@ export default function Spotify() {
 
   if (isLoading) {
     return (
-      <div
-        className={`inline-flex min-w-[250px] rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10`}
-      >
+      <div className={`inline-flex min-w-[250px] rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] md:pr-10`}>
         <div className="w-[75px] animate-pulse overflow-hidden rounded-lg p-5 sm:w-[100px]">
           <FaSpotify className="h-8 w-8" />
         </div>
 
         <div className="mx-5">
           <div className="mb-5 mt-1">
-            <div className="w-28 animate-pulse rounded-full bg-zinc-300 p-2 dark:bg-[#4949492e] backdrop-blur-lg sm:w-40"></div>
+            <div className="w-28 animate-pulse rounded-full bg-zinc-300 p-2 dark:bg-[#4949492e] sm:w-40"></div>
           </div>
-          <div className="mb-2 w-32 animate-pulse rounded-full bg-zinc-300 p-3 dark:bg-[#4949492e] backdrop-blur-lg sm:w-48"></div>
-          <div className="w-40 animate-pulse rounded-full bg-zinc-300 p-2 dark:bg-[#4949492e] backdrop-blur-lg sm:w-52"></div>
+          <div className="mb-2 w-32 animate-pulse rounded-full bg-zinc-300 p-3 dark:bg-[#4949492e] sm:w-48"></div>
+          <div className="w-40 animate-pulse rounded-full bg-zinc-300 p-2 dark:bg-[#4949492e] sm:w-52"></div>
         </div>
       </div>
     );
@@ -31,7 +29,7 @@ export default function Spotify() {
 
   if (error) {
     return (
-      <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg">
+      <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e]">
         <div className="flex items-center gap-5 overflow-hidden rounded-lg">
           <FaSpotify className="h-10 w-10 text-green-500" />
           <div className="flex flex-col space-y-2">

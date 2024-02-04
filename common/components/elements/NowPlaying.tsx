@@ -16,7 +16,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
   if (data)
     return (
       <div
-        className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10"
+        className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] md:pr-10"
         data-testid="now-playing"
       >
         <Link href={data.href} target="_blank" rel="noopener noreferrer">
@@ -77,7 +77,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
 // export function RecentlyPlayedSection({ data }: RecentlyPlayedProps) {
 //   if (data)
 //     return (
-//       <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] backdrop-blur-lg md:pr-10">
+//       <div className="flex items-center justify-start min-w-[250px] max-w-full rounded-xl bg-zinc-200 p-3 pr-3 dark:bg-[#4949492e] -lg md:pr-10">
 //         {data?.items.map((item, i) => (
 //           <>
 //             <Link href={item.track.href} target="_blank" rel="noopener noreferrer">

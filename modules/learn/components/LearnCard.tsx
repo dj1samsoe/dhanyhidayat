@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { fetcher } from '@/services/fetcher';
 import { AiFillFire as NewIcon } from 'react-icons/ai';
 import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
 import useSWR from 'swr';
@@ -9,12 +8,14 @@ import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import { ContentProps } from '@/common/types/learn';
 
+import { fetcher } from '@/services/fetcher';
+
 const LearnCard = ({ title, slug, description, image, is_new, level }: ContentProps) => {
   const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher);
 
   return (
     <Link href={`/learn/${slug}`}>
-      <Card className="group relative border border-neutral-200 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e] backdrop-blur-lg lg:hover:scale-[102%] cursor-pointer">
+      <Card className="group relative border border-neutral-200 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e]  lg:hover:scale-[102%] cursor-pointer">
         {is_new && (
           <div className="flex items-center gap-1 absolute top-0 right-0 bg-yellow-300 text-emerald-950 text-[13px] font-medium py-1 px-2 rounded-bl-xl rounded-tr-xl z-[2]">
             <NewIcon size={15} />
