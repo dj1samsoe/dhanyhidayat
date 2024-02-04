@@ -1,6 +1,5 @@
 'use client';
 
-import { fetcher } from '@/services/fetcher';
 import { motion } from 'framer-motion';
 import { useMemo, useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
@@ -9,9 +8,11 @@ import useSWR from 'swr';
 import LoadingCard from '@/common/components/elements/LoadingCard';
 import { BlogItem } from '@/common/types/blog';
 
-import BlogCard from '@/modules/blog/components/BlogCard';
-
 import { useBlogViewStore } from '@/context/useBlogViewStore';
+
+import { fetcher } from '@/services/fetcher';
+
+import BlogPreviewCard from './BlogPreviewCard';
 
 const BlogCarousel = () => {
   const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);
@@ -40,7 +41,7 @@ const BlogCarousel = () => {
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
       >
-        <BlogCard view="grid" isExcerpt={false} isCarousel={true} {...item} />
+        <BlogPreviewCard view="grid" isExcerpt={false} isCarousel={true} {...item} />
       </motion.div>
     ));
   };

@@ -40,7 +40,7 @@ const BlogCard = ({
   const newSlug = formatBlogSlug(slug);
 
   const trimmedTitle = viewOption === 'grid' ? title.slice(0, 70) + (title.length > 70 ? '...' : '') : title;
-  const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '');
+  const trimmedContent = description.slice(0, 75) + (description.length > 75 ? '...' : '');
 
   const contentContainerClasses = clsxm(
     'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 px-5 sm:p-0 mb-5 sm:mb-0',
@@ -56,9 +56,9 @@ const BlogCard = ({
       <Card
         className={clsxm(
           'group relative flex items-center sm:flex-row gap-6 cursor-pointer border border-neutral-300 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e] backdrop-blur-lg lg:hover:scale-[102%] w-full',
-          viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
+          viewOption === 'grid' ? '!flex-col sm:h-[350px] w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
-          !isExcerpt && 'sm:h-[320px]'
+          !isExcerpt && 'sm:h-[300px]'
         )}
       >
         <div className="w-fit relative">
@@ -68,8 +68,8 @@ const BlogCard = ({
             height={100}
             alt={title}
             className={clsxm(
-              'sm:rounded-xl sm:h-[8.5rem] object-cover',
-              viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none !h-48' : ''
+              'sm:rounded-xl object-cover',
+              viewOption === 'grid' ? '!rounded-t-xl !rounded-b-none' : ''
             )}
           />
           {viewOption === 'grid' && (
