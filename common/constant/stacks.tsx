@@ -4,6 +4,7 @@ import {
   SiApollographql,
   SiChakraui,
   SiCss3,
+  SiDaisyui,
   SiExpo,
   SiExpress,
   SiFirebase,
@@ -22,6 +23,7 @@ import {
   SiNuxtdotjs,
   SiPhp,
   SiPrisma,
+  SiRadixui,
   SiReact,
   SiReactquery,
   SiRedux,
@@ -32,8 +34,7 @@ import {
   SiTypescript,
   SiVite,
   SiVuedotjs,
-  SiWordpress,
-  SiDaisyui
+  SiWordpress
 } from 'react-icons/si';
 
 type stacksProps = {
@@ -78,5 +79,6 @@ export const STACKS: stacksProps = {
   Github: <SiGithub size={iconSize} />,
   MySQL: <SiMysql size={iconSize} />,
   'TMDB API': <SiThemoviedatabase size={iconSize} />,
-  Stripe: <SiStripe size={iconSize} />
+  Stripe: <SiStripe size={iconSize} />,
+  RadixUI: <SiRadixui size={iconSize} className="text-sky-500" />
 };
