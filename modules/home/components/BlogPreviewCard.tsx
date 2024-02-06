@@ -50,9 +50,9 @@ const BlogCard = ({
       <Card
         className={clsxm(
           'group relative flex items-center sm:flex-row cursor-pointer lg:hover:scale-[102%] w-full',
-          viewOption === 'grid' ? '!flex-col sm:h-[400px] w-full' : '!flex-row sm:p-5 sm:px-6',
+          viewOption === 'grid' ? '!flex-col w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]',
-          !isExcerpt && 'sm:h-[250px]'
+          !isExcerpt && 'sm:h-[200px]'
         )}
       >
         <div className="w-fit relative">

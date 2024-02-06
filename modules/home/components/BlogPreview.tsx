@@ -11,7 +11,7 @@ import BlogCarousel from './BlogCarousel';
 
 const BlogPreview = () => {
   return (
-    <section className="space-y-6">
+    <section className="space-y-2">
       <div className="flex items-center justify-between">
         <SectionHeading title="Latest Articles" className="ml-1" />
         <SectionSubHeading>
@@ -25,6 +25,8 @@ const BlogPreview = () => {
           </Link>
         </SectionSubHeading>
       </div>
+      <p className="text-md text-neutral-600 dark:text-neutral-400 pb-5">My Articles in Dev.to Blogs Community</p>
+
       <BlogCarousel />
     </section>
   );
