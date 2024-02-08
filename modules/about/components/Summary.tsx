@@ -5,7 +5,7 @@ export default function Summary() {
     <div className="flex flex-col space-y-6 font-sora text-neutral-800 dark:text-neutral-300">
       <p>
         Hi! I'm Achmad Fauzian Dhany Hidayat, a seasoned software developer with a deep love for using code to create
-        elegant and effective solutions. I have a strong foundation in HTML, CSS, and Javascript, and I have a thorough
+        elegant and effective solutions. I have a strong foundation in Javascript, Typescript, React JS, Next JS and other elements of web technology. I have a thorough
         understanding of many frontend libraries and frameworks. I currently reside in Malang, Indonesia.
       </p>
       <p>
