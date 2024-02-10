@@ -1,6 +1,5 @@
 'use client';
 
-import { fetcher } from '@/services/fetcher';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useMemo, useState } from 'react';
@@ -13,6 +12,8 @@ import { BlogItem } from '@/common/types/blog';
 import { useBlogViewStore } from '@/context/useBlogViewStore';
 
 import useIsMobile from '@/hooks/useIsMobile';
+
+import { fetcher } from '@/services/fetcher';
 
 import BlogCard from './BlogCard';
 import BlogListHeader from './BlogListHeader';
