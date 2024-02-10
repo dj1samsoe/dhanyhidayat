@@ -24,7 +24,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
         <Link href={data.href} target="_blank" rel="noopener noreferrer">
           <div className="relative w-[75px] overflow-hidden rounded-lg sm:w-[100px]">
             <Image src={data?.albumArt.url} alt="Album art" width={100} height={100} />
-            <div className="absolute right-8 top-8 z-20 backdrop-blur-md">
+            <div className="absolute right-8 bottom-8 top-8 z-20 backdrop-blur-md">
               {data?.currentlyPlaying ? (
                 <FaSpotify className="h-9 w-9 text-green-500" />
               ) : (
@@ -60,9 +60,9 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
           >
             {data.name}
           </a>
-          <div className="line-clamp-1 text-sm font-semibold hover:line-clamp-none hover:whitespace-nowrap sm:text-base">
+          <div className="line-clamp-1 text-sm font-semibold hover:line-clamp-none truncate sm:text-base">
             {data?.artists.map((artist, i) => (
-              <span key={`artist${i}`} className="ml-1">
+              <span key={`artist${i}`}>
                 <a
                   className="hover:cursor-pointer hover:underline"
                   rel="noopener noreferrer"
@@ -72,7 +72,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                 >
                   {artist.name}
                 </a>
-                {i === data.artists.length - 1 ? '' : ','}
+                {i === data.artists.length - 1 ? ' ' : ', '}
               </span>
             ))}
           </div>
