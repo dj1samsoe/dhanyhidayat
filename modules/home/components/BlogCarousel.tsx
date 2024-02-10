@@ -5,7 +5,7 @@ import { useMemo, useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
 import useSWR from 'swr';
 
-import LoadingCard from '@/common/components/elements/LoadingCard';
+import LoadingPreviewCard from '@/common/components/elements/LoadingPreviewCard';
 import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
@@ -30,7 +30,7 @@ const BlogCarousel = () => {
 
   const renderBlogCards = () => {
     if (isLoading) {
-      return Array.from({ length: 2 }, (_, index) => <LoadingCard key={index} view={viewOption} />);
+      return Array.from({ length: 2 }, (_, index) => <LoadingPreviewCard key={index} view={viewOption} />);
     }
 
     return blogData.map((item, index) => (
