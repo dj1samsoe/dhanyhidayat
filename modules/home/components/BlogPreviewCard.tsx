@@ -51,8 +51,7 @@ const BlogCard = ({
         className={clsxm(
           'group relative flex items-center sm:flex-row cursor-pointer lg:hover:scale-[102%] w-full',
           viewOption === 'grid' ? '!flex-col w-full' : '!flex-row sm:p-5 sm:px-6',
-          isCarousel && 'min-w-[350px]',
-          !isExcerpt && 'sm:h-[200px]'
+          isCarousel && 'min-w-[350px]'
         )}
       >
         <div className="w-fit relative">
@@ -64,7 +63,7 @@ const BlogCard = ({
             className={clsxm('rounded-lg object-contain')}
           />
           {viewOption === 'grid' && (
-            <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover:opacity-80 rounded-t-xl text-sm font-medium">
+            <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover:opacity-80 rounded-xl text-sm font-medium">
               <span>Read Article</span>
               <ReadIcon size={20} />
             </div>
