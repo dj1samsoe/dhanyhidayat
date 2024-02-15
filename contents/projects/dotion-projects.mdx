@@ -1,0 +1,66 @@
+This is a fullstack Notion clone built with Next.js 14.1.0, Convex(Real-time database), Tailwind CSS, Edge Store for Image Storage, and Shadcn UI
+
+---
+
+## Key Features 💎
+
+- Real-time database 🔗
+- Notion-style editor 📝
+- Light and Dark mode 🌓
+- Infinite children documents 🌲
+- Trash can & soft delete 🗑️
+- Authentication 🔐
+- File upload
+- File deletion
+- File replacement
+- Icons for each document (changes in real-time) 🌠
+- Expandable sidebar ➡️🔀⬅️
+- Full mobile responsiveness 📱
+- Publish your note to the web 🌐
+- Fully collapsable sidebar ↕️
+- Landing page 🛬
+- Cover image of each document 🖼️
+- Recover deleted files 🔄📄
+
+---
+
+## Get Started 🚀
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/dj1samsoe/notion-clone.git
+```
+
+### 2. Install Packages
+
+```bash
+npm install
+```
+
+### 3. Setup .env file
+
+```bash
+# Deployment used by `npx convex dev`
+CONVEX_DEPLOYMENT='YOUR_DEPLOYMENT'
+
+NEXT_PUBLIC_CONVEX_URL='YOUR_CONVEX_URL'
+
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY='YOUR_CLERK_PUBLISHABLE_KEY'
+CLERK_SECRET_KEY='YOUR_CLERK_SECRET_KEY'
+
+EDGE_STORE_ACCESS_KEY='YOUR_EDGE_STORE_ACCESS_KEY'
+EDGE_STORE_SECRET_KEY='YOUR_EDGE_STORE_SECRET_KEY'
+```
+
+### 4. Run Convex
+
+```bash
+npx convex dev
+```
+
+### 5. Run Development Server
+
+```bash
+npm run dev
+```
