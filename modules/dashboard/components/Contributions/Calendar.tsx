@@ -60,7 +60,7 @@ export default function Calendar({ data }: CalendarProps) {
   return (
     <>
       <div className="relative flex flex-col">
-        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400  md:justify-start">
+        <ul className="flex justify-end gap-[3px] overflow-hidden text-xs dark:text-neutral-400 md:justify-start">
           {months.map(month => (
             <li
               key={month.firstDay}
@@ -93,7 +93,7 @@ export default function Calendar({ data }: CalendarProps) {
                         transition: { delay: getRandomDelayAnimate }
                       }
                     }}
-                    className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-200 dark:bg-neutral-800"
+                    className="my-[2px] block h-[12px] w-[12px] rounded-sm bg-neutral-100 dark:bg-neutral-800"
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
@@ -114,7 +114,7 @@ export default function Calendar({ data }: CalendarProps) {
         <div className="flex items-center gap-2 text-sm">
           <span className="dark:text-neutral-400">Less</span>
           <ul className="flex gap-1">
-            <motion.li className="h-[10px] w-[10px] rounded-sm bg-neutral-200 dark:bg-neutral-800" />
+            <motion.li className="h-[10px] w-[10px] rounded-sm bg-neutral-100 dark:bg-neutral-800" />
             {contributionColors.map((item, index) => (
               <motion.li
                 key={item}

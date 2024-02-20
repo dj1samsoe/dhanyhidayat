@@ -21,7 +21,7 @@ const Progress = ({ data, className }: ProgressProps) => {
   return (
     <div className="flex items-center justify-between gap-3 px-5">
       <div className="w-20 text-sm">{name}</div>
-      <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-200 dark:bg-[#4949492e]">
+      <div className="relative flex h-3 flex-1 justify-center rounded-full bg-neutral-100 dark:bg-[#4949492e]">
         <motion.span
           initial="initial"
           animate="animate"
