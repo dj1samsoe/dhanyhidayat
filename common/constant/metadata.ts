@@ -14,5 +14,5 @@ export const METADATA = {
     locale: 'id-ID'
   },
   exTitle: '| Dhany Hidayat',
-  profile: 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1693769407/djisamsoe/tenvc6lnt4zuazowsbu7.jpg'
+  profile: 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1693769407/djisamsoe/hkkjiq2psarhw4u8i0pg.webp'
 };
