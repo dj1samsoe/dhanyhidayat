@@ -15,7 +15,7 @@ const LearnCard = ({ title, slug, description, image, is_new, level }: ContentPr
 
   return (
     <Link href={`/learn/${slug}`}>
-      <Card className="group relative border border-neutral-200 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e]  lg:hover:scale-[102%] cursor-pointer">
+      <Card className="group relative border border-neutral-200 dark:border-neutral-900 bg-neutral-100 dark:bg-[#4949492e]  lg:hover:scale-[102%] cursor-pointer">
         {is_new && (
           <div className="flex items-center gap-1 absolute top-0 right-0 bg-yellow-300 text-emerald-950 text-[13px] font-medium py-1 px-2 rounded-bl-xl rounded-tr-xl z-[2]">
             <NewIcon size={15} />
