@@ -49,7 +49,7 @@ const BlogCard = ({
     <Link href={`/blog/${newSlug}?id=${id}`}>
       <Card
         className={clsxm(
-          'group relative flex items-center sm:flex-row cursor-pointer lg:hover:scale-[102%] w-full',
+          'group relative flex items-center sm:flex-row cursor-pointer w-full',
           viewOption === 'grid' ? '!flex-col w-full' : '!flex-row sm:p-5 sm:px-6',
           isCarousel && 'min-w-[350px]'
         )}
