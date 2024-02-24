@@ -21,7 +21,7 @@ export default function Layouts({ children }: LayoutsProps) {
   const searchParams = useSearchParams();
   const readMode = searchParams.get('read-mode');
 
-  const hideSidebar = pathName === '/me' || readMode === 'true';
+  const hideSidebar = readMode === 'true';
 
   const isShowChatButton = pathName !== '/chat';
   const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false });
