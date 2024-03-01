@@ -70,7 +70,7 @@
     "@types/react-syntax-highlighter": "^15.5.7",
     "@types/uuid": "^9.0.8",
     "@vitejs/plugin-react": "^4.2.1",
-    "jsdom": "^23.2.0",
+    "jsdom": "^24.0.0",
     "prettier": "^3.0.3",
     "prisma": "^5.9.0",
     "ts-node": "^10.9.1",
