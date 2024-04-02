@@ -1,16 +1,17 @@
 'use client';
 
-import { PrismaClient, Projects } from '@prisma/client';
+import { Projects } from '@prisma/client';
 import React, { useState } from 'react';
 
 import Button from '@/common/components/elements/Button';
 import DeleteModals from '@/common/components/elements/DeleteModals';
-
-const prisma = new PrismaClient();
+import EditModal from '@/common/components/elements/EditModals';
 
 const ProjectsTable = () => {
   const [projects, setProjects] = useState<Projects[]>([]);
   const [deleteConfirmationId, setDeleteConfirmationId] = useState<number | null>(null);
+  const [editModalOpen, setEditModalOpen] = useState<boolean>(false); // State for Edit Modal
+  const [editProjectId, setEditProjectId] = useState<number | null>(null); // State for the project being edited
 
   const fetchProjects = async () => {
     try {
@@ -33,6 +34,11 @@ const ProjectsTable = () => {
   React.useEffect(() => {
     fetchProjects();
   }, []);
+
+  const handleEdit = (projectId: number) => {
+    setEditProjectId(projectId);
+    setEditModalOpen(true);
+  };
 
   const handleDelete = async (projectId: number) => {
     try {
@@ -77,6 +83,12 @@ const ProjectsTable = () => {
               <td className="p-2">{project.is_featured ? 'True' : 'False'}</td>
               <td className="p-2 flex justify-center">
                 <Button
+                  onClick={() => handleEdit(project.id)} // Call handleEdit function
+                  className="text-sky-500 !bg-transparent hover:underline"
+                >
+                  Edit
+                </Button>
+                <Button
                   onClick={() => setDeleteConfirmationId(project.id)}
                   className="text-red-500 !bg-transparent hover:underline"
                 >
@@ -96,6 +108,7 @@ const ProjectsTable = () => {
           }
         }}
       />
+      <EditModal isOpen={editModalOpen} onCancel={() => setEditModalOpen(false)} projectId={editProjectId || 0} />
     </div>
   );
 };
