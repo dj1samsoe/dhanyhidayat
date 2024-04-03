@@ -38,12 +38,12 @@ const Skills = () => {
 
   return (
     <div className="space-y-8">
-      <div className="space-y-2">
+      {/* <div className="space-y-2">
         <SectionHeading title="Skills" icon={<SkillsIcon size={22} className="mr-1" />} />
         <SectionSubHeading>
           <p className="dark:text-neutral-400">My professional hard skills</p>
         </SectionSubHeading>
-      </div>
+      </div> */}
 
       <div className="flex w-full">
         <div className="relative flex flex-col gap-y-4 justify-start py-2 w-full overflow-hidden">
