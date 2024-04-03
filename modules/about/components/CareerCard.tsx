@@ -35,7 +35,7 @@ const CareerCard = ({
   const durationText = `${durationYears > 0 ? `${durationYears} Year${durationYears > 1 ? 's' : ''}, ` : ''}${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
 
   return (
-    <Card className="flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900">
+    <Card className="flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900 bg-neutral-100 dark:bg-[#4949492e]">
       <div className="mt-1.5 w-fit">
         {logo ? (
           <Image

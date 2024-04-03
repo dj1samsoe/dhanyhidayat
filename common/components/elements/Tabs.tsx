@@ -32,7 +32,7 @@ export const Tabs = ({ tabs }: TabsProps) => {
             className={`flex-1 px-4 py-2 text-center font-medium ${
               activeTab === index
                 ? 'bg-neutral-500 text-neutral-100 dark:bg-neutral-400 dark:text-neutral-900'
-                : 'bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-200'
+                : 'bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-400 hover:dark:text-neutral-200'
             } ${index === 0 ? 'md:rounded-tl' : index === tabs.length - 1 ? 'md:rounded-tr' : ''}`}
             onClick={() => handleTabClick(index)}
           >
