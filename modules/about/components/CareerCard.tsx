@@ -1,6 +1,6 @@
 'use client';
 
-import { differenceInMonths, differenceInYears, format } from 'date-fns';
+import { differenceInMonths, differenceInWeeks, differenceInYears, format } from 'date-fns';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { BsBuildings as CompanyIcon } from 'react-icons/bs';
@@ -31,8 +31,17 @@ const CareerCard = ({
 
   const durationYears = differenceInYears(new Date(end_date || Date.now()), new Date(start_date));
   const durationMonths = (differenceInMonths(new Date(end_date || Date.now()), new Date(start_date)) % 12) + 1;
+  const durationWeeks = differenceInWeeks(new Date(end_date || Date.now()), new Date(start_date));
 
-  const durationText = `${durationYears > 0 ? `${durationYears} Year${durationYears > 1 ? 's' : ''}, ` : ''}${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
+  let durationText = '';
+
+  if (durationWeeks >= 1 && durationWeeks <= 4) {
+    durationText = `${durationWeeks} Week${durationWeeks > 1 ? 's' : ''}`;
+  } else if (durationMonths >= 1) {
+    durationText = `${durationMonths} Month${durationMonths > 1 ? 's' : ''}`;
+  } else {
+    durationText = `${durationYears} Year${durationYears > 1 ? 's' : ''}`;
+  }
 
   return (
     <Card className="flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900 bg-neutral-100 dark:bg-[#4949492e]">
