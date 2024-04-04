@@ -17,7 +17,7 @@ export default function SignInGoogleButton() {
     <button
       id="google-sign-in"
       onClick={handleGoogleSignIn}
-      className="flex space-x-2 py-2 px-8 rounded-lg items-center justify-center shadow-xl dark:shadow-none border dark:border-neutral-700 transition duration-300 bg-white hover:bg-neutral-200 w-max mt-2 mb-2"
+      className="flex space-x-2 py-2 px-8 rounded-lg items-center justify-center shadow-xl dark:shadow-none border dark:border-neutral-700 transition duration-300 bg-neutral-200 hover:bg-neutral-300 w-max mt-2 mb-2"
     >
       <GoogleIcon size={18} />
       <span className="text-neutral-900">Sign in with Google</span>

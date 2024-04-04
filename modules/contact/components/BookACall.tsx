@@ -10,7 +10,7 @@ const BookACall = () => {
         href="https://cal.com/dhanyhidayat"
         target="_blank"
         data-aos-duration="1000"
-        className="flex flex-col space-y-5 bg-gradient-to-tr bg-white dark:from-teal-950 dark:to-teal-800 dark:text-white border dark:border-teal-500 rounded-2xl py-5 px-6 cursor-pointer hover:scale-[101%] hover:shadow-sm transition-all duration-300 "
+        className="flex flex-col space-y-5 bg-gradient-to-tr bg-neutral-200 dark:from-teal-950 dark:to-teal-800 dark:text-white border dark:border-teal-500 rounded-2xl py-5 px-6 cursor-pointer hover:scale-[101%] hover:shadow-sm transition-all duration-300 "
       >
         <div className="flex gap-5 items-start justify-between">
           <div className="space-y-1">

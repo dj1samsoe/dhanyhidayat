@@ -44,7 +44,7 @@ const CareerCard = ({
   }
 
   return (
-    <Card className="flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900 bg-neutral-100 dark:bg-[#4949492e]">
+    <Card className="flex gap-5 border border-neutral-300 px-6 py-4 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e]">
       <div className="mt-1.5 w-fit">
         {logo ? (
           <Image

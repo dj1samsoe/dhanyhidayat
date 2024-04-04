@@ -1,45 +1,45 @@
-import { motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { LuSend as SendIcon } from 'react-icons/lu'
-import { MdOutlineClose as CloseIcon } from 'react-icons/md'
+import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { LuSend as SendIcon } from 'react-icons/lu';
+import { MdOutlineClose as CloseIcon } from 'react-icons/md';
 
-import InputField from '@/common/components/elements/InputField'
-import clsxm from '@/common/libs/clsxm'
-import { IReply } from '@/common/types/chat'
+import InputField from '@/common/components/elements/InputField';
+import clsxm from '@/common/libs/clsxm';
+import { IReply } from '@/common/types/chat';
 
 interface IChatForm {
-  message: string
+  message: string;
 }
 
 interface IChatInputProps {
-  sendMessage: (message: string) => void
-  reply: IReply
-  cancleReply: () => void
+  sendMessage: (message: string) => void;
+  reply: IReply;
+  cancleReply: () => void;
 }
 
 export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInputProps) {
-  const [disabled, setDisabled] = useState(true)
+  const [disabled, setDisabled] = useState(true);
   const {
     register,
     handleSubmit,
     reset,
     watch,
     formState: { errors }
-  } = useForm<IChatForm>()
+  } = useForm<IChatForm>();
 
   async function handleFormSubmit(payload: IChatForm) {
-    sendMessage(payload.message)
-    reset()
-    cancleReply()
+    sendMessage(payload.message);
+    reset();
+    cancleReply();
   }
 
   useEffect(() => {
     const subscription = watch(value => {
-      setDisabled(!value.message)
-    })
-    return () => subscription.unsubscribe()
-  }, [watch])
+      setDisabled(!value.message);
+    });
+    return () => subscription.unsubscribe();
+  }, [watch]);
 
   return (
     <form onSubmit={handleSubmit(handleFormSubmit)} className="flex items-end space-x-2">
@@ -54,7 +54,7 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
             <button
               onClick={cancleReply}
               aria-label="Close Reply"
-              className="rounded-full bg-neutral-50 dark:bg-neutral-600"
+              className="rounded-full bg-neutral-200 dark:bg-neutral-600"
             >
               <CloseIcon size={14} />
             </button>
@@ -77,5 +77,5 @@ export default function ChatInput({ reply, sendMessage, cancleReply }: IChatInpu
         <SendIcon />
       </button>
     </form>
-  )
+  );
 }

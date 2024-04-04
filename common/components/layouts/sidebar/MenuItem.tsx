@@ -30,7 +30,7 @@ export default function MenuItem({
 
   const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-200 rounded-lg ${
     pathname === url.pathname
-      ? 'bg-neutral-100 dark:bg-neutral-800 text-neutral-900 dark:!text-neutral-200'
+      ? 'bg-neutral-200 dark:bg-neutral-800 !text-green-500'
       : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
   }`;
 

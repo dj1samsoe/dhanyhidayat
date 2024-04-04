@@ -8,7 +8,7 @@
 }
 
 body {
-  background: radial-gradient(ellipse 60% 50% at top, rgba(45, 212, 190, 0.035) 0%, rgba(36, 0, 0, 0.151));
+  background: radial-gradient(ellipse 60% 50% at 50% -30%, rgb(45 212 191 / 15%) 0%, rgb(8 0 0 / 0%));
 }
 
 .dark {

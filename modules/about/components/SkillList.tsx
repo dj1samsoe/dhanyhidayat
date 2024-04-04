@@ -10,7 +10,7 @@ import SectionSubHeading from '@/common/components/elements/SectionSubHeading';
 import { SKILLS } from '@/common/constant/skills';
 
 const Tag = ({ icon, title }: { icon: ReactNode; title: string }) => (
-  <div className="flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-100 dark:bg-[#4949492e]  dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700">
+  <div className="flex items-center gap-2 mr-3 rounded-full py-2 px-5 w-max bg-neutral-200 dark:bg-[#4949492e]  dark:text-neutral-50 shadow-sm border border-neutral-300 dark:border-neutral-700">
     {icon}
     <span>{title}</span>
   </div>

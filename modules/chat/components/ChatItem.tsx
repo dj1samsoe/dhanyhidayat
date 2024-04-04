@@ -52,7 +52,7 @@ export default function ChatItem({
         </div>
 
         <div className="flex space-x-2 items-end w-full">
-          <div className="font-sans bg-neutral-100 shadow-xl dark:shadow-none dark:bg-neutral-800 dark:hover:bg-neutral-700 py-2 px-3 rounded-xl rounded-tl-none">
+          <div className="font-sans bg-neutral-200 shadow-xl dark:shadow-none dark:bg-neutral-800 dark:hover:bg-neutral-700 py-2 px-3 rounded-xl rounded-tl-none">
             <p className="text-neutral-900 dark:text-neutral-200 text-md font-normal">
               {is_reply && (
                 <div className="flex flex-col space-y-2">

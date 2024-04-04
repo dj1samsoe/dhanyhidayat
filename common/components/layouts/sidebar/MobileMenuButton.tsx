@@ -18,7 +18,7 @@ const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) 
       {menuSpanData.map(item => (
         <StyledMenuSpan
           key={item.index}
-          className={clsx('bg-neutral-950 dark:bg-neutral-100 ', expandMenu && 'active')}
+          className={clsx('bg-neutral-950 dark:bg-neutral-200 ', expandMenu && 'active')}
         />
       ))}
     </StyledMenu>

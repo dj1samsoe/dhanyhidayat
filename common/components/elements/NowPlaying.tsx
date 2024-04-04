@@ -18,7 +18,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
   if (data)
     return (
       <Card
-        className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-neutral-100 p-3 dark:bg-[#4949492e]"
+        className="flex items-center justify-start min-w-[250px] lg:w-fit max-w-full rounded-xl bg-neutral-200 p-3 dark:bg-[#4949492e]"
         data-testid="now-playing"
       >
         <Link href={data.href} target="_blank" rel="noopener noreferrer">

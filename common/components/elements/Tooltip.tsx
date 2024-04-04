@@ -31,7 +31,7 @@ const Tooltip = ({ title, children }: TooltipProps) => {
       </div>
       {isTooltipVisible && (
         <motion.div
-          className="hidden lg:block bottom-full mb-2 bg-neutral-500 dark:bg-neutral-100 dark:text-neutral-700 text-neutral-100 text-xs font-medium rounded px-2 py-1 absolute w-max max-w-xs"
+          className="hidden lg:block bottom-full mb-2 bg-neutral-500 dark:bg-neutral-200 dark:text-neutral-700 text-neutral-100 text-xs font-medium rounded px-2 py-1 absolute w-max max-w-xs"
           variants={tooltipVariants}
           initial="hidden"
           animate="visible"
