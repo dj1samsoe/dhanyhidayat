@@ -15,7 +15,7 @@ import { fetcher } from '@/services/fetcher';
 import BlogPreviewCard from './BlogPreviewCard';
 
 const BlogCarousel = () => {
-  const { data, isLoading } = useSWR(`/api/blog?page=1&per_page=4`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?limit=4`, fetcher);
   const { viewOption } = useBlogViewStore();
 
   const blogData: BlogItem[] = useMemo(() => {

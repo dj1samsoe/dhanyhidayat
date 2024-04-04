@@ -31,10 +31,9 @@ const Blog = ({ perPage = 6, showHeader = true, showPagination = true }: BlogLis
   const { viewOption, setViewOption } = useBlogViewStore();
 
   const [page, setPage] = useState<number>(1);
-  // eslint-disable-next-line unused-imports/no-unused-vars
   const [pageSize, setPageSize] = useState<number>(perPage);
 
-  const { data, isLoading } = useSWR(`/api/blog?page=${page}&per_page=${pageSize}`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?page=${page}&limit=${pageSize}`, fetcher);
 
   const blogData: BlogItem[] = useMemo(() => {
     if (data?.status && data?.data && Array.isArray(data?.data)) {
