@@ -61,11 +61,7 @@ export default function MenuItem({
       <div {...elementProps}>
         {!hideIcon && (
           <div
-            className={clsx(
-              isHovered && '-rotate-12',
-              'transition-all duration-300 dark:text-green-500',
-              isActiveRoute && '-rotate-12'
-            )}
+            className={clsx(isHovered && '-rotate-12', 'transition-all duration-300', isActiveRoute && '-rotate-12')}
           >
             {icon}
           </div>
