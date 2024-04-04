@@ -25,7 +25,7 @@ type BlogList = {
   perPage?: number;
 };
 
-const Blog = ({ perPage = 6, showHeader = true, showPagination = true }: BlogList) => {
+const Blog = ({ perPage = 4, showHeader = true, showPagination = true }: BlogList) => {
   const isMobile = useIsMobile();
 
   const { viewOption, setViewOption } = useBlogViewStore();
