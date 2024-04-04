@@ -25,6 +25,7 @@ const Resume = () => {
         height={'800px'}
         frameBorder="0"
         scrolling="no"
+        loading="lazy"
       >
         This browser does not support embedding PDFs. Please use a compatible browser.
       </iframe>
