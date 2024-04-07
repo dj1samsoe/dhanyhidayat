@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 
-// import GoogleAnalytics from '@bradgarropy/next-google-analytics';
+import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import NextTopLoader from 'nextjs-toploader';
@@ -57,12 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* <GoogleAnalytics measurementId={process.env.GTM_ID || ''} /> */}
         <SpeedInsights />
-        <Script
-          async
-          defer
-          src="https://analytics.us.umami.is/script.js"
-          data-website-id="335ddf5f-0048-464a-b07e-dc3b578194d7"
-        />
       </body>
     </html>
   );
