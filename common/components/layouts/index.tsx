@@ -10,6 +10,7 @@ import React, { ReactNode, useEffect } from 'react';
 import { jakartaSans, soraSans } from '@/common/styles/fonts';
 
 import ChatButton from '../elements/ChatButton';
+import Spotify from '../elements/Spotify';
 import Sidebar from './sidebar';
 
 interface LayoutsProps {
@@ -57,6 +58,7 @@ export default function Layouts({ children }: LayoutsProps) {
       </div>
       <Notif />
       {isShowChatButton && <ChatButton />}
+      <Spotify />
     </>
   );
 }
