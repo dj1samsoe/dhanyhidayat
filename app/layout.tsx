@@ -38,7 +38,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning={true}>
       <Head>
         <script
-          async
           defer
           src="https://analytics.us.umami.is/script.js"
           data-website-id="335ddf5f-0048-464a-b07e-dc3b578194d7"
