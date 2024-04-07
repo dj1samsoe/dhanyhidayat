@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Head from 'next/head';
+import Script from 'next/script';
 
 // import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import { Analytics } from '@vercel/analytics/react';
@@ -36,13 +36,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <Head>
-        <script
-          defer
-          src="https://analytics.us.umami.is/script.js"
-          data-website-id="335ddf5f-0048-464a-b07e-dc3b578194d7"
-        ></script>
-      </Head>
       <body className={soraSans.className}>
         <NextTopLoader
           color="#40C463"
@@ -65,6 +58,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* <GoogleAnalytics measurementId={process.env.GTM_ID || ''} /> */}
         <SpeedInsights />
       </body>
+      <Script
+        defer
+        src="https://analytics.us.umami.is/script.js"
+        data-website-id="335ddf5f-0048-464a-b07e-dc3b578194d7"
+      />
     </html>
   );
 }
