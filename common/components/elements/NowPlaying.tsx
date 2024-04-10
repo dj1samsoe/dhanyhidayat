@@ -47,13 +47,19 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                 //   animate={{ scale: [1, 1.2, 1] }}
                 //   transition={{ duration: 0.5, repeat: Infinity }}
                 // />
-                <FaSpotify className="h-5 w-5 text-neutral-800" />
+                <div className="flex gap-2 items-center">
+                  <h2 className="truncate">Now Playing on</h2>
+                  <FaSpotify className="h-5 w-5 text-neutral-800" />
+                </div>
               ) : (
                 // <span className="text-sm text-neutral-600 dark:text-neutral-400">Now Playing</span>
                 // </div>
                 // <div className="flex items-center gap-2">
                 // <FaRegStopCircle className="h-3 w-3 text-red-600" />
-                <FaSpotify className="h-5 w-5 text-green-500" />
+                <div className="flex gap-2 items-center">
+                  <h2>Last Played on</h2>
+                  <FaSpotify className="h-5 w-5 text-green-500" />
+                </div>
                 //  <span className="text-sm text-neutral-600 dark:text-neutral-400">Last Played</span>
                 // </div>
               )}
