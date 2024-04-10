@@ -57,7 +57,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                 // <div className="flex items-center gap-2">
                 // <FaRegStopCircle className="h-3 w-3 text-red-600" />
                 <div className="flex gap-2 items-center">
-                  <h2>Last Played on</h2>
+                  <h2 className="truncate">Last Played on</h2>
                   <FaSpotify className="h-5 w-5 text-green-500" />
                 </div>
                 //  <span className="text-sm text-neutral-600 dark:text-neutral-400">Last Played</span>
