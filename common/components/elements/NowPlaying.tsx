@@ -79,7 +79,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                   >
                     {artist.name}
                   </a>
-                  {i === data.artists.length - 1 ? ' ' : 'ft. '}
+                  {i === data.artists.length - 1 ? ' ' : ' ft. '}
                 </span>
               ))}
             </div>
