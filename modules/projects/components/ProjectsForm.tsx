@@ -54,37 +54,48 @@ const ProjectForm = () => {
           {...register('title')}
           placeholder="Title"
           required
-          className="w-full py-2 px-4 rounded-md"
+          className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
         />
-        <input type="text" {...register('slug')} placeholder="Slug" required className="w-full py-2 px-4 rounded-md" />
+        <input
+          type="text"
+          {...register('slug')}
+          placeholder="Slug"
+          required
+          className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
+        />
       </div>
       <textarea
         {...register('description')}
         placeholder="Description"
         required
         rows={5}
-        className="w-full py-2 px-4 rounded-md"
+        className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
       />
       <input
         type="text"
         {...register('image')}
         placeholder="Image URL"
         required
-        className="w-full py-2 px-4 rounded-md"
+        className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
       />
-      <input type="text" {...register('link_demo')} placeholder="Demo Link" className="w-full py-2 px-4 rounded-md" />
+      <input
+        type="text"
+        {...register('link_demo')}
+        placeholder="Demo Link"
+        className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
+      />
       <input
         type="text"
         {...register('link_github')}
         placeholder="GitHub Link"
-        className="w-full py-2 px-4 rounded-md"
+        className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
       />
       <input
         type="text"
         {...register('stacks')}
         placeholder="Stacks"
         required
-        className="w-full py-2 px-4 rounded-md"
+        className="w-full py-2 px-4 rounded-md border dark:border-neutral-600"
       />
       <div className="flex gap-2 items-center">
         <input type="checkbox" {...register('is_show')} />

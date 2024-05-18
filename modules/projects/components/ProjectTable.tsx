@@ -76,7 +76,7 @@ const ProjectsTable = () => {
         <tbody>
           {projects.map((project: Projects) => (
             <tr key={project.id} className="border-t dark:border-neutral-700 border-neutral-200 text-center">
-              <td className="p-2">{project.id - 5}</td>
+              <td className="p-2">{project.id}</td>
               <td className="p-2 truncate">{project.title}</td>
               <td className="p-2 truncate">{project.slug}</td>
               <td className="p-2">{project.is_show ? 'True' : 'False'}</td>
