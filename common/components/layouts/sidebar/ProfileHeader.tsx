@@ -39,7 +39,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         </Tooltip>
       </div>
       <Link
-        href="https://instagram.com/dhanhid_"
+        href="https://instagram.com/dhanyhidayat_"
         target="_blank"
         className="hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
       >

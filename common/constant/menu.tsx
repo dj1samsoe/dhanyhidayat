@@ -127,7 +127,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   {
     title: 'Instagram',
-    href: 'https://instagram.com/dhanhid_',
+    href: 'https://instagram.com/dhanyhidayat_',
     icon: <InstagramIcon size={iconSize} />,
     isShow: true,
     isExternal: true,
