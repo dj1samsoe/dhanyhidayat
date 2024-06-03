@@ -1,0 +1,56 @@
+This is Fullstack CRUD To-do List Project. Built from scratch using Next JS 14, TypeScript, Tailwind CSS, Shadcn-UI, Prisma, PostgreSQL, and NextAuth.
+
+## Installation
+
+1. Clone this repository to your local machine using:
+
+   ```bash
+   git clone https://github.com/dj1samsoe/do-it.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd do-it
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+## Usage
+
+1. Configure your settings in the .env file.
+2. Get the Google Secret key in Google Cloud Console until get this :
+   ```bash
+   GOOGLE_CLIENT_ID=
+   GOOGLE_CLIENT_SECRET=
+   ```
+   then copy the key, and paste into your .env file
+3. Add this to your .env file :
+   ```bash
+   NEXTAUTH_URL=http://localhost:3000/api/auth
+   NEXTAUTH_SECRET=your_secret_code
+   ```
+4. Connect your database using Postgresql (in my case I'm using [Aiven](https://aiven.io/))
+5. Paste your database url like this :
+   ```bash
+   DATABASE_URL="postgres://username:password@host:port/dbname"
+   ```
+6. Run the Prisma migration to set up your database schema:
+   ```bash
+    npx prisma migrate dev
+   ```
+7. Start the development server:
+   ```bash
+   npm run dev
+   ```
+8. Access the application in your browser at http://localhost:3000.
+
+## Reference
+
+1. Design UI : [Behance](https://www.behance.net/gallery/157754015/To-Do-List-UI-Design/modules/890065645)
+2. Documentation :
+   - [Next.JS](https://nextjs.org/)
+   - [TailwindCSS](https://tailwindcss.com/docs/installation)
+   - [Shadcn-UI](https://ui.shadcn.com/)
+   - [NextAuth](https://next-auth.js.org/)
