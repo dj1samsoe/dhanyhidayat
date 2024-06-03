@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { BiLogoPostgresql } from 'react-icons/bi';
 import { BsFillBootstrapFill } from 'react-icons/bs';
 import {
@@ -80,5 +82,6 @@ export const STACKS: stacksProps = {
   MySQL: <SiMysql size={iconSize} />,
   'TMDB API': <SiThemoviedatabase size={iconSize} />,
   Stripe: <SiStripe size={iconSize} />,
-  RadixUI: <SiRadixui size={iconSize} className="text-sky-500" />
+  RadixUI: <SiRadixui size={iconSize} className="text-sky-500" />,
+  NextAuth: <Image src="/next-auth.svg" width={iconSize} height={iconSize} alt="NextAuth" />
 };
