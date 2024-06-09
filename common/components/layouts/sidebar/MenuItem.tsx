@@ -30,7 +30,7 @@ export default function MenuItem({
 
   const activeClasses = `flex items-center gap-2 py-2 px-4 text-neutral-700 dark:text-neutral-400 hover:text-neutral-900 hover:dark:text-neutral-200 rounded-lg ${
     pathname === url.pathname
-      ? 'bg-neutral-200 dark:bg-neutral-800 !text-green-500'
+      ? 'bg-neutral-200 dark:bg-neutral-800'
       : 'hover:dark:lg:bg-neutral-800 hover:lg:bg-neutral-200 hover:lg:rounded-lg lg:hover:scale-105 lg:transition-all lg:duration-300'
   }`;
 
@@ -68,9 +68,9 @@ export default function MenuItem({
         )}
         <div className="flex-grow ml-0.5">{title}</div>
         {children && <>{children}</>}
-        {isActiveRoute && <ExternalLinkIcon size={22} className="text-green-500 animate-pulse" />}
+        {isActiveRoute && <ExternalLinkIcon size={22} className="animate-pulse" />}
         {isExternalUrl && isHovered && (
-          <ExternalLinkIcon size={22} className="text-green-500 -rotate-45 lg:transition-all lg:duration-300" />
+          <ExternalLinkIcon size={22} className="-rotate-45 lg:transition-all lg:duration-300" />
         )}
       </div>
     );

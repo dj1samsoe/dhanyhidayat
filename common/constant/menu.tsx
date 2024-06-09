@@ -23,20 +23,20 @@ const iconSize = 20;
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {
-    title: 'Dashboard',
-    href: '/dashboard',
-    icon: <DashboardIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Dashboard'
-  },
-  {
     title: 'Home',
     href: '/',
     icon: <HomeIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Home'
+  },
+  {
+    title: 'Dashboard',
+    href: '/dashboard',
+    icon: <DashboardIcon size={iconSize} />,
+    isShow: true,
+    isExternal: false,
+    eventName: 'Pages: Dashboard'
   },
   {
     title: 'Projects',
