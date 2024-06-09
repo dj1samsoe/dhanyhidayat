@@ -20,8 +20,6 @@ export default function Home() {
       <ContactPreview />
       <Breakline className="my-8" />
       <ServicesList />
-      {/* <Breakline className="my-8" />
-      <Spotify /> */}
     </>
   );
 }

@@ -1,19 +1,8 @@
-import Link from 'next/link';
-
-import { TbCoffee } from 'react-icons/tb';
-
-import { SAWERIA_URL } from '@/common/constant';
-
 export default function Introduction() {
   return (
     <section className="bg-cover bg-no-repeat space-y-2">
-      <div className="flex justify-between items-center">
-        <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-sora">
-          <h1>Hi, I&apos;m Dhany</h1>
-        </div>
-        <Link href={SAWERIA_URL} target="_blank" aria-label="logo-coffee">
-          <TbCoffee size={25} />
-        </Link>
+      <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-sora">
+        <h1>Hi, I&apos;m Dhany Hidayat</h1>
       </div>
 
       <div className="space-y-4">
