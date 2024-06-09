@@ -1,48 +1,92 @@
 import Link from 'next/link';
 
-import { AiFillFire as NewIcon } from 'react-icons/ai';
-import { HiOutlineArrowSmRight as ViewIcon } from 'react-icons/hi';
-import useSWR from 'swr';
+import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { BsArrowRight as MoreIcon } from 'react-icons/bs';
+import { FaHotjar as NewIcon } from 'react-icons/fa';
 
+import Breakline from '@/common/components/elements/Breakline';
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
+import Tooltip from '@/common/components/elements/Tooltip';
+import { PLACEHOLDER_URL, PROFILE_URL } from '@/common/constant';
 import { ContentProps } from '@/common/types/learn';
 
 import { fetcher } from '@/services/fetcher';
 
-const LearnCard = ({ title, slug, description, image, is_new, level }: ContentProps) => {
-  const { data } = useSWR(`/api/learn?slug=${slug}`, fetcher);
+const LearnCard = ({ title, slug, description, is_new, level }: ContentProps) => {
+  const [isHovered, setIsHovered] = useState<boolean>(false);
+
+  const imageUrl =
+    'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1717960292/djisamsoe/projects/ejzc3vniqi1tjc9t9oh1.jpg';
+  const slideDownVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   return (
     <Link href={`/learn/${slug}`}>
-      <Card className="group relative border border-neutral-200 dark:border-neutral-900 bg-neutral-200 dark:bg-[#4949492e]  lg:hover:scale-[102%] cursor-pointer">
+      <Card
+        className="group relative flex h-[400px] w-full flex-col rounded-lg border shadow-sm dark:border-neutral-800"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         {is_new && (
           <div className="flex items-center gap-1 absolute top-0 right-0 bg-yellow-300 text-emerald-950 text-[13px] font-medium py-1 px-2 rounded-bl-xl rounded-tr-xl z-[2]">
             <NewIcon size={15} />
             <span>New</span>
           </div>
         )}
-        <div className="relative">
+        <div
+          className="relative rounded-xl duration-500"
+          style={{
+            height: '400px',
+            overflow: 'hidden'
+          }}
+        >
           <Image
-            src={image}
-            width={400}
-            height={200}
+            src={imageUrl || PLACEHOLDER_URL}
             alt={title}
-            className="rounded-t-xl h-48 object-cover object-left"
+            fill={true}
+            sizes="100vw, 100vh"
+            className="h-full w-full transform object-cover object-top transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm"
           />
-          <div className="flex gap-1 absolute top-0 left-0 w-full h-full bg-black opacity-0 transition-opacity duration-300 justify-center items-center text-white group-hover:opacity-80 rounded-t-xl text-sm font-medium">
-            <span>View Lessons</span>
-            <ViewIcon size={20} />
-          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black opacity-90 transition-opacity duration-300"></div>
         </div>
-        <div className="flex flex-col justify-between p-5 space-y-3">
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <div className="text-lg font-sora cursor-pointer text-neutral-700 dark:text-neutral-300 lg:group-hover:text-green-800 dark:group-hover:text-green-400 transition-all duration-300">
-                {title}
-              </div>
-            </div>
-            <p className="text-neutral-700 dark:text-neutral-400 text-[.9375rem] leading-relaxed">{description}</p>
+
+        <div className="absolute flex h-full flex-col justify-end space-y-2 p-5">
+          <div className="rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400 w-fit">
+            <span className="mr-1 font-semibold">#</span>
+            {level}
+          </div>
+          <h3 className="font-sora md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
+            {title}
+          </h3>
+
+          <p className="text-sm leading-relaxed text-neutral-400 line-clamp-1">{description}</p>
+
+          <Breakline className="!border-neutral-700" />
+          <div className="flex justify-between gap-4 px-0.5 text-neutral-400">
+            <Tooltip title="by dhanyhidayat">
+              <Image
+                src={PROFILE_URL}
+                alt="Dhany Hidayat"
+                width={25}
+                height={25}
+                rounded="rounded-full"
+                className="rotate-3 border border-neutral-500"
+              />
+            </Tooltip>
+            <motion.div
+              variants={slideDownVariants}
+              initial="hidden"
+              animate={isHovered ? 'visible' : 'hidden'}
+              className={clsx('flex items-center gap-1', !isHovered && 'hidden')}
+            >
+              <span className="mr-0.5 text-xs font-medium">READ MORE</span>
+              <MoreIcon size={16} />
+            </motion.div>
           </div>
         </div>
       </Card>
