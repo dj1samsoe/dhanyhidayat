@@ -29,7 +29,7 @@ export default function Summary() {
       <p>I appreciate you stopping by, and I&apos;m looking forward to learning from you.</p>
       <div className="space-y-4">
         <span>Best Regards,</span>
-        <Image src="/sign.webp" width={250} height={250} alt="Dhany Hidayat" />
+        <Image src="/signature.webp" width={250} height={250} alt="Dhany Hidayat" />
       </div>
     </div>
   );
