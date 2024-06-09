@@ -7,6 +7,7 @@ import useSWR from 'swr';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import LoadingCard from '@/common/components/elements/LoadingCard';
+import BlogCardSkeleton from '@/common/components/skeleton/BlogCardSkeleton';
 import { BlogItem } from '@/common/types/blog';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
@@ -33,7 +34,10 @@ const Blog = ({ perPage = 4, showHeader = true, showPagination = true }: BlogLis
   const [page, setPage] = useState<number>(1);
   const [pageSize, setPageSize] = useState<number>(perPage);
 
-  const { data, isLoading } = useSWR(`/api/blog?page=${page}&limit=${pageSize}`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?page=${page}&limit=${pageSize}`, fetcher, {
+    revalidateOnFocus: false,
+    refreshInterval: 0
+  });
 
   const blogData: BlogItem[] = useMemo(() => {
     if (data?.status && data?.data && Array.isArray(data?.data)) {
@@ -56,7 +60,9 @@ const Blog = ({ perPage = 4, showHeader = true, showPagination = true }: BlogLis
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  if (isLoading) return <LoadingCard view={viewOption} />;
+  if (isLoading) {
+    return Array.from({ length: 2 }, (_, index) => <BlogCardSkeleton key={index} />);
+  }
 
   if (!isLoading && blogData.length === 0) {
     return <EmptyState message="No Data" />;
