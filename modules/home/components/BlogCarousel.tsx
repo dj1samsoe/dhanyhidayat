@@ -5,17 +5,17 @@ import { useMemo, useRef } from 'react';
 import { useDraggable } from 'react-use-draggable-scroll';
 import useSWR from 'swr';
 
-import LoadingPreviewCard from '@/common/components/elements/LoadingPreviewCard';
+import BlogCardSkeleton from '@/common/components/skeleton/BlogCardSkeleton';
 import { BlogItem } from '@/common/types/blog';
+
+import BlogCard from '@/modules/blog/components/BlogCard';
 
 import { useBlogViewStore } from '@/context/useBlogViewStore';
 
 import { fetcher } from '@/services/fetcher';
 
-import BlogPreviewCard from './BlogPreviewCard';
-
 const BlogCarousel = () => {
-  const { data, isLoading } = useSWR(`/api/blog?limit=4`, fetcher);
+  const { data, isLoading } = useSWR(`/api/blog?limit=4`, fetcher, { revalidateOnFocus: false, refreshInterval: 0 });
   const { viewOption } = useBlogViewStore();
 
   const blogData: BlogItem[] = useMemo(() => {
@@ -30,7 +30,7 @@ const BlogCarousel = () => {
 
   const renderBlogCards = () => {
     if (isLoading) {
-      return Array.from({ length: 2 }, (_, index) => <LoadingPreviewCard key={index} view={viewOption} />);
+      return Array.from({ length: 3 }, (_, index) => <BlogCardSkeleton key={index} />);
     }
 
     return blogData.map((item, index) => (
@@ -40,14 +40,15 @@ const BlogCarousel = () => {
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -100 }}
         transition={{ duration: 0.5 }}
+        className="min-w-[326px] gap-x-5"
       >
-        <BlogPreviewCard view="grid" isExcerpt={false} isCarousel={true} {...item} />
+        <BlogCard {...item} />
       </motion.div>
     ));
   };
 
   return (
-    <div className="flex p-1 gap-4 overflow-x-scroll scrollbar-hide" {...events} ref={ref}>
+    <div className="flex gap-4 overflow-x-scroll p-1 scrollbar-hide" {...events} ref={ref}>
       {renderBlogCards()}
     </div>
   );
