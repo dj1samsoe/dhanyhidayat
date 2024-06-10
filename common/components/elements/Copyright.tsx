@@ -8,7 +8,7 @@ export default function Copyright() {
         ❤
       </span>
       <span>by</span>
-      <span className="hover:dark:text-neutral-400">dhanhid</span>
+      <span className="hover:dark:text-neutral-400">dhany</span>
     </div>
   );
 }
