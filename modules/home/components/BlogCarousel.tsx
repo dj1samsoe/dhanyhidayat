@@ -16,7 +16,6 @@ import { fetcher } from '@/services/fetcher';
 
 const BlogCarousel = () => {
   const { data, isLoading } = useSWR(`/api/blog?limit=4`, fetcher, { revalidateOnFocus: false, refreshInterval: 0 });
-  const { viewOption } = useBlogViewStore();
 
   const blogData: BlogItem[] = useMemo(() => {
     if (data?.status && data?.data && Array.isArray(data?.data)) {
