@@ -43,7 +43,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         target="_blank"
         className="hidden lg:flex text-sm font-sora text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
       >
-        @dhanhid_
+        @dhanyhidayat_
       </Link>
     </div>
   );
