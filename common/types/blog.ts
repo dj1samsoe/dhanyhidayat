@@ -77,3 +77,7 @@ export type CommentItemProps = {
   user: UserProps;
   children: Comment[];
 };
+
+export type BlogFeaturedProps = {
+  data: BlogItem[];
+};
