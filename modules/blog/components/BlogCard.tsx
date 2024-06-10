@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BsArrowRight as MoreIcon } from 'react-icons/bs';
 import { FaRegEye as ViewIcon } from 'react-icons/fa';
 import { HiOutlineClock as ClockIcon } from 'react-icons/hi';
@@ -12,11 +12,9 @@ import Breakline from '@/common/components/elements/Breakline';
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
-import { PLACEHOLDER_URL, PROFILE_URL } from '@/common/constant';
+import { PROFILE_URL } from '@/common/constant';
 import { formatBlogSlug, formatDate } from '@/common/helpers';
 import { BlogItem } from '@/common/types/blog';
-
-import useIsMobile from '@/hooks/useIsMobile';
 
 interface BlogCardProps extends BlogItem {
   view?: string;
@@ -27,19 +25,14 @@ interface BlogCardProps extends BlogItem {
 const BlogCard = ({
   id,
   title,
+  cover_image,
   published_at,
-  description,
   page_views_count,
   slug,
   tag_list,
-  reading_time_minutes,
-  view = 'list',
-  isExcerpt = true
+  reading_time_minutes
 }: BlogCardProps) => {
-  const [viewOption, setViewOption] = useState<string>(view);
   const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  const isMobile = useIsMobile();
 
   const newSlug = formatBlogSlug(slug);
   const slideDownVariants = {
@@ -48,10 +41,6 @@ const BlogCard = ({
   };
 
   const imageUrl = 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1717877267/djisamsoe/malbh7segwlqnpojldy1.jpg';
-
-  useEffect(() => {
-    isMobile ? setViewOption('grid') : setViewOption(view);
-  }, [isMobile, view]);
 
   return (
     <Link href={`/blog/${newSlug}?id=${id}`}>
@@ -68,42 +57,38 @@ const BlogCard = ({
           }}
         >
           <Image
-            src={imageUrl || PLACEHOLDER_URL}
+            src={cover_image || imageUrl}
             alt={title}
             fill={true}
             sizes="100vw, 100vh"
-            className="h-full w-full transform object-cover object-top transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm"
+            className="h-full w-full transform object-cover object-left-bottom transition-transform duration-300 group-hover:scale-105 group-hover:blur-sm"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black opacity-90 transition-opacity duration-300"></div>
         </div>
 
-        <div className="absolute flex h-full flex-col justify-between space-y-4 p-5">
-          <div className="flex flex-col space-y-2">
-            <div className="flex flex-wrap gap-1">
-              {tag_list?.map(tag => (
-                <div
-                  key={tag}
-                  className="rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400"
-                >
-                  <span className="mr-1 font-semibold">#</span>
-                  {tag?.charAt(0).toUpperCase() + tag?.slice(1)}
-                </div>
-              ))}
-            </div>
-            <h3 className="font-sora md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
-              {title}
-            </h3>
-          </div>
-
+        <div className="absolute flex h-full flex-col justify-end space-y-4 p-5">
           <div className="flex flex-col justify-end">
             <div className="flex flex-col space-y-3">
-              <div className="flex flex-col space-y-3">
-                <div className="flex items-center gap-1 text-neutral-400">
-                  <DateIcon size={14} />
-                  <span className="ml-0.5 text-xs">{formatDate(published_at)}</span>
+              <div className="flex flex-col space-y-2">
+                <div className="flex flex-wrap gap-1">
+                  {tag_list?.map(tag => (
+                    <div
+                      key={tag}
+                      className="rounded-full bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400"
+                    >
+                      <span className="mr-1 font-semibold">#</span>
+                      {tag?.charAt(0).toUpperCase() + tag?.slice(1)}
+                    </div>
+                  ))}
                 </div>
+                <h3 className="font-sora text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 line-clamp-3 ">
+                  {title}
+                </h3>
               </div>
-              {isExcerpt && <p className="text-sm leading-relaxed text-neutral-400 line-clamp-2">{description}</p>}
+              <div className="flex items-center gap-1 text-neutral-400">
+                <DateIcon size={14} />
+                <span className="ml-0.5 text-xs">{formatDate(published_at)}</span>
+              </div>
             </div>
 
             <Breakline className="!border-neutral-700" />
