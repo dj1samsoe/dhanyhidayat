@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 
 import Breakline from '@/common/components/elements/Breakline';
+import Chatbot from '@/common/components/elements/Chatbot';
 
 // import Spotify from '@/common/components/elements/Spotify';
 // import { IServices } from '@/common/types/services';
