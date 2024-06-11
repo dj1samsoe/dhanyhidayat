@@ -77,24 +77,7 @@ export const MENU_ITEMS: MenuItemProps[] = [
     isShow: true,
     isExternal: false,
     eventName: 'Pages: Contact'
-  },
-
-  {
-    title: 'Guestbook',
-    href: '/chat',
-    icon: <ChatIcon size={iconSize} />,
-    isShow: true,
-    isExternal: false,
-    eventName: 'Pages: Chat Room'
   }
-  // {
-  //   title: 'Roadmap',
-  //   href: '/roadmap?tribe=frontend-developer',
-  //   icon: <RoadmapIcon size={iconSize} />,
-  //   isShow: false,
-  //   isExternal: false,
-  //   eventName: 'Pages: Roadmap'
-  // }
 ];
 
 export const SOCIAL_MEDIA: MenuItemProps[] = [
