@@ -66,6 +66,7 @@ export const personalData = {
   contact: {
     email: 'dhanyh86@gmail.com',
     linkedin: 'https://www.linkedin.com/in/fauziandhany',
-    github: 'https://github.com/dj1samsoe'
+    github: 'https://github.com/dj1samsoe',
+    instagram: 'https://www.instagram.com/dhanyhidayat_'
   }
 };
