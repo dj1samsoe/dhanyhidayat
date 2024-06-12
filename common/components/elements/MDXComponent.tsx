@@ -24,7 +24,7 @@ const MDXComponent = ({ children }: MarkdownRendererProps) => {
       remarkPlugins={[remarkGfm]}
       components={{
         a: props => (
-          <a className="text-teal-600 hover:text-teal-400 hover:underline cursor-pointer" target="_blank" {...props} />
+          <a className="text-sky-700 hover:text-sky-400 hover:underline cursor-pointer" target="_blank" {...props} />
         ),
         p: props => <div {...props} />,
         h2: props => <h2 className="text-xl font-medium dark:text-neutral-300" {...props} />,
