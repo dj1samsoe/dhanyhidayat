@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -33,6 +34,7 @@ const BlogCard = ({
   reading_time_minutes
 }: BlogCardProps) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const router = useRouter();
 
   const newSlug = formatBlogSlug(slug);
   const slideDownVariants = {
@@ -42,8 +44,12 @@ const BlogCard = ({
 
   const imageUrl = 'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1717877267/djisamsoe/malbh7segwlqnpojldy1.jpg';
 
+  function handleCardClick() {
+    router.push(`/blog/${newSlug}?id=${id}&read-mode=true`);
+  }
+
   return (
-    <Link href={`/blog/${newSlug}?id=${id}`}>
+    <Link href={`/blog/${newSlug}?id=${id}&read-mode=true`}>
       <Card
         className="group relative flex h-[400px] w-full flex-col rounded-lg border shadow-sm dark:border-neutral-800"
         onMouseEnter={() => setIsHovered(true)}

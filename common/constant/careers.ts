@@ -21,10 +21,10 @@ export const CAREERS = [
     ]
   },
   {
-    position: 'Frontend Developer',
-    company: 'GasCPNS',
-    company_legal_name: 'Freelance',
-    logo: '/gascpns.webp',
+    position: 'Freelance Frontend Developer',
+    company: 'projects.co.id',
+    company_legal_name: 'projects.co.id',
+    logo: '/projects.ico',
     location: 'Indonesia 🇮🇩',
     location_type: 'Remote',
     type: 'Freelance',

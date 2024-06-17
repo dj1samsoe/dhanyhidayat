@@ -16,12 +16,6 @@ const EducationList = () => {
           {EDUCATION?.map((item, index) => <EducationCard key={index} {...item} />)}
         </div>
       </div>
-      <div className="space-y-3">
-        <SectionHeading title="Extra Education" icon={<EducationIcon size={22} className="mr-1" />} />
-        <div className="grid md:grid-cols-2 gap-4">
-          {CERTIFICATES?.map((certificate, index) => <CertificationCard key={index} {...certificate} />)}
-        </div>
-      </div>
     </section>
   );
 };

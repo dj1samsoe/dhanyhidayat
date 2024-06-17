@@ -9,7 +9,7 @@ import Profile from './Profile';
 export default function Sidebar() {
   const isMobile = useIsMobile();
   return (
-    <div className="sticky transition-all duration-300 top-0 z-10 flex flex-col lg:py-8">
+    <div className="sticky transition-all duration-300 top-0 z-10 flex flex-col lg:py-8 lg:dark:bg-neutral-900 lg:bg-white lg:px-5 lg:rounded-lg">
       <Profile />
       <nav className="hidden md:block">
         <Breakline />
