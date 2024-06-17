@@ -1,13 +1,15 @@
+import TypeAnimation from '@/common/components/elements/TypingAnimation';
+
 export default function Introduction() {
   return (
     <section className="bg-cover bg-no-repeat space-y-2">
       <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-sora">
-        <h1>Hi, I&apos;m Dhany Hidayat</h1>
+        <TypeAnimation sequence={["Hi, I'm Dhany Hidayat", "Hi, I'm Frontend Developer"]} delay={3000} />
       </div>
 
       <div className="space-y-4">
         <ul className="flex flex-col lg:flex-row gap-1 lg:gap-8 ml-5 list-disc text-neutral-700 dark:text-neutral-400">
-          <li>Frontend Developer</li>
+          <li>Remote Worker</li>
           <li>
             Based in Sidoarjo, Indonesia <span className="ml-1">🇮🇩</span>
           </li>
