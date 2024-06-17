@@ -4,18 +4,20 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
+import Marquee from 'react-fast-marquee';
 import { FaRegStopCircle, FaSpotify } from 'react-icons/fa';
 
 import clsxm from '@/common/libs/clsxm';
 import { NowPlaying } from '@/common/types/spotify';
 
-import Card from './Card';
+import useIsMobile from '@/hooks/useIsMobile';
 
 type NowPlayingProps = {
   data: NowPlaying;
 };
 
 export default function NowPlayingSection({ data }: NowPlayingProps) {
+  const isMobile = useIsMobile();
   if (data)
     return (
       <div
@@ -64,31 +66,65 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                 // </div>
               )}
             </div>
-            <a
-              href={data.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="line-clamp-1 text-sm font-bold hover:line-clamp-none hover:whitespace-nowrap hover:underline"
-            >
-              {data.name}
-            </a>
-            <div className="line-clamp-1 text-sm font-semibold hover:line-clamp-none truncate">
-              by{' '}
-              {data?.artists.map((artist, i) => (
-                <span key={`artist${i}`}>
+            {!isMobile || !data?.currentlyPlaying ? (
+              <>
+                <a
+                  href={data.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="line-clamp-1 text-xs sm:text-sm font-bold hover:line-clamp-none hover:whitespace-nowrap hover:underline"
+                >
+                  {data.name}
+                </a>
+                <div className="line-clamp-1 text-xs sm:text-sm font-semibold hover:line-clamp-none truncate">
+                  by{' '}
+                  {data?.artists.map((artist, i) => (
+                    <span key={`artist${i}`}>
+                      <a
+                        className="hover:cursor-pointer hover:underline"
+                        rel="noopener noreferrer"
+                        aria-label={artist.name}
+                        href={artist.href}
+                        target="_blank"
+                      >
+                        {artist.name}
+                      </a>
+                      {i === data.artists.length - 1 ? ' ' : ' ft. '}
+                    </span>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <Marquee pauseOnHover speed={60} gradient={false}>
+                <div className="flex gap-1 items-center">
                   <a
-                    className="hover:cursor-pointer hover:underline"
-                    rel="noopener noreferrer"
-                    aria-label={artist.name}
-                    href={artist.href}
+                    href={data.href}
                     target="_blank"
+                    rel="noopener noreferrer"
+                    className="line-clamp-1 text-xs sm:text-sm font-bold hover:line-clamp-none hover:whitespace-nowrap hover:underline"
                   >
-                    {artist.name}
+                    {data.name}
                   </a>
-                  {i === data.artists.length - 1 ? ' ' : ' ft. '}
-                </span>
-              ))}
-            </div>
+                  <div className="line-clamp-1 text-xs sm:text-sm font-semibold hover:line-clamp-none truncate">
+                    by{' '}
+                    {data?.artists.map((artist, i) => (
+                      <span key={`artist${i}`}>
+                        <a
+                          className="hover:cursor-pointer hover:underline"
+                          rel="noopener noreferrer"
+                          aria-label={artist.name}
+                          href={artist.href}
+                          target="_blank"
+                        >
+                          {artist.name}
+                        </a>
+                        {i === data.artists.length - 1 ? ' ' : ' ft. '}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Marquee>
+            )}
           </div>
         </div>
       </div>
