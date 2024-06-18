@@ -19,7 +19,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
     <div
       className={clsx(
         'flex items-center gap-4 lg:gap-0.5 flex-grow lg:flex-col w-full',
-        expandMenu && 'flex-col !items-center'
+        expandMenu && 'flex-col !items-start'
       )}
     >
       <Image
