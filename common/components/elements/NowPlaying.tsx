@@ -22,7 +22,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
     return (
       <div
         className={clsxm(
-          'flex items-center justify-center w-full py-1',
+          'flex items-center justify-center w-full py-1 font-sans',
           data?.currentlyPlaying ? 'bg-green-600 dark:bg-green-600 text-white' : 'bg-zinc-200 dark:bg-[#4949492e]'
         )}
       >
@@ -95,7 +95,7 @@ export default function NowPlayingSection({ data }: NowPlayingProps) {
                 </div>
               </>
             ) : (
-              <Marquee pauseOnHover speed={60} gradient={false}>
+              <Marquee pauseOnHover speed={30} gradient={false} className="flex gap-2 items-center">
                 <div className="flex gap-1 items-center">
                   <a
                     href={data.href}
