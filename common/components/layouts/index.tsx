@@ -51,7 +51,7 @@ export default function Layouts({ children }: LayoutsProps) {
               <Sidebar />
             </header>
           )}
-          <main className="lg:w-[900px] max-w-[900px] transition-all duration-300 lg:min-h-screen overflow-y-auto no-scrollbar lg:dark:bg-neutral-900 lg:bg-white lg:rounded-lg">
+          <main className="lg:w-[900px] max-w-[900px] transition-all duration-300 lg:min-h-screen overflow-y-auto no-scrollbar lg:dark:bg-[#4949492e] lg:bg-white lg:rounded-lg">
             {children}
           </main>
         </div>
