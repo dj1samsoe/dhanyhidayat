@@ -14,7 +14,8 @@ export const getAccessToken = async () => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-      Accept: 'application/json'
+      Accept: 'application/json',
+      caches: 'no-store'
     },
     body: querystring.stringify({
       grant_type: 'refresh_token',
