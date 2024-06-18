@@ -27,20 +27,22 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
           <Status />
         </div>
         <div className="flex">
-          <div className="rounded-s-lg mt-11 w-[50%] h-[50px] dark:bg-neutral-800 bg-neutral-200"></div>
-          <div className="rounded-lg w-[67%] h-24 dark:bg-neutral-800 bg-neutral-200"></div>
+          <div className="rounded-s-lg mt-11 w-[50%] h-[75px] dark:bg-neutral-800 bg-neutral-200"></div>
+          <div className="rounded-lg w-[67%] h-[120px] dark:bg-neutral-800 bg-neutral-200"></div>
         </div>
         <div className="absolute bottom-0 right-0 p-2">
           <ToggleTheme />
         </div>
-        <Image
-          src="/profile.jpg"
-          alt="profile"
-          width={expandMenu ? 80 : imageSize * 0.9}
-          height={expandMenu ? 80 : imageSize * 0.9}
-          rounded="rounded-full"
-          className="lg:hover:scale-105 absolute z-50 -mt-10 left-1/2 -translate-x-1/2 border-2 border-white dark:border-neutral-800"
-        />
+        <div className="absolute z-50 -mt-12 left-1/2 -translate-x-1/2 border-8 border-white dark:border-[#1C1C1C] rounded-full">
+          <Image
+            src="/profile.jpg"
+            alt="profile"
+            width={expandMenu ? 80 : imageSize * 0.9}
+            height={expandMenu ? 80 : imageSize * 0.9}
+            rounded="rounded-full"
+            className="lg:hover:scale-110"
+          />
+        </div>
       </div>
       <Image
         src="/profile.jpg"
