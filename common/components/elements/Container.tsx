@@ -11,8 +11,14 @@ interface ContainerProps {
 }
 
 export default function Container({ children, className = '', ...others }: ContainerProps) {
+  const searchParams = useSearchParams();
+  const readMode = searchParams?.get('read-mode');
   return (
-    <div className={`mt-20 mb-10 md:mt-0 p-8 ${className}  `} {...others} data-testid="container">
+    <div
+      className={`mb-10 md:mt-0 p-8 ${readMode === 'true' ? 'mt-6' : 'mt-20'} ${className}  `}
+      {...others}
+      data-testid="container"
+    >
       {children}
     </div>
   );
