@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         darkText: '#E4E6EB',
         dark: '#121212',
-        light: '#fafafa'
+        light: '#eeeeee'
       },
       fontFamily: {
         sans: ['var(--jakartaSans-font)'],
