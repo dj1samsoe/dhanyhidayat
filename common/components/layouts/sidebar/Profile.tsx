@@ -41,12 +41,6 @@ export default function Profile() {
     >
       <div className="flex items-start justify-between lg:flex-col lg:space-y-4 ">
         <ProfileHeader expandMenu={isOpen} imageSize={imageSize} />
-        {!isMobile && (
-          <div className="lg:flex hidden items-center mt-4 w-full justify-between">
-            <Status />
-            <ThemeToggle />
-          </div>
-        )}
         {isMobile && (
           <div
             className={clsx(

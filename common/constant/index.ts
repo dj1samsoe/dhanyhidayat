@@ -6,3 +6,5 @@ export const PROFILE_URL =
 export const SAWERIA_URL = 'https://saweria.co/dhanyhidayat';
 export const PAGESPEED_URL = 'https://pagespeed.web.dev/';
 export const PAGESPEED_CATEGORIES = '&category=accessibility&category=performance&category=best-practices&category=seo';
+export const BACKDROP_URL =
+  'https://res.cloudinary.com/dfcwcfx5z/image/upload/v1718731956/djisamsoe/k5zfz2py7bgeilcfjjma.webp';

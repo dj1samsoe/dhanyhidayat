@@ -11,7 +11,7 @@ import { METADATA } from '@/common/constant/metadata';
 
 import ThemeProviderContext from '@/context/theme';
 
-import { soraSans } from '../common/styles/fonts';
+import { bricolage } from '../common/styles/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={soraSans.className}>
+      <body className={bricolage.className}>
         <NextTopLoader
           color="#40C463"
           initialPosition={0.08}

@@ -20,7 +20,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--jakartaSans-font)'],
-        sora: ['var(--soraSans-font)']
+        bricolage: ['var(--bricolage-font)']
       },
       keyframes: {
         wave: {

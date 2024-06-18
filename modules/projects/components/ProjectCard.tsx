@@ -53,7 +53,7 @@ export default function ProjectCard({ title, slug, description, image, stacks, i
         </div>
 
         <div className="absolute flex h-full flex-col justify-end space-y-2 p-5">
-          <h3 className="font-sora md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
+          <h3 className="font-bricolage md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
             {title}
           </h3>
 

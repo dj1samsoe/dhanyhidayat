@@ -75,7 +75,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
           animate={{ y: -40, opacity: 1 }}
           exit={{ y: -50, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className={`fixed z-50 bottom-10 md:right-7 right-5 md:w-full w-[350px] md:max-w-sm h-[500px] dark:bg-light bg-neutral-600/90 backdrop-blur-xl shadow-xl rounded-lg border-2 dark:border-neutral-300 border-none p-4 font-sans`}
+          className={`fixed z-50 bottom-10 md:right-7 right-5 md:w-full w-[350px] md:max-w-sm h-[500px] dark:bg-light bg-neutral-600/90 backdrop-blur-xl shadow-xl rounded-lg border-2 dark:border-neutral-300 border-none p-4 font-bricolage`}
         >
           <div className="flex flex-col justify-between h-full w-full overflow-hidden">
             <div className="text-white dark:text-neutral-800 flex flex-col">

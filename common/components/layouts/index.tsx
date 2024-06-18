@@ -7,7 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import React, { ReactNode, useEffect } from 'react';
 
-import { jakartaSans, soraSans } from '@/common/styles/fonts';
+import { bricolage, jakartaSans } from '@/common/styles/fonts';
 
 import ChatButton from '../elements/ChatButton';
 import Spotify from '../elements/Spotify';
@@ -40,7 +40,7 @@ export default function Layouts({ children }: LayoutsProps) {
         {`
           html {
             --jakartaSans-font: ${jakartaSans.style.fontFamily};
-            --soraSans-font: ${soraSans.style.fontFamily};
+            --bricolage-font: ${bricolage.style.fontFamily};
           }
         `}
       </style>

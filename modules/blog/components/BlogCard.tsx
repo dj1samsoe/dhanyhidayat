@@ -87,7 +87,7 @@ const BlogCard = ({
                     </div>
                   ))}
                 </div>
-                <h3 className="font-sora text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 line-clamp-3 ">
+                <h3 className="font-bricolage text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 line-clamp-3 ">
                   {title}
                 </h3>
               </div>

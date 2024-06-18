@@ -4,7 +4,7 @@ import Image from '@/common/components/elements/Image';
 
 export default function Summary() {
   return (
-    <div className="flex flex-col space-y-6 font-sora text-neutral-800 dark:text-neutral-300">
+    <div className="flex flex-col space-y-6 font-bricolage text-neutral-800 dark:text-neutral-300">
       <p>Hello Everyone!</p>
       <p>
         I&apos;m Achmad Fauzian Dhany Hidayat, a seasoned software developer especially in frontend developer with a

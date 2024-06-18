@@ -60,7 +60,7 @@ const LearnCard = ({ title, slug, description, is_new, level }: ContentProps) =>
             <span className="mr-1 font-semibold">#</span>
             {level}
           </div>
-          <h3 className="font-sora md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
+          <h3 className="font-bricolage md:text-xl text-lg font-medium text-neutral-100 group-hover:underline group-hover:underline-offset-4 ">
             {title}
           </h3>
 

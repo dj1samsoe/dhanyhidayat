@@ -7,10 +7,10 @@ import Container from '@/common/components/elements/Container';
 const NotFound = () => {
   return (
     <Container className="flex flex-col h-full justify-center items-center space-y-5 py-40 md:py-20" data-aos="fade-up">
-      <StyledHeading title="404" className="font-bold text-7xl font-sora">
+      <StyledHeading title="404" className="font-bold text-7xl font-bricolage">
         404
       </StyledHeading>
-      <StyledHeading title="Page Not Found" className="font-bold text-4xl font-sora">
+      <StyledHeading title="Page Not Found" className="font-bold text-4xl font-bricolage">
         Page Not Found!
       </StyledHeading>
       <h2 className="text-xl lg:text-xl animate-pulse text-center">
