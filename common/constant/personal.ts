@@ -47,14 +47,14 @@ export const personalData = {
       ]
     },
     {
-      position: 'Frontend Developer',
-      company: 'GasCPNS',
+      position: 'Freelance Frontend Developer',
+      company: 'projects.co.id',
       location: 'Indonesia 🇮🇩',
-      location_type: 'Remote',
       type: 'Freelance',
+      location_type: 'Remote',
       start_date: '2024-02-29',
       end_date: '2024-03-07',
-      link: 'https://projects.co.id/',
+      link: 'https://projects.co.id',
       responsibilities: [
         'Responsible for slicing UI designs from Figma into code.',
         'Responsible for creating pages including register, admin dashboard, member dashboard, and create question.',

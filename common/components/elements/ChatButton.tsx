@@ -1,3 +1,4 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
 import { FaRobot as BotIcon } from 'react-icons/fa';
 
@@ -23,7 +24,11 @@ export default function ChatButton() {
       >
         <BotIcon size={30} className="text-neutral-300" />
       </button>
-      {isChatOpen && <Chatbot isOpen={isChatOpen} onClose={handleCloseChat} />}
+      {isChatOpen && (
+        <AnimatePresence>
+          <Chatbot isOpen={isChatOpen} onClose={handleCloseChat} />
+        </AnimatePresence>
+      )}
     </>
   );
 }
