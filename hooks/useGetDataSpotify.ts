@@ -8,11 +8,7 @@ export function useGetDataSpotify() {
       if (res.ok) return res.json();
       else return Promise.reject(await res.json());
     });
-  const { data, error, isLoading } = useSWR<NowPlaying>(
-    '/api/spotify',
-    fetcher,
-    process.env.NODE_ENV === 'production' ? { refreshInterval: 3000 } : {}
-  );
+  const { data, error, isLoading } = useSWR<NowPlaying>('/api/spotify', fetcher);
   return {
     data,
     isLoading,
