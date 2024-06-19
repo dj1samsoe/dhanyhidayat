@@ -26,11 +26,7 @@ export default function ToggleTheme() {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay: 0.5 }}
     >
-      {resolvedTheme === 'light' ? (
-        <BsCloudSun className="w-5 h-5" />
-      ) : (
-        <BsCloudMoon className="w-5 h-5 text-blue-500" />
-      )}
+      {resolvedTheme === 'light' ? <BsCloudSun className="w-5 h-5" /> : <BsCloudMoon className="w-5 h-5" />}
     </motion.button>
   );
 }
