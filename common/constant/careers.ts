@@ -8,7 +8,7 @@ export const CAREERS = [
     location_type: 'Remote',
     type: 'Internship',
     start_date: '2024-02-12',
-    end_date: null,
+    end_date: '2024-06-12',
     industry: 'wellness',
     link: 'https://kawankerja.id',
     responsibilities: [
