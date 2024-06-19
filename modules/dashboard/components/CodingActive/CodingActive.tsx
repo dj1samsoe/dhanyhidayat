@@ -20,14 +20,8 @@ interface CodingActiveProps {
   lastUpdate?: string;
 }
 
-export const dynamic = 'force-dynamic';
-export const revalidate = 30;
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
-  const { data } = useSWR(
-    '/api/wakatime',
-    fetcher,
-    process.env.NODE_ENV === 'production' ? { refreshInterval: 3000 } : {}
-  );
+  const { data } = useSWR('/api/wakatime', fetcher);
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(null);
 
   useEffect(() => {

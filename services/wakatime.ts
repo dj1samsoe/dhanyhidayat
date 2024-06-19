@@ -15,15 +15,14 @@ export const getAccessToken = async () => {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
       Accept: 'application/json',
-      caches: 'no-store'
+      caches: 'force-cache'
     },
     body: querystring.stringify({
       grant_type: 'refresh_token',
       client_id: CLIENT_ID,
       client_secret: CLIENT_SECRET,
       refresh_token: REFRESH_TOKEN
-    }),
-    next: { revalidate: 3600 }
+    })
   };
 
   const response = await fetch(TOKEN_ENDPOINT, requestOptions);
