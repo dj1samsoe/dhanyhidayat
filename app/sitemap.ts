@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const domain = process.env.DOMAIN || 'www.dhanyhidayat.com';
+  const domain = process.env.DOMAIN || 'https://www.dhanyhidayat.my.id/';
   return [
     {
       url: domain,
