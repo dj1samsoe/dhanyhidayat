@@ -10,34 +10,25 @@ const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time
 const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
 
 export const getAccessToken = async () => {
-  const requestOptions = {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      Accept: 'application/json',
-      caches: 'force-cache'
-    },
-    body: querystring.stringify({
-      grant_type: 'refresh_token',
-      client_id: CLIENT_ID,
-      client_secret: CLIENT_SECRET,
-      refresh_token: REFRESH_TOKEN
-    })
-  };
+  const data = querystring.stringify({
+    grant_type: 'refresh_token',
+    client_id: CLIENT_ID,
+    client_secret: CLIENT_SECRET,
+    refresh_token: REFRESH_TOKEN
+  });
 
-  const response = await fetch(TOKEN_ENDPOINT, requestOptions);
-  if (!response.ok) {
-    console.error(`Failed to fetch access token. Status: ${response.status}`);
-    return undefined;
-  }
-  const responseText = await response.text();
-  console.log('Response Text:', responseText);
   try {
-    const data = JSON.parse(responseText);
-    console.log(data);
-    return data.access_token;
+    const response = await axios.post(TOKEN_ENDPOINT, data, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        Accept: 'application/json'
+      }
+    });
+
+    console.log('Response Data:', response.data);
+    return response.data.access_token;
   } catch (error) {
-    console.error('Error parsing JSON:', error);
+    console.error('Failed to fetch access token:', error);
     return undefined;
   }
 };
