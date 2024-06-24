@@ -1,22 +1,19 @@
 import { NextResponse } from 'next/server';
 
-import { getALLTimeSinceToday, getAccessToken, getReadStats } from '@/services/wakatime';
+import { getALLTimeSinceToday, getReadStats } from '@/services/wakatime';
 
 export async function GET() {
-  const accessToken = await getAccessToken();
+  try {
+    const readStatsResponse = await getReadStats();
+    const allTimeSinceTodayResponse = await getALLTimeSinceToday();
 
-  // Check if accessToken is defined before proceeding
-  if (accessToken === undefined) {
-    return NextResponse.json({ error: 'Failed to obtain access token' }, { status: 500 });
+    const data = {
+      ...(readStatsResponse?.data || {}),
+      all_time_since_today: allTimeSinceTodayResponse?.data || {}
+    };
+
+    return NextResponse.json(data);
+  } catch (error) {
+    return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   }
-
-  const readStatsResponse = await getReadStats(accessToken);
-  const allTimeSinceTodayResponse = await getALLTimeSinceToday(accessToken);
-
-  const data = {
-    ...(readStatsResponse?.data || {}),
-    all_time_since_today: allTimeSinceTodayResponse?.data || {}
-  };
-
-  return NextResponse.json(data);
 }

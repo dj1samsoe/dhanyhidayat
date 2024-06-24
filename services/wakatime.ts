@@ -1,57 +1,25 @@
 import axios from 'axios';
-import querystring from 'querystring';
 
-const CLIENT_ID = process.env.WAKATIME_CLIENT_ID;
-const CLIENT_SECRET = process.env.WAKATIME_CLIENT_SECRET;
-const REFRESH_TOKEN = process.env.WAKATIME_CLIENT_REFRESH_TOKEN;
+const API_KEY = process.env.WAKATIME_API_KEY;
 
 const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time_since_today';
-const TOKEN_ENDPOINT = 'https://wakatime.com/oauth/token';
 
-export const getAccessToken = async () => {
-  const data = querystring.stringify({
-    grant_type: 'refresh_token',
-    client_id: CLIENT_ID,
-    client_secret: CLIENT_SECRET,
-    refresh_token: REFRESH_TOKEN
-  });
-
+export const getReadStats = async () => {
   try {
-    const response = await axios.post(TOKEN_ENDPOINT, data, {
+    const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        Accept: 'application/json'
+        Authorization: `Basic ${API_KEY}`,
+        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
       }
     });
-
-    console.log('Response Data:', response.data);
-    return response.data.access_token;
-  } catch (error) {
-    console.error('Failed to fetch access token:', error);
-    return undefined;
-  }
-};
-
-export const getReadStats = async (accessToken: string) => {
-  const myHeaders = new Headers();
-  myHeaders.append('Authorization', `Bearer ${accessToken}`);
-
-  const requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    next: { revalidate: 3600 }
-  };
-
-  try {
-    const response = await fetch(`${STATS_ENDPOINT}/last_7_days`, requestOptions);
 
     const status = response.status;
     console.log('dj1samsoe ~ getReadStats ~ status : ', status);
 
     if (status >= 400) return { status, data: [] };
 
-    const getData = await response.json();
+    const getData = await response.data;
     console.log('dj1samsoe ~ getReadStats ~ getData : ', getData);
 
     const start_date = getData?.data?.start;
@@ -89,23 +57,19 @@ export const getReadStats = async (accessToken: string) => {
   }
 };
 
-export const getALLTimeSinceToday = async (accessToken: string) => {
-  const myHeaders = new Headers();
-  myHeaders.append('Authorization', `Bearer ${accessToken}`);
-
-  const requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    next: { revalidate: 3600 }
-  };
-
-  const response = await fetch(ALL_TIME_SINCE_TODAY, requestOptions);
+export const getALLTimeSinceToday = async () => {
+  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
+    headers: {
+      Authorization: `Basic ${API_KEY}`,
+      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+    }
+  });
 
   const status = response.status;
 
   if (status >= 400) return { status, data: {} };
 
-  const getData = await response.json();
+  const getData = await response.data;
   console.log('dj1samsoe ~ getAllTimeStats ~ getData : ', getData);
 
   const data = {
