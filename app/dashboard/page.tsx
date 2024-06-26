@@ -21,7 +21,7 @@ const PAGE_TITLE = 'Dashboard';
 const PAGE_DESCRIPTION =
   'This is my personal dashboard, built with Next.js API routes deployed as serverless functions.';
 
-export const revalidate = 3600;
+// export const revalidate = 3600;
 export default async function DahboardPage() {
   const githubData = await getGithubData();
   return (

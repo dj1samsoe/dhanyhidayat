@@ -10,7 +10,7 @@ export const getReadStats = async () => {
     const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
       headers: {
         Authorization: `Basic ${API_KEY}`,
-        'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+        'Cache-Control': 'no-cache, no-store, must-revalidate'
       }
     });
 
@@ -61,7 +61,7 @@ export const getALLTimeSinceToday = async () => {
   const response = await axios.get(ALL_TIME_SINCE_TODAY, {
     headers: {
       Authorization: `Basic ${API_KEY}`,
-      'Cache-Control': 'public, s-maxage=60, stale-while-revalidate=30'
+      'Cache-Control': 'no-cache, no-store, must-revalidate'
     }
   });
 
