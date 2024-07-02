@@ -9,8 +9,7 @@ export const getReadStats = async () => {
   try {
     const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
       headers: {
-        Authorization: `Basic ${API_KEY}`,
-        'Cache-Control': 'no-cache, no-store, must-revalidate'
+        Authorization: `Basic ${API_KEY}`
       }
     });
 
@@ -60,8 +59,7 @@ export const getReadStats = async () => {
 export const getALLTimeSinceToday = async () => {
   const response = await axios.get(ALL_TIME_SINCE_TODAY, {
     headers: {
-      Authorization: `Basic ${API_KEY}`,
-      'Cache-Control': 'no-cache, no-store, must-revalidate'
+      Authorization: `Basic ${API_KEY}`
     }
   });
 
