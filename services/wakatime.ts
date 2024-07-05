@@ -14,12 +14,12 @@ export const getReadStats = async () => {
     });
 
     const status = response.status;
-    console.log('dj1samsoe ~ getReadStats ~ status : ', status);
+    // console.log('dj1samsoe ~ getReadStats ~ status : ', status);
 
     if (status >= 400) return { status, data: [] };
 
     const getData = await response.data;
-    console.log('dj1samsoe ~ getReadStats ~ getData : ', getData);
+    // console.log('dj1samsoe ~ getReadStats ~ getData : ', getData);
 
     const start_date = getData?.data?.start;
     const end_date = getData?.data?.end;
@@ -68,7 +68,7 @@ export const getALLTimeSinceToday = async () => {
   if (status >= 400) return { status, data: {} };
 
   const getData = await response.data;
-  console.log('dj1samsoe ~ getAllTimeStats ~ getData : ', getData);
+  // console.log('dj1samsoe ~ getAllTimeStats ~ getData : ', getData);
 
   const data = {
     text: getData?.data?.text,
