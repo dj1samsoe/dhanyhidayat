@@ -25,13 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${domain}/dashboard`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.3
+      priority: 0.5
     },
     {
       url: `${domain}/projects`,
       lastModified: new Date(),
       changeFrequency: 'daily',
-      priority: 0.3
+      priority: 0.4
     },
     {
       url: `${domain}/about`,
