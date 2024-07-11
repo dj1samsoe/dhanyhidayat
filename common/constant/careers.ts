@@ -1,5 +1,18 @@
 export const CAREERS = [
   {
+    position: 'Web Developer',
+    company: 'Cognitia Strategi Indonesia',
+    company_legal_name: 'PT. Cognitia Strategi Indonesia',
+    logo: '/cognitia.webp',
+    location: 'Surabaya, Indonesia 🇮🇩',
+    location_type: 'Hybrid',
+    type: 'Internship',
+    start_date: '2024-07-12',
+    end_date: null,
+    industry: 'wellness',
+    link: 'https://www.linkedin.com/company/cognitia-strategi-indonesia/'
+  },
+  {
     position: 'Frontend Developer',
     company: 'Kawan Kerja',
     company_legal_name: 'PT. Kawan Kerja Indonesia',
