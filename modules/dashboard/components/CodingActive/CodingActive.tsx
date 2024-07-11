@@ -21,7 +21,10 @@ interface CodingActiveProps {
 }
 
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
-  const { data } = useSWR('/api/wakatime', fetcher);
+  const { data } = useSWR('/api/wakatime', fetcher, {
+    revalidateOnFocus: true,
+    refreshInterval: 300000
+  });
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(null);
 
   useEffect(() => {
