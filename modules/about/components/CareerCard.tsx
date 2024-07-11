@@ -63,15 +63,15 @@ const CareerCard = ({
           <h6>{position}</h6>
           <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
             <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
-              <a href={link || '#'} target="_blank" data-umami-event={`Click Career Company Name: ${company}`}>
-                <span className="cursor-pointer underline-offset-2 hover:text-dark hover:underline hover:dark:text-white">
+              <a href={link || '#'} target="_blank">
+                <span className="cursor-pointer underline-offset-2 hover:text-dark hover:underline hover:dark:text-white truncate">
                   {company}
                 </span>
               </a>
               <span className="hidden text-neutral-300 dark:text-neutral-700 lg:block">•</span>
-              <span className="text-neutral-500">[ {company_legal_name} ]</span>
+              <span className="text-neutral-500 truncate">[ {company_legal_name} ]</span>
               <span className="hidden text-neutral-300 dark:text-neutral-700 lg:block">•</span>
-              <span>{location}</span>
+              <span className="truncate">{location}</span>
             </div>
             <div className="flex flex-col gap-2 md:flex-row md:text-[13px]">
               <div className="flex gap-1">
