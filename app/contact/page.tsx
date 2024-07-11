@@ -8,7 +8,7 @@ import Contact from '@/modules/contact';
 
 export const metadata: Metadata = {
   title: `Contact ${METADATA.exTitle}`,
-  description: `A contact of ${METADATA.creator}`,
+  description: `A contact list of ${METADATA.creator}`,
   alternates: {
     canonical: `${process.env.DOMAIN}/contact`
   }

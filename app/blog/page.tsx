@@ -13,7 +13,8 @@ import { BlogItem } from '../../common/types/blog';
 export const metadata: Metadata = {
   title: `Blog ${METADATA.exTitle}`,
   description: 'My blogs content about programming and software development',
-  keywords: "blog dhanhid, dhanhid, dhany hidayat's blog, dhany hidayat, mext js blog, typescript blog, react js blog",
+  keywords:
+    "blog dhany hidayat, dhany hidayat, dhany hidayat's blog, dhany hidayat, next js blog, typescript blog, react js blog",
   alternates: {
     canonical: `${process.env.DOMAIN}/blog`
   }

@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'Achmad Fauzian Dhany Hidayat - Frontend Developer',
     short_name: 'Dhany Hidayat',
     description:
-      'Personal website, portfolio, blog, programming tips of dhanhid, dhany hidayat, dhany hidayat personal website',
+      'Personal website, portfolio, blog, programming tips of dhany, dhany hidayat, dhany hidayat personal website, achmad fauzian dhany hidayat',
     start_url: '/',
     display: 'standalone',
     background_color: '#fff',
