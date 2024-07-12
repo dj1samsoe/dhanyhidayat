@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
       all_time_since_today: allTimeSinceTodayResponse?.data
     };
 
-    return NextResponse.json(data, { headers: { 'Cache-Control': 'no-store' } });
+    return NextResponse.json(data);
   } catch (error) {
     return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   }

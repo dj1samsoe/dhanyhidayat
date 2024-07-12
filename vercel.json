@@ -14,15 +14,6 @@
           "value": "public, max-age=1, must-revalidate"
         }
       ]
-    },
-    {
-      "source": "app/api/wakatime/route.ts",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, must-revalidate"
-        }
-      ]
     }
   ]
 }
