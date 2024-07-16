@@ -6,7 +6,7 @@ const STATS_ENDPOINT = 'https://wakatime.com/api/v1/users/current/stats';
 const ALL_TIME_SINCE_TODAY = 'https://wakatime.com/api/v1/users/current/all_time_since_today';
 
 export const getReadStats = async () => {
-  const response = await axios.get(`${STATS_ENDPOINT}/last_7_days`, {
+  const response = await axios.get(`${STATS_ENDPOINT}/last_7_days?cacheBust=${Date.now()}`, {
     headers: {
       Authorization: `Basic ${API_KEY}`
     }
@@ -53,7 +53,7 @@ export const getReadStats = async () => {
 };
 
 export const getALLTimeSinceToday = async () => {
-  const response = await axios.get(ALL_TIME_SINCE_TODAY, {
+  const response = await axios.get(`${ALL_TIME_SINCE_TODAY}?cacheBust=${Date.now()}`, {
     headers: {
       Authorization: `Basic ${API_KEY}`
     }

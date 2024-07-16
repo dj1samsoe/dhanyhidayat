@@ -8,8 +8,8 @@ export async function GET(req: NextRequest) {
     const allTimeSinceTodayResponse = await getALLTimeSinceToday();
 
     const data = {
-      ...readStatsResponse?.data,
-      all_time_since_today: allTimeSinceTodayResponse?.data
+      ...(readStatsResponse?.data || []),
+      all_time_since_today: allTimeSinceTodayResponse?.data || {}
     };
 
     const response = NextResponse.json(data);

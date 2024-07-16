@@ -3,6 +3,10 @@
     "app/api/blog/route.ts": {
       "memory": 1024,
       "maxDuration": 10
+    },
+    "app/api/wakatime/route.ts": {
+      "memory": 1024,
+      "maxDuration": 10
     }
   },
   "headers": [
@@ -12,6 +16,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=1, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "app/api/wakatime/route.ts",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, s-maxage=60, stale-while-revalidate"
         }
       ]
     }
