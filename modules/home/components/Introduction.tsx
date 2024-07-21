@@ -4,7 +4,10 @@ export default function Introduction() {
   return (
     <section className="bg-cover bg-no-repeat space-y-2">
       <div className="flex gap-2 text-2xl lg:text-3xl font-medium font-bricolage">
-        <TypeAnimation sequence={["Hi, I'm Dhany Hidayat", "Hi, I'm Frontend Developer"]} delay={3000} />
+        <TypeAnimation
+          sequence={["Hi, I'm Dhany Hidayat", "Hi, I'm Frontend Developer", "Hi, I'm Web Developer"]}
+          delay={3000}
+        />
       </div>
 
       <div className="space-y-4">
