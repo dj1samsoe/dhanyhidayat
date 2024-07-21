@@ -34,6 +34,7 @@ const systemMessage = {
           ${exp.responsibilities.map(resp => `    - ${resp}`).join('\n  ')}`
     )
     .join('\n\n')}
+  (if end_date is null, show as Present)
 
 **Contact:**
     - **Email:** ${personalData.contact.email}

@@ -29,6 +29,20 @@ export const personalData = {
   ],
   experiences: [
     {
+      position: 'Web Developer',
+      company: 'PT. Cognitia Strategy Indonesia',
+      location: 'Surabaya, Indonesia 🇮🇩',
+      type: 'Internship',
+      location_type: 'Hybrid',
+      start_date: '2024-07-12',
+      end_date: null,
+      link: 'https://cognitia.id',
+      responsibilities: [
+        'Maintenanced and developed company website using Wordpress',
+        'Redesign company website using Wordpress'
+      ]
+    },
+    {
       position: 'Frontend Developer',
       company: 'PT. Kawan Kerja Indonesia',
       location: 'Bandung, Indonesia 🇮🇩',
@@ -47,7 +61,7 @@ export const personalData = {
       ]
     },
     {
-      position: 'Freelance Frontend Developer',
+      position: 'Frontend Developer',
       company: 'projects.co.id',
       location: 'Indonesia 🇮🇩',
       type: 'Freelance',

@@ -10,7 +10,11 @@ export const CAREERS = [
     start_date: '2024-07-12',
     end_date: null,
     industry: 'wellness',
-    link: 'https://www.linkedin.com/company/cognitia-strategi-indonesia/'
+    link: 'https://cognitia.id',
+    responsibilities: [
+      'Maintenanced and developed company website using Wordpress',
+      'Redesign company website using Wordpress'
+    ]
   },
   {
     position: 'Frontend Developer',
