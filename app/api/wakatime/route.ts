@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     };
 
     const response = NextResponse.json(data);
-    response.headers.set('Cache-Control', 'public, s-maxage=60, stale-while-revalidate');
+    response.headers.set('Cache-Control', 'no-store');
 
     return response;
   } catch (error) {
