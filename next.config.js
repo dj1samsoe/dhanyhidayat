@@ -1,7 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['picsum.photos', 'res.cloudinary.com', 'i.scdn.co', 'media.dev.to', 'lh3.googleusercontent.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos'
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.scdn.co'
+      },
+      {
+        protocol: 'https',
+        hostname: 'media.dev.to'
+      },
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com'
+      }
+    ]
   }
 };
 module.exports = nextConfig;
