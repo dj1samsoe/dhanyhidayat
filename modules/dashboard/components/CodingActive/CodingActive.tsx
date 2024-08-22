@@ -21,26 +21,26 @@ interface CodingActiveProps {
 }
 
 const CodingActive = ({ lastUpdate }: CodingActiveProps) => {
-  const { data } = useSWR('/api/wakatime', fetcher, {
+  const { data, isValidating } = useSWR('/api/wakatime', fetcher, {
     revalidateOnFocus: true,
     refreshInterval: 60000
   });
   const [formattedLastUpdate, setFormattedLastUpdate] = useState<string | null>(null);
 
   useEffect(() => {
-    const formatLastUpdate = (): void => {
+    if (!data || isValidating) return;
+    // Lakukan format ulang jika data baru tersedia
+    const formatLastUpdate = () => {
       const lastUpdateDate = lastUpdate || data?.last_update;
       if (lastUpdateDate) {
         const zonedDate = utcToZonedTime(zonedTimeToUtc(lastUpdateDate, 'Asia/Jakarta'), 'Asia/Jakarta');
-        const distance = formatDistanceToNowStrict(zonedDate, {
-          addSuffix: true
-        });
+        const distance = formatDistanceToNowStrict(zonedDate, { addSuffix: true });
         setFormattedLastUpdate(distance);
       }
     };
 
     formatLastUpdate();
-  }, [lastUpdate, data]);
+  }, [lastUpdate, data, isValidating]);
 
   const renderLastUpdate = () => {
     if (formattedLastUpdate) {
