@@ -1,0 +1,61 @@
+# MoneyMate - Personal Finance Management App
+
+**MoneyMate** is a personal finance management web application designed to help users manage their income and expenses efficiently. With an intuitive interface and comprehensive features, MoneyMate provides valuable insights into your financial situation, making it easier to achieve your financial goals.
+
+## Key Features
+
+- **Real-time Dashboard**: Get a visual overview of your finances with graphs and statistics.
+- **Transaction History**: Track your income and expenses over time with detailed transaction logs.
+- **Category Settings**: Customize and organize your income and expense categories.
+- **Multi-language Support**: Switch between English and Indonesian based on your preference.
+- **Authentication**: Secure your financial data with a user-friendly login system using Clerk.
+- **Export to CSV**: Export your financial data in a CSV format for easy analysis.
+
+## Technology Stack
+
+- **Next.js** for server-side rendering and optimized performance.
+- **TypeScript** for type-safe development.
+- **Tailwind CSS** for responsive and modern UI.
+- **Shadcn-UI** for customizable and accessible components.
+- **Next-Intl** for internationalization support.
+- **Clerk** for user authentication and authorization.
+- **PostgreSQL** as the database solution with **Prisma** for ORM.
+
+Explore your finances effortlessly with MoneyMate!
+
+## How to Start this project
+
+### 1. Clone using git
+
+```git
+https://github.com/dj1samsoe/money-mate.git
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Create a .env file
+
+```bash
+   # Database Configuration
+POSTGRES_PRISMA_URL=
+POSTGRES_URL_NON_POOLING=
+
+# Clerk Configuration
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL="/sign-in"
+NEXT_PUBLIC_CLERK_SIGN_UP_URL="/sign-up"
+
+```
+
+### 4. Run development server
+
+```bash
+npm run dev
+```
+
+Open http://localhost:3000 with your browser to see the result.
