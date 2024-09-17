@@ -1,3 +1,5 @@
+'use client';
+
 import { AnimatePresence } from 'framer-motion';
 import React, { useState } from 'react';
 import { FaRobot as BotIcon } from 'react-icons/fa';
@@ -24,11 +26,7 @@ export default function ChatButton() {
       >
         <BotIcon size={30} className="text-neutral-300" />
       </button>
-      {isChatOpen && (
-        <AnimatePresence>
-          <Chatbot isOpen={isChatOpen} onClose={handleCloseChat} />
-        </AnimatePresence>
-      )}
+      <AnimatePresence>{isChatOpen && <Chatbot isOpen={isChatOpen} onClose={handleCloseChat} />}</AnimatePresence>
     </>
   );
 }
