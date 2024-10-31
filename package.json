@@ -59,7 +59,7 @@
     "typescript": "^5.1.6",
     "usehooks-ts": "^2.10.0",
     "uuid": "^9.0.1",
-    "zustand": "^4.4.1"
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@emotion/react": "^11.11.1",
