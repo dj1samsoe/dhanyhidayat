@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
-    "@langchain/core": "^0.2.6",
+    "@langchain/core": "^0.3.19",
     "@langchain/groq": "^0.0.12",
     "@prisma/client": "^5.8.1",
     "@types/node": "^20.5.3",
