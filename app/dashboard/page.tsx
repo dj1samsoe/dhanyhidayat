@@ -49,5 +49,6 @@ async function getGithubData() {
       }
     }
   );
+  // console.log(response.data?.data.user.contributionsCollection.contributionCalendar);
   return response.data?.data.user.contributionsCollection.contributionCalendar;
 }

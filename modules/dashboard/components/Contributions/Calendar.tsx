@@ -55,6 +55,11 @@ export default function Calendar({ data }: CalendarProps) {
       };
     }) ?? [];
 
+  // Warna hijau default GitHub
+  // const defaultGreenColors = ['#9be9a8', '#40c463', '#30a14e', '#216e39'];
+
+  // Override colors dengan defaultGreenColors jika warna kuning terdeteksi
+  // const contributionColors = data?.colors.includes('#ffee4a') ? defaultGreenColors : data?.colors ?? defaultGreenColors;
   const contributionColors = data?.colors ?? [];
 
   return (
@@ -64,7 +69,7 @@ export default function Calendar({ data }: CalendarProps) {
           {months.map(month => (
             <li
               key={month.firstDay}
-              className={clsx(`${month.totalWeeks < 2 ? 'invisible' : 'visible'}`)}
+              className={clsx(`${month.totalWeeks < 2 ? 'invisible' : ''}`)}
               style={{ minWidth: 14.3 * month.totalWeeks }}
             >
               {month.name}
@@ -72,7 +77,7 @@ export default function Calendar({ data }: CalendarProps) {
           ))}
         </ul>
 
-        <div className="flex justify-end md:justify-start gap-[3px] overflow-hidden">
+        <div className="flex justify-start gap-[3px] overflow-hidden">
           {weeks?.map(week => (
             <div key={week.firstDay}>
               {week.contributionDays.map(contribution => {
@@ -93,7 +98,7 @@ export default function Calendar({ data }: CalendarProps) {
                         transition: { delay: getRandomDelayAnimate }
                       }
                     }}
-                    className="my-[2px] block h-[12px] w-[12px] rounded-[3px] bg-neutral-200 dark:bg-neutral-800"
+                    className="my-[2px] block h-[13px] w-[13px] rounded-[4px] bg-neutral-300 dark:bg-neutral-800"
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
@@ -114,7 +119,7 @@ export default function Calendar({ data }: CalendarProps) {
         <div className="flex items-center gap-2 text-sm">
           <span className="dark:text-neutral-400">Less</span>
           <ul className="flex gap-1">
-            <motion.li className="h-[10px] w-[10px] rounded-sm bg-neutral-200 dark:bg-neutral-800" />
+            <motion.li className="h-[10px] w-[10px] rounded-sm bg-neutral-300 dark:bg-neutral-800" />
             {contributionColors.map((item, index) => (
               <motion.li
                 key={item}
