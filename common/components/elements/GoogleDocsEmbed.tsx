@@ -13,6 +13,7 @@ const GoogleDocsEmbed: React.FC<GoogleDocsEmbedProps> = ({ src, width = '100%', 
       height={height}
       frameBorder="0"
       scrolling="no"
+      className="rounded-lg"
     >
       This browser does not support embedding Google Docs. Please use a compatible browser.
     </iframe>
