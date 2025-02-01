@@ -18,9 +18,11 @@ export default function Introduction() {
           <li>Working remotely</li>
         </ul>
         <p className="leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300">
-          Undergraduate Information Systems student at Brawijaya University who is a enthusiast in Software Engineer
-          with a strong emphasis on frontend development. Proficient in Javascript, Typescript, React JS, Next JS and
-          other elements of web technology.
+          I&apos;m a skilled front-end developer with expertise in React.js and Next.js, dedicated to translating design
+          concepts into clean, maintainable code. I excel at crafting responsive, pixel-perfect web applications that
+          provide an exceptional user experience while reflecting your brand&apos;s identity and innovation. With a
+          strong focus on attention to detail, I ensure that every project is delivered with seamless UI/UX integration
+          and aligns perfectly with your vision.
         </p>
       </div>
     </section>
