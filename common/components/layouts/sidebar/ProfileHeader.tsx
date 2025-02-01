@@ -35,7 +35,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         </div>
         <div className="absolute z-50 -mt-12 left-1/2 -translate-x-1/2 border-8 border-white dark:border-[#1C1C1C] rounded-full">
           <Image
-            src="/profile.jpg"
+            src="/logo.png"
             alt="profile"
             width={expandMenu ? 80 : imageSize * 0.9}
             height={expandMenu ? 80 : imageSize * 0.9}
@@ -45,7 +45,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         </div>
       </div>
       <Image
-        src="/profile.jpg"
+        src="/logo.png"
         alt="profile"
         width={expandMenu ? 80 : imageSize * 0.9}
         height={expandMenu ? 80 : imageSize * 0.9}

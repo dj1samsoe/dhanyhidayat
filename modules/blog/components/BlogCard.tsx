@@ -13,7 +13,6 @@ import Breakline from '@/common/components/elements/Breakline';
 import Card from '@/common/components/elements/Card';
 import Image from '@/common/components/elements/Image';
 import Tooltip from '@/common/components/elements/Tooltip';
-import { PROFILE_URL } from '@/common/constant';
 import { formatBlogSlug, formatDate } from '@/common/helpers';
 import { BlogItem } from '@/common/types/blog';
 
@@ -101,7 +100,7 @@ const BlogCard = ({
             <div className="flex justify-between gap-4 px-0.5 text-neutral-400">
               <Tooltip title="by dhanyhidayat">
                 <Image
-                  src={PROFILE_URL}
+                  src="/logo.png"
                   alt="Dhany Hidayat"
                   width={25}
                   height={25}
