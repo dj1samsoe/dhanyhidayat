@@ -1,57 +1,41 @@
 'use client';
 
 import { Projects } from '@prisma/client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Button from '@/common/components/elements/Button';
 import DeleteModals from '@/common/components/elements/DeleteModals';
 import EditModal from '@/common/components/elements/EditModals';
 
-const ProjectsTable = () => {
-  const [projects, setProjects] = useState<Projects[]>([]);
+import { Project } from './ProjectsForm';
+
+interface ProjectsTableProps {
+  projects: Project[];
+  onRefresh: () => void; // Fungsi untuk me-refresh data setelah CRUD
+}
+
+const ProjectsTable: React.FC<ProjectsTableProps> = ({ projects, onRefresh }) => {
   const [deleteConfirmationId, setDeleteConfirmationId] = useState<number | null>(null);
-  const [editModalOpen, setEditModalOpen] = useState<boolean>(false); // State for Edit Modal
-  const [editProjectId, setEditProjectId] = useState<number | null>(null); // State for the project being edited
-
-  const fetchProjects = async () => {
-    try {
-      const response = await fetch('/api/crud', {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-      if (!response.ok) {
-        throw new Error('Failed to fetch projects');
-      }
-      const data = await response.json();
-      setProjects(data);
-    } catch (error) {
-      console.error('Error fetching projects:', error);
-    }
-  };
-
-  React.useEffect(() => {
-    fetchProjects();
-  }, []);
+  const [editProjectId, setEditProjectId] = useState<number | null>(null);
+  const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
 
   const handleEdit = (projectId: number) => {
     setEditProjectId(projectId);
     setEditModalOpen(true);
   };
 
-  const handleDelete = async (projectId: number) => {
+  const handleDelete = async () => {
+    if (!deleteConfirmationId) return;
+
     try {
       await fetch(`/api/crud`, {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ projectId })
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ projectId: deleteConfirmationId })
       });
 
       alert('Project deleted successfully.');
-      await fetchProjects(); // Refresh projects list after deletion
+      onRefresh(); // Refresh daftar proyek setelah delete
     } catch (error) {
       console.error('Error deleting project:', error);
     } finally {
@@ -74,18 +58,15 @@ const ProjectsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {projects.map((project: Projects) => (
+          {projects.map((project, index) => (
             <tr key={project.id} className="border-t dark:border-neutral-700 border-neutral-200 text-center">
-              <td className="p-2">{project.id}</td>
+              <td className="p-2">{index + 1}</td>
               <td className="p-2 truncate">{project.title}</td>
               <td className="p-2 truncate">{project.slug}</td>
               <td className="p-2">{project.is_show ? 'True' : 'False'}</td>
               <td className="p-2">{project.is_featured ? 'True' : 'False'}</td>
-              <td className="p-2 flex justify-center">
-                <Button
-                  onClick={() => handleEdit(project.id)} // Call handleEdit function
-                  className="text-sky-500 !bg-transparent hover:underline"
-                >
+              <td className="p-2 flex justify-center space-x-2">
+                <Button onClick={() => handleEdit(project.id)} className="text-sky-500 !bg-transparent hover:underline">
                   Edit
                 </Button>
                 <Button
@@ -99,16 +80,21 @@ const ProjectsTable = () => {
           ))}
         </tbody>
       </table>
+
+      {/* Modal Delete */}
       <DeleteModals
         isOpen={!!deleteConfirmationId}
         onCancel={() => setDeleteConfirmationId(null)}
-        onConfirm={() => {
-          if (deleteConfirmationId) {
-            handleDelete(deleteConfirmationId);
-          }
-        }}
+        onConfirm={handleDelete}
       />
-      <EditModal isOpen={editModalOpen} onCancel={() => setEditModalOpen(false)} projectId={editProjectId || 0} />
+
+      {/* Modal Edit */}
+      <EditModal
+        isOpen={editModalOpen}
+        onCancel={() => setEditModalOpen(false)}
+        projectId={editProjectId || 0}
+        onSuccess={onRefresh} // Refresh data setelah edit
+      />
     </div>
   );
 };

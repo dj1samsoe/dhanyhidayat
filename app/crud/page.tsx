@@ -1,12 +1,13 @@
 import { Metadata } from 'next';
 
-import Breakline from '@/common/components/elements/Breakline';
+// import Breakline from '@/common/components/elements/Breakline';
 import Container from '@/common/components/elements/Container';
 import PageHeading from '@/common/components/elements/PageHeading';
 import { METADATA } from '@/common/constant/metadata';
 
-import ProjectsTable from '@/modules/projects/components/ProjectTable';
-import ProjectForm from '@/modules/projects/components/ProjectsForm';
+// import ProjectsTable from '@/modules/projects/components/ProjectTable';
+// import ProjectForm from '@/modules/projects/components/ProjectsForm';
+import ProjectManager from '@/modules/projects/components/ProjectManager';
 
 export const metadata: Metadata = {
   title: `Add Projects ${METADATA.exTitle}`,
@@ -23,9 +24,7 @@ const AdminProjectsPage: React.FC = () => {
   return (
     <Container data-aos="fade-up">
       <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-      <ProjectForm />
-      <Breakline />
-      <ProjectsTable />
+      <ProjectManager />
     </Container>
   );
 };

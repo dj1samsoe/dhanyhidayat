@@ -2,8 +2,8 @@ import React from 'react';
 
 type DeleteModalsProps = {
   isOpen: boolean;
-  onCancel: () => void;
-  onConfirm: () => void;
+  onCancel: VoidFunction;
+  onConfirm: VoidFunction;
 };
 
 const DeleteModals = ({ isOpen, onCancel, onConfirm }: DeleteModalsProps) => {

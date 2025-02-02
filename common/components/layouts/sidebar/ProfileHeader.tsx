@@ -1,7 +1,10 @@
+'use client';
+
 import Link from 'next/link';
 
 import clsx from 'clsx';
-import React from 'react';
+import { useTheme } from 'next-themes';
+import React, { useEffect, useState } from 'react';
 import { MdVerified as VerifiedIcon } from 'react-icons/md';
 
 import Image from '../../elements/Image';
@@ -15,6 +18,19 @@ interface ProfileHeaderProps {
 }
 
 export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderProps) {
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const logoSrc = currentTheme === 'dark' ? '/bg-profile-dark-2.png' : '/bg-profile-light-2.png';
   return (
     <div
       className={clsx(
@@ -23,13 +39,10 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       )}
     >
       <div className="relative lg:block hidden w-full mb-12">
-        <div className="absolute top-0 left-0 dark:bg-[#1C1C1C] bg-white p-2.5 rounded-ee-lg">
+        <div className="absolute top-0 left-0 p-2.5">
           <Status />
         </div>
-        <div className="flex">
-          <div className="rounded-s-lg mt-11 w-[50%] h-[75px] dark:bg-neutral-800 bg-neutral-200"></div>
-          <div className="rounded-lg w-[67%] h-[120px] dark:bg-neutral-800 bg-neutral-200"></div>
-        </div>
+        <Image src={logoSrc} alt="bg-profile" width={200} height={100} className="w-full" />
         <div className="absolute bottom-0 right-0 p-2">
           <ToggleTheme />
         </div>

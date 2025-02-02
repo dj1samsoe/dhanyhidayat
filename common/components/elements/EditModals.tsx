@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
+import { Project } from '@/modules/projects/components/ProjectsForm';
+
 interface FormData {
   title: string;
   slug: string;
@@ -15,16 +17,16 @@ interface FormData {
   is_featured: boolean;
 }
 
-type EditModalProps = {
+interface EditModalProps {
   isOpen: boolean;
   onCancel: () => void;
-  // onSave: (projectId: number, updatedData: any) => void; // Updated onSave function
   projectId: number;
-};
+  onSuccess: () => void; // Callback untuk refresh data setelah update
+}
 
-const EditModal = ({ isOpen, onCancel, projectId }: EditModalProps) => {
+const EditModal = ({ isOpen, onCancel, projectId, onSuccess }: EditModalProps) => {
   const { register, handleSubmit, setValue } = useForm<FormData>();
-  const [projectData, setProjectData] = useState<any>(null);
+  const [projectData, setProjectData] = useState<Project | null>(null);
 
   useEffect(() => {
     const fetchProjectData = async () => {
@@ -66,13 +68,19 @@ const EditModal = ({ isOpen, onCancel, projectId }: EditModalProps) => {
         body: JSON.stringify(formData)
       });
 
-      if (response.ok) {
-        alert('Project updated successfully!');
-        window.location.reload();
-      } else {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to update project');
-      }
+      if (!response.ok) throw new Error('Failed to update project');
+
+      alert('Project updated successfully!');
+      onSuccess(); // Refresh data tanpa reload halaman
+      onCancel(); // Tutup modal setelah sukses
+      // if (response.ok) {
+      //   alert('Project updated successfully!');
+      //   onSuccess(); // Refresh data tanpa reload halaman
+      //   onCancel(); // Tutup modal setelah sukses
+      // } else {
+      //   const errorData = await response.json();
+      //   throw new Error(errorData.error || 'Failed to update project');
+      // }
     } catch (error) {
       console.error('Error updating project:', error);
       alert('Failed to update project.');

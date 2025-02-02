@@ -7,6 +7,21 @@ import { IoEnterOutline } from 'react-icons/io5';
 
 import Button from '@/common/components/elements/Button';
 
+// Definisi tipe untuk project
+export interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  image: string;
+  link_demo?: string;
+  link_github?: string;
+  stacks: string;
+  is_show: boolean;
+  is_featured: boolean;
+}
+
+// Tipe untuk FormData
 interface FormData {
   title: string;
   slug: string;
@@ -19,30 +34,41 @@ interface FormData {
   is_featured: boolean;
 }
 
-const ProjectForm = () => {
-  const { register, handleSubmit } = useForm<FormData>();
-  const [isLoading, setIsLoading] = useState(false);
+// Props untuk mengupdate daftar proyek setelah tambah data
+interface ProjectFormProps {
+  onSuccess: (newProject: Project) => void;
+}
+
+const ProjectForm: React.FC<ProjectFormProps> = ({ onSuccess }) => {
+  const { register, handleSubmit, reset } = useForm<FormData>();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const onSubmit: SubmitHandler<FormData> = async formData => {
+    setIsLoading(true);
     try {
       const response = await fetch('/api/crud', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
 
-      if (response.ok) {
-        alert('Project created successfully!');
-        window.location.reload();
-      } else {
+      if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.error || 'Failed to create project');
       }
+
+      const newProject: Project = await response.json();
+
+      // Tambahkan project ke list tanpa reload
+      onSuccess(newProject);
+
+      alert('Project created successfully!');
+      reset();
     } catch (error) {
       console.error('Error creating project:', error);
       alert('Failed to create project.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
