@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 
-import GoogleAnalytics from '@bradgarropy/next-google-analytics';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import NextTopLoader from 'nextjs-toploader';
@@ -11,7 +10,7 @@ import { METADATA } from '@/common/constant/metadata';
 
 import ThemeProviderContext from '@/context/theme';
 
-import { bricolage } from '../common/styles/fonts';
+import { manrope } from '../common/styles/fonts';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={bricolage.className}>
+      <body className={manrope.className}>
         <NextTopLoader
           color="#40C463"
           initialPosition={0.08}

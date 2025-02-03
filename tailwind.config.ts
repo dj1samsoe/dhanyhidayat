@@ -20,7 +20,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--jakartaSans-font)'],
-        bricolage: ['var(--bricolage-font)']
+        bricolage: ['var(--bricolage-font)'],
+        manrope: ['var(--manrope-font)']
       },
       keyframes: {
         wave: {

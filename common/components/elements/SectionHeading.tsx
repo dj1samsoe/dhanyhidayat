@@ -13,7 +13,7 @@ export default function SectionHeading({ title, icon, className = '' }: SectionH
       data-testid="section-heading"
     >
       {icon && <>{icon}</>}
-      <h2 className="capitalize" data-testid="title">
+      <h2 className="capitalize font-bricolage" data-testid="title">
         {title}
       </h2>
     </div>

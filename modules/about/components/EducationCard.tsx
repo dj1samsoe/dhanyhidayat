@@ -11,7 +11,7 @@ const EducationCard = ({ school, major, logo, degree, start_year, end_year, link
 
       <div className="space-y-1">
         <a href={link || '#'} target="_blank" data-umami-event={`Click Education School: ${school}`}>
-          <h2>{school}</h2>
+          <h2 className="font-bricolage">{school}</h2>
         </a>
         <div className="text-sm text-neutral-600 dark:text-neutral-400 space-y-2">
           <div className="flex flex-col md:flex-row gap-1 md:gap-2">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <Container data-aos="fade-up">

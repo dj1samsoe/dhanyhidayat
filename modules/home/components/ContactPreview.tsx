@@ -22,7 +22,7 @@ const ContactPreview = () => {
       <Card className="p-8 bg-neutral-200 border shadow-3xl ring-1 ring-black/5 dark:divide-neutral-800 dark:border-neutral-800 dark:bg-[#4949492e]  rounded-xl space-y-4">
         <div className="flex gap-2 items-center">
           <RocketIcon size={24} />
-          <h3 className="text-xl font-medium">Lets work together!</h3>
+          <h3 className="text-xl font-medium font-bricolage">Lets work together!</h3>
         </div>
         <p className="leading-[1.8] md:leading-loose text-neutral-800 dark:text-neutral-300 pl-2">
           I&apos;m open for freelance projects, feel free to email me to see how can we collaborate.

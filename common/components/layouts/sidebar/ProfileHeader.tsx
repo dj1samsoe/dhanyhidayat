@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 import clsx from 'clsx';
@@ -18,19 +16,6 @@ interface ProfileHeaderProps {
 }
 
 export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderProps) {
-  const { theme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  const currentTheme = theme === 'system' ? systemTheme : theme;
-  const logoSrc = currentTheme === 'dark' ? '/bg-profile-dark-2.png' : '/bg-profile-light-2.png';
   return (
     <div
       className={clsx(
@@ -42,7 +27,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
         <div className="absolute top-0 left-0 p-2.5">
           <Status />
         </div>
-        <Image src={logoSrc} alt="bg-profile" width={200} height={100} className="w-full" />
+        <div className="w-full h-[120px] bg-contain bg-no-repeat bg-center dark:bg-[url('/bg-profile-dark-2.png')] bg-[url('/bg-profile-light-2.png')]" />
         <div className="absolute bottom-0 right-0 p-2">
           <ToggleTheme />
         </div>
@@ -76,7 +61,7 @@ export default function ProfileHeader({ expandMenu, imageSize }: ProfileHeaderPr
       <Link
         href="https://instagram.com/dhanyhidayat_"
         target="_blank"
-        className="hidden lg:flex text-sm font-bricolage text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
+        className="hidden lg:flex text-sm font-manrope text-neutral-600 hover:text-neutral-700 dark:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-300"
       >
         @dhanyhidayat_
       </Link>

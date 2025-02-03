@@ -63,5 +63,5 @@ const About = () => {
 export default About;
 
 const TabLabel = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex items-center justify-center gap-1.5">{children}</div>
+  <div className="flex items-center justify-center gap-1.5 font-bricolage">{children}</div>
 );

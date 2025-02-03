@@ -60,7 +60,7 @@ const CareerCard = ({
       </div>
       <div className="w-4/5 space-y-3">
         <div className="space-y-1">
-          <h6>{position}</h6>
+          <h6 className="font-bricolage">{position}</h6>
           <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400">
             <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
               <a href={link || '#'} target="_blank">

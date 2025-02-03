@@ -1,11 +1,7 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-
-import { motion } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
-import { FaRegStopCircle, FaSpotify } from 'react-icons/fa';
+import { FaSpotify } from 'react-icons/fa';
 
 import clsxm from '@/common/libs/clsxm';
 import { NowPlaying } from '@/common/types/spotify';

@@ -5,7 +5,7 @@ import { FiCalendar, FiClock, FiVideo } from 'react-icons/fi';
 const BookACall = () => {
   return (
     <div className="space-y-5 pb-2">
-      <h3 className="text-lg font-medium">Book a Call</h3>
+      <h3 className="text-lg font-medium font-bricolage">Book a Call</h3>
       <Link
         href="https://cal.com/dhanyhidayat"
         target="_blank"
