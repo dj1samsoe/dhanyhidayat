@@ -1,5 +1,3 @@
-import { da } from 'date-fns/locale';
-
 export const personalData = {
   name: 'Dhany Hidayat',
   age: 22,
@@ -14,42 +12,90 @@ export const personalData = {
     { category: 'Backend', skills: ['Node JS'] },
     { category: 'Database', skills: ['MySQL', 'PostgreSQL', 'Firebase'] },
     { category: 'Tools', skills: ['Git', 'GitHub', 'Figma', 'Postman', 'VS Code'] },
-    { category: 'Languages', skills: ['English', 'Indonesian'] }
+    { category: 'Languages', skills: ['English', 'Bahasa Indonesia'] }
   ],
   interests: ['Web Development', 'Frontend Development', 'Some likes Coffee', 'Coding', 'Reading'],
-  projects: [
-    {
-      name: 'Personal Portfolio',
-      description: 'A personal portfolio website showcasing my projects and skills.'
-    },
-    {
-      name: 'Do-it',
-      description: 'a Fullstack Next JS To-do Lists Project with smooth design'
-    }
-  ],
   experiences: [
     {
-      position: 'Web Developer',
-      company: 'PT. Cognitia Strategy Indonesia',
+      position: 'Web Developer Intern',
+      company: 'Cognitia Strategi Indonesia',
+      company_legal_name: 'PT. Cognitia Strategi Indonesia',
+      logo: '/cognitia.webp',
       location: 'Surabaya, Indonesia 🇮🇩',
-      type: 'Internship',
       location_type: 'Hybrid',
-      start_date: '2024-07-12',
+      type: 'Internship',
+      start_date: '2024-12-12',
       end_date: null,
+      industry: 'wellness',
       link: 'https://cognitia.id',
-      responsibilities: [
-        'Maintenanced and developed company website using Wordpress',
-        'Redesign company website using Wordpress'
-      ]
+      responsibilities: ['Developed and maintained Online Shop website of Cognitia Foundation using Wordpress']
     },
     {
       position: 'Frontend Developer',
-      company: 'PT. Kawan Kerja Indonesia',
-      location: 'Bandung, Indonesia 🇮🇩',
-      type: 'Internship',
+      company: 'Traction Energy Asia',
+      company_legal_name: 'PT. Traction Energy Asia',
+      logo: '/tea.png',
+      location: 'Indonesia 🇮🇩',
       location_type: 'Remote',
+      type: 'Freelance',
+      start_date: '2024-07-11',
+      end_date: '2025-02-03',
+      industry: 'wellness',
+      link: 'https://tractionenergy.asia/',
+      responsibilities: [
+        'Developed UI Layout on E-Learning TEA website using Odoo',
+        'Brainstorming about tools that used',
+        'Customize layout in Odoo Module using Tailwind CSS'
+      ]
+    },
+    {
+      position: 'Freelance Web Developer',
+      company: 'projects.co.id',
+      company_legal_name: 'projects.co.id',
+      logo: '/projects.ico',
+      location: 'Indonesia 🇮🇩',
+      location_type: 'Remote',
+      type: 'Freelance',
+      start_date: '2025-01-11',
+      end_date: '2025-01-31',
+      industry: 'wellness',
+      link: 'https://projects.co.id',
+      responsibilities: [
+        'Creating online shop using Wordpress, Woocommerce and Elementor',
+        'Integration with Xendit payment gateway and Ongkoskirim.id plugin for shipping'
+      ]
+    },
+    {
+      position: 'Web Developer Intern',
+      company: 'Cognitia Strategi Indonesia',
+      company_legal_name: 'PT. Cognitia Strategi Indonesia',
+      logo: '/cognitia.webp',
+      location: 'Surabaya, Indonesia 🇮🇩',
+      location_type: 'Hybrid',
+      type: 'Internship',
+      start_date: '2024-07-12',
+      end_date: '2024-10-12',
+      industry: 'wellness',
+      link: 'https://cognitia.id',
+      responsibilities: [
+        'Developed and maintained company website using Wordpress.',
+        'Contributed to weekly meetings (hybrid) with the team.',
+        'Problem-solving based on discussions with the team',
+        'Exploring new knowledge about WordPress plugin'
+      ]
+    },
+
+    {
+      position: 'Frontend Developer',
+      company: 'Kawan Kerja',
+      company_legal_name: 'PT. Kawan Kerja Indonesia',
+      logo: '/kawankerja.webp',
+      location: 'Bandung, Indonesia 🇮🇩',
+      location_type: 'Remote',
+      type: 'Internship',
       start_date: '2024-02-12',
       end_date: '2024-06-12',
+      industry: 'wellness',
       link: 'https://kawankerja.id',
       responsibilities: [
         'Contributed to the development of "Kawan Kampus", one of the projects created by PT. Kawan Kerja Indonesia.',
@@ -61,13 +107,16 @@ export const personalData = {
       ]
     },
     {
-      position: 'Frontend Developer',
+      position: 'Freelance Frontend Developer',
       company: 'projects.co.id',
+      company_legal_name: 'projects.co.id',
+      logo: '/projects.ico',
       location: 'Indonesia 🇮🇩',
-      type: 'Freelance',
       location_type: 'Remote',
+      type: 'Freelance',
       start_date: '2024-02-29',
       end_date: '2024-03-07',
+      industry: 'wellness',
       link: 'https://projects.co.id',
       responsibilities: [
         'Responsible for slicing UI designs from Figma into code.',
