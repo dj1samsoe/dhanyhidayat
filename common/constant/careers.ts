@@ -22,7 +22,7 @@ export const CAREERS = [
     location_type: 'Remote',
     type: 'Freelance',
     start_date: '2024-07-11',
-    end_date: null,
+    end_date: '2025-02-03',
     industry: 'wellness',
     link: 'https://tractionenergy.asia/',
     responsibilities: [
