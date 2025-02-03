@@ -98,7 +98,7 @@ export default function Calendar({ data }: CalendarProps) {
                         transition: { delay: getRandomDelayAnimate }
                       }
                     }}
-                    className="my-[2px] block h-[13px] w-[13px] rounded-[4px] bg-neutral-300 dark:bg-neutral-800"
+                    className="my-[2px] block h-[12px] w-[12px] rounded-[4px] bg-neutral-300 dark:bg-neutral-800"
                     style={backgroundColor ? { backgroundColor } : undefined}
                     onMouseEnter={() =>
                       setSelectContribution({
