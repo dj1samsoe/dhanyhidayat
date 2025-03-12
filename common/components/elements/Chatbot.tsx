@@ -32,23 +32,30 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
 
   const handleUserMessage = async (message: string) => {
     setIsLoading(true);
-    const userMessage = { user: message, bot: 'Thinking...' };
 
-    setChat([...chat, userMessage]);
+    const userMessage = { role: 'user', content: message };
+    const newChat = [...chat, { user: message, bot: 'Thinking...' }];
+
+    setChat(newChat);
 
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ userMessage: message })
+      body: JSON.stringify({
+        messages: newChat.map(msg => ({
+          role: 'user',
+          content: msg.user
+        }))
+      })
     });
 
     const data = await response.json();
 
     setChat(prevChat => {
       const updatedChat = [...prevChat];
-      updatedChat[updatedChat.length - 1] = { user: message, bot: data.reply };
+      updatedChat[updatedChat.length - 1] = { user: message, bot: data.text };
       return updatedChat;
     });
 
