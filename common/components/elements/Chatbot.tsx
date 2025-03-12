@@ -21,7 +21,23 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    useChatbotStore.setState({ chat });
+    const storedChat = localStorage.getItem('chat-history');
+    if (storedChat) {
+      try {
+        const parsedChat = JSON.parse(storedChat);
+        if (Array.isArray(parsedChat)) {
+          setChat(() => parsedChat);
+        }
+      } catch (error) {
+        console.error('Error parsing chat history from localStorage:', error);
+      }
+    }
+  }, [setChat]);
+
+  useEffect(() => {
+    if (chat.length > 0) {
+      localStorage.setItem('chat-history', JSON.stringify(chat));
+    }
   }, [chat]);
 
   useEffect(() => {
@@ -33,31 +49,23 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   const handleUserMessage = async (message: string) => {
     setIsLoading(true);
 
-    const userMessage = { role: 'user', content: message };
-    const newChat = [...chat, { user: message, bot: 'Thinking...' }];
-
+    const newChat = [...chat, { role: 'user' as 'user', content: message }];
     setChat(newChat);
+    localStorage.setItem('chat-history', JSON.stringify(newChat));
 
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        messages: newChat.map(msg => ({
-          role: 'user',
-          content: msg.user
-        }))
-      })
+      body: JSON.stringify({ messages: newChat })
     });
 
     const data = await response.json();
 
-    setChat(prevChat => {
-      const updatedChat = [...prevChat];
-      updatedChat[updatedChat.length - 1] = { user: message, bot: data.text };
-      return updatedChat;
-    });
+    const updatedChat = [...newChat, { role: 'model' as 'model', content: data.text }];
+    setChat(updatedChat);
+    localStorage.setItem('chat-history', JSON.stringify(updatedChat));
 
     setIsLoading(false);
   };
@@ -72,6 +80,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
 
   const handleDeleteChat = () => {
     setChat([]);
+    localStorage.removeItem('chat-history');
   };
 
   return (
@@ -115,16 +124,16 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
                 </div>
               ) : (
                 chat.map((message, index) => (
-                  <div key={index} className={`flex flex-col space-y-4 w-full`}>
-                    {message.user && (
+                  <div key={index} className="flex flex-col space-y-4 w-full">
+                    {message.role === 'user' && (
                       <div className="w-full flex justify-end">
                         <div className="bg-neutral-900 text-white text-sm rounded-s-xl rounded-ee-xl py-2 px-4 w-fit flex flex-col space-y-1 items-end">
                           <h1 className="font-bold">You</h1>
-                          <div className="whitespace-pre-wrap text-end">{message.user}</div>
+                          <div className="whitespace-pre-wrap text-end">{message.content}</div>
                         </div>
                       </div>
                     )}
-                    {message.bot && (
+                    {message.role === 'model' && (
                       <div className="w-full flex justify-start">
                         <div className="bg-neutral-300 text-dark text-sm rounded-e-xl rounded-es-xl py-2 px-4 w-fit flex flex-col space-y-1 items-start">
                           <h1 className="font-bold">Dhany Hidayat</h1>
@@ -132,7 +141,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
                             <p>Thinking...</p>
                           ) : (
                             <div className="whitespace-pre-wrap font-medium">
-                              <MDXComponent>{message.bot}</MDXComponent>
+                              <MDXComponent>{message.content}</MDXComponent>
                             </div>
                           )}
                         </div>

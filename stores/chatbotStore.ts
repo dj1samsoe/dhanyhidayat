@@ -1,8 +1,8 @@
 import { create } from 'zustand';
 
 interface ChatMessage {
-  user: string;
-  bot: string;
+  role: 'user' | 'model';
+  content: string;
 }
 
 interface ChatbotStore {
