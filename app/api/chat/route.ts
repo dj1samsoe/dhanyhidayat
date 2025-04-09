@@ -92,21 +92,48 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const messages = Array.isArray(body.messages) ? body.messages : [];
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-001' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' }); // Pastikan model mendukung streaming
 
     const chatHistory = [
       systemMessage,
-      ...messages.map((msg: { role: any; content: any }) => ({
+      ...messages.map((msg: { role: string; content: string }) => ({
         role: msg.role,
         parts: [{ text: msg.content }]
       }))
     ];
 
-    const result = await model.generateContent({ contents: chatHistory });
-    const response = await result.response;
-    const text = response.text();
+    const streamResult = await model.generateContentStream({ contents: chatHistory });
 
-    return NextResponse.json({ text });
+    // Menggunakan ReadableStream untuk streaming response
+    const encoder = new TextEncoder();
+    let fullText = '';
+
+    return new NextResponse(
+      new ReadableStream({
+        async start(controller) {
+          for await (const chunk of streamResult.stream) {
+            const text = chunk.text();
+            fullText += text;
+            // Pecah text menjadi kata-kata dan kirim satu per satu
+            const words = text.split(/\s+/).filter((word: string | string[]) => word.length > 0);
+            for (const word of words) {
+              controller.enqueue(encoder.encode(JSON.stringify({ word }) + '\n'));
+              await new Promise(resolve => setTimeout(resolve, 100)); // Delay untuk efek kata per kata
+            }
+          }
+          // Kirim sinyal bahwa streaming selesai
+          controller.enqueue(encoder.encode(JSON.stringify({ complete: fullText }) + '\n'));
+          controller.close();
+        }
+      }),
+      {
+        headers: {
+          'Content-Type': 'text/event-stream',
+          'Cache-Control': 'no-cache',
+          Connection: 'keep-alive'
+        }
+      }
+    );
   } catch (error) {
     console.error('Error:', error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

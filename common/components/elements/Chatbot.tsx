@@ -19,6 +19,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
   const { chat, setChat } = useChatbotStore();
   const [isLoading, setIsLoading] = useState(false);
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [streamingMessage, setStreamingMessage] = useState<string[]>([]); // Kata-kata yang sedang distream
 
   useEffect(() => {
     const storedChat = localStorage.getItem('chat-history');
@@ -44,10 +45,11 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
-  }, [chat]);
+  }, [chat, streamingMessage]);
 
   const handleUserMessage = async (message: string) => {
     setIsLoading(true);
+    setStreamingMessage([]);
 
     const newChat = [...chat, { role: 'user' as 'user', content: message }];
     setChat(newChat);
@@ -61,13 +63,33 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
       body: JSON.stringify({ messages: newChat })
     });
 
-    const data = await response.json();
+    if (response.body) {
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let fullText = '';
 
-    const updatedChat = [...newChat, { role: 'model' as 'model', content: data.text }];
-    setChat(updatedChat);
-    localStorage.setItem('chat-history', JSON.stringify(updatedChat));
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
 
-    setIsLoading(false);
+        const chunk = decoder.decode(value);
+        const lines = chunk.split('\n').filter(line => line.trim());
+
+        for (const line of lines) {
+          const parsed = JSON.parse(line);
+          if (parsed.word) {
+            setStreamingMessage(prev => [...prev, parsed.word]);
+          } else if (parsed.complete) {
+            fullText = parsed.complete;
+            const updatedChat = [...newChat, { role: 'model' as 'model', content: fullText }];
+            setChat(updatedChat);
+            localStorage.setItem('chat-history', JSON.stringify(updatedChat));
+            setStreamingMessage([]); // Reset setelah selesai
+            setIsLoading(false);
+          }
+        }
+      }
+    }
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
@@ -80,6 +102,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
 
   const handleDeleteChat = () => {
     setChat([]);
+    setStreamingMessage([]);
     localStorage.removeItem('chat-history');
   };
 
@@ -110,7 +133,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
               ref={chatContainerRef}
               className="flex flex-col space-y-4 px-2 overflow-y-auto w-full h-full overflow-x-hidden"
             >
-              {chat.length === 0 ? (
+              {chat.length === 0 && streamingMessage.length === 0 && !isLoading ? (
                 <div className="flex flex-col space-y-4 justify-center items-center h-full">
                   <div className="p-4 rounded-full bg-white text-dark shadow-xl dark:border border-none">
                     <FaRobot size={50} />
@@ -123,32 +146,71 @@ const Chatbot: React.FC<ChatbotProps> = ({ isOpen, onClose }) => {
                   </p>
                 </div>
               ) : (
-                chat.map((message, index) => (
-                  <div key={index} className="flex flex-col space-y-4 w-full">
-                    {message.role === 'user' && (
-                      <div className="w-full flex justify-end">
-                        <div className="bg-neutral-900 text-white text-sm rounded-s-xl rounded-ee-xl py-2 px-4 w-fit flex flex-col space-y-1 items-end">
-                          <h1 className="font-bold">You</h1>
-                          <div className="whitespace-pre-wrap text-end">{message.content}</div>
+                <>
+                  {chat.map((message, index) => (
+                    <div key={index} className="flex flex-col space-y-4 w-full">
+                      {message.role === 'user' && (
+                        <div className="w-full flex justify-end">
+                          <div className="bg-neutral-900 text-white text-sm rounded-s-xl rounded-ee-xl py-2 px-4 w-fit flex flex-col space-y-1 items-end">
+                            <h1 className="font-bold">You</h1>
+                            <div className="whitespace-pre-wrap text-start">{message.content}</div>
+                          </div>
                         </div>
-                      </div>
-                    )}
-                    {message.role === 'model' && (
-                      <div className="w-full flex justify-start">
-                        <div className="bg-neutral-300 text-dark text-sm rounded-e-xl rounded-es-xl py-2 px-4 w-fit flex flex-col space-y-1 items-start">
-                          <h1 className="font-bold">Dhany Hidayat</h1>
-                          {index === chat.length - 1 && isLoading ? (
-                            <p>Thinking...</p>
-                          ) : (
-                            <div className="whitespace-pre-wrap font-medium">
+                      )}
+                      {message.role === 'model' && (
+                        <div className="w-full flex justify-start">
+                          <div className="bg-neutral-300 text-dark text-sm rounded-e-xl rounded-es-xl py-2 px-4 w-fit flex flex-col space-y-1 items-start">
+                            <h1 className="font-bold">Dhany Hidayat</h1>
+                            <motion.div
+                              initial={{ opacity: 0 }}
+                              animate={{ opacity: 1 }}
+                              transition={{ duration: 0.3 }}
+                              className="whitespace-pre-wrap font-medium"
+                            >
                               <MDXComponent>{message.content}</MDXComponent>
-                            </div>
-                          )}
+                            </motion.div>
+                          </div>
                         </div>
+                      )}
+                    </div>
+                  ))}
+                  {isLoading && (
+                    <div className="w-full flex justify-start">
+                      <div className="bg-neutral-300 text-dark text-sm rounded-e-xl rounded-es-xl py-2 px-4 w-fit flex flex-col space-y-1 items-start">
+                        <h1 className="font-bold">Dhany Hidayat</h1>
+                        {streamingMessage.length === 0 ? (
+                          <p>Thinking...</p>
+                        ) : (
+                          <motion.div
+                            initial="hidden"
+                            animate="visible"
+                            variants={{
+                              hidden: { opacity: 0 },
+                              visible: {
+                                opacity: 1,
+                                transition: { staggerChildren: 0.1 }
+                              }
+                            }}
+                            className="whitespace-pre-wrap font-medium"
+                          >
+                            {streamingMessage.map((word, wordIndex) => (
+                              <motion.span
+                                key={wordIndex}
+                                variants={{
+                                  hidden: { opacity: 0 },
+                                  visible: { opacity: 1 }
+                                }}
+                                style={{ display: 'inline-block', marginRight: '4px' }}
+                              >
+                                {word}
+                              </motion.span>
+                            ))}
+                          </motion.div>
+                        )}
                       </div>
-                    )}
-                  </div>
-                ))
+                    </div>
+                  )}
+                </>
               )}
             </div>
             <div className="pt-4">
