@@ -1,5 +1,23 @@
 export const CAREERS = [
   {
+    position: 'IT Officer',
+    company: 'Cognitia Strategi Indonesia',
+    company_legal_name: 'PT. Cognitia Strategi Indonesia',
+    logo: '/cognitia.webp',
+    location: 'Surabaya, Indonesia 🇮🇩',
+    location_type: 'Hybrid',
+    type: 'Contract',
+    start_date: '2025-04-08',
+    end_date: null,
+    industry: 'wellness',
+    link: 'https://cognitia.id',
+    responsibilities: [
+      'Maintained website "Cognitia Strategi Indonesia" (https://cognitia.id)',
+      'Maintained website "Tumbu Tropica" (https://tumbutropica.com)',
+      'Maintained B2B Website for export & import comodities named "Planten Global" (https://globalplanten.com)'
+    ]
+  },
+  {
     position: 'Web Developer Intern',
     company: 'Cognitia Strategi Indonesia',
     company_legal_name: 'PT. Cognitia Strategi Indonesia',
@@ -8,10 +26,13 @@ export const CAREERS = [
     location_type: 'Hybrid',
     type: 'Internship',
     start_date: '2024-12-12',
-    end_date: null,
+    end_date: '2025-02-28',
     industry: 'wellness',
     link: 'https://cognitia.id',
-    responsibilities: ['Developed and maintained Online Shop website of Cognitia Foundation using Wordpress']
+    responsibilities: [
+      'Developed and maintained website "Tumbu Tropica" (https://tumbutropica.com) using Wordpress',
+      'Developed and maintained B2B Website for export & import comodities named "Planten Global" (https://globalplanten.com) using Wordpress'
+    ]
   },
   {
     position: 'Frontend Developer',
